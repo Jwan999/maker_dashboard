@@ -2,9 +2,20 @@
 
 namespace App\Nova;
 
+use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\BooleanGroup;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OwenMelbz\RadioField\RadioButton;
+use Dniccum\PhoneNumber\PhoneNumber;
+
 
 class Student extends Resource
 {
@@ -20,7 +31,7 @@ class Student extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -29,25 +40,54 @@ class Student extends Resource
      */
     public static $search = [
         'id',
+        'name',
+        'email'
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make(__('Name'), 'name')->sortable(),
+
+            Number::make(__('Phone Number'), 'phone'),
+            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::all()),
+            Text::make(__('University'), 'university'),
+
+            Text::make(__('Email'), 'email'),
+            BelongsToMany::make('trainings'),
+
+            RadioButton::make(__('Gender'), 'gender')
+                ->options([
+                    'Female' => 'Female',
+                    'Male' => 'Male'
+                ])
+                ->stack() // optional (required to show hints)
+                ->marginBetween() // optional
+                ->skipTransformation() // optional
+                ->toggle([  // optional
+                    1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
+                ]),
+
+            Text::make(__('Field of study'), 'field_of_study'),
+            Date::make(__('Date of birth'), 'date_of_birth'),
+            Select::make(__('Governorate'), 'governorate')->options([
+                'Baghdad' => 'Baghdad',
+                'Other' => 'Other'
+            ]),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -58,7 +98,7 @@ class Student extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -69,7 +109,7 @@ class Student extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -80,11 +120,11 @@ class Student extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new Actions\ImportStudents];
     }
 }

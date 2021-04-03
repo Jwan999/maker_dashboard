@@ -19,9 +19,7 @@ class CreateTrainingsTable extends Migration
             $table->string('type');
             $table->string('date');
             $table->string('period');
-            $table->string('trainer');
             $table->boolean('in_person');
-
             $table->timestamps();
         });
     }

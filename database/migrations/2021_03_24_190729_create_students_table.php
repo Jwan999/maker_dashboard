@@ -19,7 +19,11 @@ class CreateStudentsTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('gender');
+            $table->string('field_of_study');
+            $table->string('date_of_birth');
             $table->string('governorate');
+            $table->string('university');
+
 
             $table->timestamps();
         });
