@@ -146,6 +146,8 @@
       <path value="$PROJECT_DIR$/vendor/coroowicaksono/chart-js-integration" />
       <path value="$PROJECT_DIR$/vendor/theme/iot-maker" />
       <path value="$PROJECT_DIR$/vendor/example/miami-ice" />
+      <path value="$PROJECT_DIR$/vendor/dillingham/nova-attach-many" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

@@ -151,6 +151,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/coroowicaksono/chart-js-integration" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theme/iot-maker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/example/miami-ice" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dillingham/nova-attach-many" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

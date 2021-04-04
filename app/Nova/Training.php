@@ -9,6 +9,10 @@ use Laravel\Nova\Fields\BooleanGroup;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
+use NovaAttachMany\AttachMany;
+use Benjacho\BelongsToManyField\BelongsToManyField;
+
+
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Tests\Feature\SelectTest;
@@ -56,6 +60,9 @@ class Training extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             BelongsToMany::make('Students'),
+            BelongsToManyField::make('Students', 'students', 'App\Nova\Student')->hideFromIndex(),
+
+
             BelongsToMany::make('Trainers'),
 
             Date::make(__('Starting Date'), 'date'),
