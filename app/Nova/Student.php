@@ -61,7 +61,7 @@ class Student extends Resource
             Text::make(__('University'), 'university'),
 
             Text::make(__('Email'), 'email'),
-            BelongsToMany::make('trainings'),
+            BelongsToMany::make('Trainings'),
 
             RadioButton::make(__('Gender'), 'gender')
                 ->options([
