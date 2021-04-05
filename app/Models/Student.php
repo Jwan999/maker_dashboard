@@ -13,6 +13,7 @@ class Student extends Model
         'date_of_birth' => 'datetime'
     ];
 
+
     public function trainings(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Training::class);

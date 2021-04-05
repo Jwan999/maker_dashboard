@@ -148,6 +148,7 @@
       <path value="$PROJECT_DIR$/vendor/example/miami-ice" />
       <path value="$PROJECT_DIR$/vendor/dillingham/nova-attach-many" />
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/hdrm147/students-importer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

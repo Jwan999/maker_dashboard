@@ -3,19 +3,63 @@
 namespace App\Imports;
 
 use App\Models\Student;
+use App\Models\Training;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class StudentsImport implements ToModel
+class StudentsImport implements ToCollection, WithHeadingRow
 {
+
     /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
-    public function model(array $row)
+     * @var Training
+     */
+    private Training $training;
+
+    public function __construct(Training $training)
     {
-        return new Student([
-            //
-        ]);
+
+        $this->training = $training;
+    }
+
+    public function collection(Collection $collection)
+    {
+        DB::beginTransaction();
+        try {
+            foreach ($collection as $data) {
+                $old = Student::where("email", "=", $data["email"])->first();
+                $model = $old ?: $this->create($data);
+                $this->training->students()->attach($model->id);
+            }
+            DB::commit();
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            throw new \Exception("There was an error with the data, nothing imported.");
+        }
+    }
+
+    private function create($data)
+    {
+        $new = new Student;
+
+        $new->name = $this->safeGet($data, "name");
+        $new->phone = $this->safeGet($data, "phone");
+        $new->email = $this->safeGet($data, "email");
+        $new->gender = $this->safeGet($data, "gender");
+        $new->field_of_study = $this->safeGet($data, "field_of_study");
+
+        $new->age = $this->safeGet($data, "age");
+        $new->governorate = $this->safeGet($data, "governorate");
+        $new->university = $this->safeGet($data, "university");
+        $new->save();
+        return $new;
+    }
+
+    private function safeGet($data, $key)
+    {
+        return isset($data[$key]) ? $data[$key] : null;
     }
 }

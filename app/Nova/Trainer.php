@@ -25,7 +25,7 @@ class Trainer extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -50,7 +50,6 @@ class Trainer extends Resource
             Text::make(__('Name'), 'name')->sortable(),
             Number::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'email'),
-            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::all()),
 
         ];
     }

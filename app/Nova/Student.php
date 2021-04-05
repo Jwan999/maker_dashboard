@@ -56,7 +56,7 @@ class Student extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
 
-            Number::make(__('Phone Number'), 'phone'),
+            Text::make(__('Phone Number'), 'phone'),
             BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::all()),
             Text::make(__('University'), 'university'),
 
@@ -76,7 +76,7 @@ class Student extends Resource
                 ]),
 
             Text::make(__('Field of study'), 'field_of_study'),
-            Date::make(__('Date of birth'), 'date_of_birth'),
+            Text::make(__('Age'), 'age'),
             Select::make(__('Governorate'), 'governorate')->options([
                 'Baghdad' => 'Baghdad',
                 'Other' => 'Other'

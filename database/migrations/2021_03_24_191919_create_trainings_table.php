@@ -20,6 +20,7 @@ class CreateTrainingsTable extends Migration
             $table->string('date');
             $table->string('period');
             $table->boolean('in_person');
+            $table->foreignId('trainer_id')->constrained("trainers")->onDelete('cascade');
             $table->timestamps();
         });
     }

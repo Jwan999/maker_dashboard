@@ -2,11 +2,13 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\StudentsImporter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\BooleanGroup;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use NovaAttachMany\AttachMany;
@@ -59,11 +61,6 @@ class Training extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
-            BelongsToMany::make('Students'),
-            BelongsToManyField::make('Students', 'students', 'App\Nova\Student')->hideFromIndex(),
-
-
-            BelongsToMany::make('Trainers'),
 
             Date::make(__('Starting Date'), 'date'),
             Text::make(__('Duration'), 'period'),
@@ -72,7 +69,11 @@ class Training extends Resource
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
                 ->falseValue(false),
-
+            BelongsTo::make(__("Trainer"), "trainer", Trainer::Class),
+//            Select::make(__("Training Type"),"type")->options([
+//                'course' => 'Course',
+//                'session' => 'Session'
+//            ])->displayUsingLabels(),
             RadioButton::make(__('Training Type'), 'type')
                 ->options([
                     'Course' => 'Course',
@@ -84,6 +85,8 @@ class Training extends Resource
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]),
+            BelongsToMany::make('Students'),
+
 
         ];
     }
@@ -129,7 +132,9 @@ class Training extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new StudentsImporter)->showOnTableRow()
+        ];
     }
 }
 

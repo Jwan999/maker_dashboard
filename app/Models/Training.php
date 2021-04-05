@@ -18,9 +18,9 @@ class Training extends Model
         return $this->belongsToMany(Student::class);
     }
 
-    public function trainers()
+    public function trainer()
     {
-        return $this->belongsToMany(Trainer::class);
+        return $this->belongsTo(Trainer::class);
 
     }
 
