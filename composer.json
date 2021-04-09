@@ -30,14 +30,6 @@
         {
             "type": "path",
             "url": "./nova"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/IotMaker"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/Iotmaker"
         }
     ],
     "require-dev": {
