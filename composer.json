@@ -30,6 +30,7 @@
         {
             "type": "path",
             "url": "./nova"
+
         }
     ],
     "require-dev": {
