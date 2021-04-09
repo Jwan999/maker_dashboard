@@ -1,5 +1,5 @@
 {
-    "name": "theme/iot-maker",
+    "name": "maker/iotmaker",
     "description": "A Laravel Nova theme.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Theme\\IotMaker\\": "src/"
+            "Maker\\Iotmaker\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Theme\\IotMaker\\ThemeServiceProvider"
+                "Maker\\Iotmaker\\ThemeServiceProvider"
             ]
         }
     },

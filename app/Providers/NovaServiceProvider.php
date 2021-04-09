@@ -23,6 +23,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+        Nova::style('iot-maker', asset('css/theme.css'));
     }
 
     /**

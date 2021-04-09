@@ -176,7 +176,7 @@ return [
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\NovaServiceProvider::class,
-        Theme\IotMaker\ThemeServiceProvider::class,
+        maker\IotMaker\ThemeServiceProvider::class,
 
 
     ],

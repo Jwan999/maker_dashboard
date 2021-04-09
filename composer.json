@@ -24,7 +24,7 @@
         "laravel/tinker": "^2.5",
         "owenmelbz/nova-radio-field": "^1.0",
         "rcknr/nova-multiselect-filter": "^1.3",
-        "theme/iot-maker": "*"
+        "maker/iotmaker": "*"
     },
     "repositories": [
         {
@@ -42,6 +42,10 @@
         {
             "type": "path",
             "url": "./nova-components/IotMaker"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Iotmaker"
         }
     ],
     "require-dev": {
