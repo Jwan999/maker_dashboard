@@ -33,14 +33,6 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/MiamiIce"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/MiamiIce"
-        },
-        {
-            "type": "path",
             "url": "./nova-components/IotMaker"
         },
         {
