@@ -57,7 +57,7 @@ class Badge extends Field
     public $map;
 
     /**
-     * The built-in badge types and their corresponding CSS classes.
+     * The built-in badge types and their corresponding css classes.
      *
      * @var array
      */
@@ -69,7 +69,7 @@ class Badge extends Field
     ];
 
     /**
-     * Add badge types and their corresponding CSS classes to the built-in ones.
+     * Add badge types and their corresponding css classes to the built-in ones.
      *
      * @param  array  $types
      * @return $this
@@ -82,7 +82,7 @@ class Badge extends Field
     }
 
     /**
-     * Set the badge types and their corresponding CSS classes.
+     * Set the badge types and their corresponding css classes.
      *
      * @param  array  $types
      * @return $this
@@ -134,7 +134,7 @@ class Badge extends Field
     }
 
     /**
-     * Resolve the Badge's CSS classes based on the field's value.
+     * Resolve the Badge's css classes based on the field's value.
      *
      * @return string
      */

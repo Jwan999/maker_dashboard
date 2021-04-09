@@ -22,7 +22,7 @@ class Line extends Text
     public $type = self::BASE;
 
     /**
-     * Extra CSS classes to apply to the line.
+     * Extra css classes to apply to the line.
      *
      * @var mixed
      */
@@ -36,7 +36,7 @@ class Line extends Text
     public $component = 'line-field';
 
     /**
-     * CSS class lookup table for lines.
+     * css class lookup table for lines.
      *
      * @var array
      */
@@ -111,7 +111,7 @@ class Line extends Text
     }
 
     /**
-     * Set the extra CSS classes to be applied to the line field.
+     * Set the extra css classes to be applied to the line field.
      *
      * @param mixed $classes
      * @return $this

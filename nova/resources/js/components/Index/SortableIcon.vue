@@ -64,7 +64,7 @@ export default {
     },
 
     /**
-     * The CSS class to apply to the ascending arrow icon
+     * The css class to apply to the ascending arrow icon
      */
     ascClass() {
       if (this.isSorted && this.isDescDirection) {
@@ -75,7 +75,7 @@ export default {
     },
 
     /**
-     * The CSS class to apply to the descending arrow icon
+     * The css class to apply to the descending arrow icon
      */
     descClass() {
       if (this.isSorted && this.isAscDirection) {

@@ -101,14 +101,14 @@ class Nova
     public static $scripts = [];
 
     /**
-     * All of the registered Nova tool CSS.
+     * All of the registered Nova tool css.
      *
      * @var array
      */
     public static $styles = [];
 
     /**
-     * The theme CSS files applied to Nova.
+     * The theme css files applied to Nova.
      *
      * @var array
      */
@@ -846,7 +846,7 @@ class Nova
     }
 
     /**
-     * Register the given CSS file with Nova.
+     * Register the given css file with Nova.
      *
      * @param  string  $name
      * @param  string  $path
@@ -860,7 +860,7 @@ class Nova
     }
 
     /**
-     * Register the given remote CSS file with Nova.
+     * Register the given remote css file with Nova.
      *
      * @param  string  $path
      * @return static
@@ -871,7 +871,7 @@ class Nova
     }
 
     /**
-     * Register the given theme CSS file with Nova.
+     * Register the given theme css file with Nova.
      *
      * @param string $publicPath
      * @return static
@@ -991,7 +991,7 @@ class Nova
     }
 
     /**
-     * Enable theming-friendly CSS classes for Nova's built-in Vue components.
+     * Enable theming-friendly css classes for Nova's built-in Vue components.
      *
      * @return static
      */

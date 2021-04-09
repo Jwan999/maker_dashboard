@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.mixin(Localization)
 
 /**
- * If configured, register a global mixin to add theming-friendly CSS
+ * If configured, register a global mixin to add theming-friendly css
  * classnames to Nova's built-in Vue components. This allows the user
  * to fully customize Nova's theme to their project's branding.
  */

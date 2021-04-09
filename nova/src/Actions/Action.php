@@ -686,7 +686,7 @@ class Action implements JsonSerializable
     }
 
     /**
-     * Return the CSS classes for the Action.
+     * Return the css classes for the Action.
      *
      * @return string
      */
