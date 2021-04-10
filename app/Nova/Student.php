@@ -125,6 +125,6 @@ class Student extends Resource
      */
     public function actions(Request $request)
     {
-        return [new Actions\ImportStudents];
+        return [];
     }
 }
