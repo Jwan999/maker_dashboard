@@ -31,7 +31,6 @@ class StudentsImport implements ToCollection, WithHeadingRow
         try {
             foreach ($collection as $data) {
                 $old = Student::where("email", "=", $data["email"])->first();
-                dd($data);
                 $model = $old ?: $this->create($data);
                 $this->training->students()->attach($model->id);
             }
