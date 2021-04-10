@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "259f3070d9e2a7b3b6fdcad30eac6f5b",
+    "content-hash": "453d1e2056647098088e038017abb194",
     "packages": [
         {
             "name": "anaseqal/nova-import",

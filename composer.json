@@ -23,6 +23,7 @@
     "laravel/framework": "^8.12",
     "laravel/nova": "*",
     "laravel/tinker": "^2.5",
+    "maatwebsite/excel": "^3.1",
     "maker/iotmaker": "*",
     "owenmelbz/nova-radio-field": "^1.0",
     "rcknr/nova-multiselect-filter": "^1.3",
