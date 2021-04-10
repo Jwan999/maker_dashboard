@@ -153,6 +153,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maker/iotmaker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/simplesquid/nova-advanced-number-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gkermer/nova-text-auto-complete" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -150,6 +150,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/vendor/hdrm147/students-importer" />
       <path value="$PROJECT_DIR$/vendor/maker/IotMaker" />
+      <path value="$PROJECT_DIR$/vendor/simplesquid/nova-advanced-number-field" />
+      <path value="$PROJECT_DIR$/vendor/gkermer/nova-text-auto-complete" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

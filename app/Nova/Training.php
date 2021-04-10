@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\StudentsImporter;
+use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -21,6 +22,7 @@ use Laravel\Nova\Tests\Feature\SelectTest;
 use Davidpiesse\NovaToggle\Toggle;
 use OwenMelbz\RadioField\RadioButton;
 use Laravel\Nova\Fields\BelongsToMany;
+use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
 
 
 class Training extends Resource
@@ -63,8 +65,24 @@ class Training extends Resource
             Text::make(__('Name'), 'name')->sortable(),
 
             Date::make(__('Starting Date'), 'date'),
-            Text::make(__('Duration'), 'period'),
 
+            TextAutoComplete::make(__('Duration'), 'period')->items([
+                '1 Month',
+                '1 Day',
+                '2 Months',
+                '2 Days',
+                '3 Months',
+                '3 Days',
+                '4 Months',
+                '4 Days',
+                '5 Months',
+                '5 Days',
+                '6 Months',
+                '6 Days',
+                '7 Days',
+                '8 Days',
+
+            ]),
 
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
