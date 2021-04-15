@@ -10,6 +10,7 @@
   "require": {
     "php": "^7.3|^8.0",
     "anaseqal/nova-import": "^0.0.6",
+    "anaseqal/nova-sidebar-icons": "^0.0.3",
     "benjacho/belongs-to-many-field": "^1.8",
     "coroowicaksono/chart-js-integration": "^0.3.4",
     "davidpiesse/nova-toggle": "^0.0.8",

@@ -10,6 +10,8 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 use Anaseqal\NovaImport\NovaImport;
 use Coroowicaksono\ChartJsIntegration\PieChart;
 use Coroowicaksono\ChartJsIntegration\LineChart;
+use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
+
 use Coroowicaksono\ChartJsIntegration\BarChart;
 
 
@@ -124,6 +126,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new NovaImport,
+            new NovaSidebarIcons,
+
 
         ];
     }
