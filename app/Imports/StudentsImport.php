@@ -50,7 +50,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
         $pass = null;
         $fields = ["name","phone","email"];
         foreach($fields as $field) {
-            $pass = isset($data[$field]) && $data[$field] != null;
+            $pass = isset($row[$field]) && $row[$field] != null;
         }
         return $pass;
     }
