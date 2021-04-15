@@ -37,7 +37,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
-            throw new \Exception("There was an error with the data, nothing imported.");
+            throw new \Exception("There was an error with the data, nothing imported. {$exception->getMessage()}");
         }
     }
 
