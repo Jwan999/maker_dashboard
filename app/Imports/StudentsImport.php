@@ -31,8 +31,12 @@ class StudentsImport implements ToCollection, WithHeadingRow
         try {
             foreach ($collection as $data) {
                 $old = Student::where("email", "=", $data["email"])->first();
+                if(!$this->checkRow($data))
+                    continue;
+
                 $model = $old ?: $this->create($data);
                 $this->training->students()->attach($model->id);
+
             }
             DB::commit();
         } catch (\Exception $exception) {
@@ -41,6 +45,15 @@ class StudentsImport implements ToCollection, WithHeadingRow
         }
     }
 
+    public function checkRow($row)
+    {
+        $pass = null;
+        $fields = ["name","phone","email"];
+        foreach($fields as $field) {
+            $pass = isset($data[$field]) && $data[$field] != null;
+        }
+        return $pass;
+    }
     private function create($data)
     {
         $new = new Student;
