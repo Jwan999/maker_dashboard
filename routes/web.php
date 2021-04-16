@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 Route::get('/test', function () {
-    $students = Student::where('gender','=','ذكر');
+    $students = Student::where('gender','=','ذكر')->get();
     foreach ($students as $student)
         $student->update(['gender' => 'male']);
     dd($students);
