@@ -47,7 +47,7 @@ class Training extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+//        'id',
         'name',
 
     ];
@@ -61,10 +61,10 @@ class Training extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id'),
             Text::make(__('Name'), 'name')->sortable(),
 
-            Date::make(__('Starting Date'), 'date'),
+            Date::make(__('Starting Date'), 'date')->sortable(),
 
             TextAutoComplete::make(__('Duration'), 'period')->items([
                 '1 Month',

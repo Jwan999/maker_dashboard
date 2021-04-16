@@ -18,11 +18,6 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/test', function () {
-    $students = Student::where('gender','=','ذكر')->get();
-    foreach ($students as $student)
-        $student->update(['gender' => 'male']);
-    dd($students);
-});
+
 
 

@@ -33,7 +33,7 @@ class Trainer extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+//        'id',
         'name'
     ];
 
@@ -46,7 +46,7 @@ class Trainer extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Number::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'email'),
