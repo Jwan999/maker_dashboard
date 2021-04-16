@@ -156,6 +156,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/simplesquid/nova-advanced-number-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gkermer/nova-text-auto-complete" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/anaseqal/nova-sidebar-icons" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/clickable-table-row" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

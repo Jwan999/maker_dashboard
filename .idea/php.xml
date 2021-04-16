@@ -153,6 +153,7 @@
       <path value="$PROJECT_DIR$/vendor/simplesquid/nova-advanced-number-field" />
       <path value="$PROJECT_DIR$/vendor/gkermer/nova-text-auto-complete" />
       <path value="$PROJECT_DIR$/vendor/anaseqal/nova-sidebar-icons" />
+      <path value="$PROJECT_DIR$/vendor/digital-creative/clickable-table-row" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

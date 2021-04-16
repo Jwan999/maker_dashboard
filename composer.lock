@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cd27c6a04b896575ca8b3f85e805b07",
+    "content-hash": "3ec0a84c6539a14f2c8fa187ac5813f9",
     "packages": [
         {
             "name": "anaseqal/nova-import",
@@ -483,6 +483,59 @@
                 "source": "https://github.com/davidpiesse/nova-toggle/tree/0.0.8"
             },
             "time": "2020-12-09T15:32:52+00:00"
+        },
+        {
+            "name": "digital-creative/clickable-table-row",
+            "version": "v0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dcasia/clickable-table-row.git",
+                "reference": "d79f625f01aea4289b1021f6fe58f8cc3214ef65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dcasia/clickable-table-row/zipball/d79f625f01aea4289b1021f6fe58f8cc3214ef65",
+                "reference": "d79f625f01aea4289b1021f6fe58f8cc3214ef65",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DigitalCreative\\ClickableTableRow\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DigitalCreative\\ClickableTableRow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rafael Milewski"
+                }
+            ],
+            "description": "Makes every Nova table resource rows clickable",
+            "keywords": [
+                "clickable",
+                "laravel",
+                "nova",
+                "row",
+                "table"
+            ],
+            "support": {
+                "issues": "https://github.com/dcasia/clickable-table-row/issues",
+                "source": "https://github.com/dcasia/clickable-table-row/tree/v0.1.5"
+            },
+            "time": "2020-05-02T02:39:53+00:00"
         },
         {
             "name": "dillingham/nova-attach-many",
