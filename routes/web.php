@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Student;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 Route::get('/test', function () {
-    $students = Student::where('gender', '=', 'ذكر')->get();
+    $students = Student::where('gender','=','ذكر');
+//    foreach ($students as $student)
+//        $students->update(['gender' => 'male']);
     dd($students);
 });
 
