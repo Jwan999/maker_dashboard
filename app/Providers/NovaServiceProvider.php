@@ -79,25 +79,29 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->width('1/3'),
 
             (new BarChart())
-                ->title('Revenue')
+                ->title('Age Range')
                 ->animations([
                     'enabled' => true,
                     'easing' => 'easeinout',
                 ])
-                ->series(array([
-                    'barPercentage' => 0.5,
-                    'label' => 'Average Sales',
-                    'backgroundColor' => '#999',
-                    'data' => [80, 90, 80, 40, 62, 79, 79, 90, 90, 90, 92, 91],
-                ],[
-                    'barPercentage' => 0.5,
-                    'label' => 'Average Sales 2',
-                    'backgroundColor' => '#F87900',
-                    'data' => [40, 62, 79, 80, 90, 79, 90, 90, 90, 92, 91, 80],
-                ]))
+                ->series(
+                    array([
+                        'label' => '',
+                        'backgroundColor' => '#F87900',
+                        $student = Student::where('age', '!=', null)->get('age'),
+
+                        'data' => [$student->map(function ($student) {
+                            return $student->age;
+                        })],
+                    ]))
                 ->options([
                     'xaxis' => [
-                        'categories' => [ 'Jan', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct' ]
+//                        $student = Student::where('age', '!=', null)->get('age'),
+//                        'categories' => [$student->map(function ($student) {
+//                            return $student->age;
+//                        })],
+
+//                        dd($student),
                     ],
                 ])
                 ->width('2/3'),
