@@ -16,7 +16,7 @@ class students extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, Student::class);
+        return $this->count($request, Student::where('governorate','Baghdad'));
     }
 
     /**
