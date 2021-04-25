@@ -2,7 +2,6 @@
 
 namespace App\Nova\Metrics;
 
-use App\Models\Student;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 
@@ -16,7 +15,7 @@ class students extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, Student::where('governorate','Baghdad'));
+        return $this->count($request, Student::class);
     }
 
     /**
