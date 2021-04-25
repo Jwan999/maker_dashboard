@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Student;
+use App\Nova\Metrics\governorate;
+use App\Nova\Metrics\students;
+use IDF\HtmlCard\HtmlCard;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -10,6 +13,7 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 use Anaseqal\NovaImport\NovaImport;
 use Coroowicaksono\ChartJsIntegration\PieChart;
 use Coroowicaksono\ChartJsIntegration\LineChart;
+use Coroowicaksono\ChartJsIntegration\ScatterChart;
 use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
 
 use Coroowicaksono\ChartJsIntegration\BarChart;
@@ -64,13 +68,60 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
+//        dd($student);
+
+        $dataChart1 = [];
+        $dataChart2 = [];
+        for ($i = 0; $i <= 50; $i++) {
+            $dataChart1[$i] = [
+                'x' => rand(-25, 25),
+                'y' => rand(-25, 25),
+            ];
+            $dataChart2[$i] = [
+                'x' => rand(-25, 25),
+                'y' => rand(-25, 25),
+            ];
+        }
+
         return [
+            (new LineChart())
+                ->title('Trainings per month')
+                ->animations([
+                    'enabled' => true,
+                    'easing' => 'easeinout',
+                ])
+                ->series(array([
+                    'barPercentage' => 0.5,
+                    'label' => 'Sessions',
+                    'borderColor' => '#677DEA',
+                    'data' => [3, 2, 4, 3, 5, 2, 5, 4, 4, 3, 1, 3],
+                ], [
+                    'barPercentage' => 0.5,
+                    'label' => 'Courses',
+                    'borderColor' => '#1B1F2C',
+                    'data' => [0, 1, 2, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+                ]))
+                ->options([
+                    'layout' => [
+                        'padding' => [
+                            'left' => 8,
+                            'right' => 8,
+                            'top' => 8,
+                            'bottom' => 8
+                        ],
+                    ],
+                    'xaxis' => [
+                        'categories' => ['Jan', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+                    ],
+                ])
+                ->width('2/3'),
+
             (new PieChart())
                 ->title('Gender')
                 ->series(array([
 
                     'data' => [count(Student::where('gender', 'male')->get()), count(Student::where('gender', 'female')->get())],
-                    'backgroundColor' => ["#ffcc5c", "#91e8e1", "#ff6f69", "#88d8b0", "#b088d8", "#d8b088", "#88b0d8", "#6f69ff"],
+                    'backgroundColor' => ["#EC4899","#414F8B"],
                 ]))
                 ->options([
                     'xaxis' => [
@@ -85,26 +136,35 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'easing' => 'easeinout',
                 ])
                 ->series(
-                    array([
-                        'label' => '',
-                        'backgroundColor' => '#F87900',
-                        $student = Student::where('age', '!=', null)->get('age'),
 
-                        'data' => [$student->map(function ($student) {
-                            return $student->age;
-                        })],
+                    array([
+                        $studentsAges = Student::all()->groupBy('age')->map->count(),
+
+                        'label' => 'Age',
+                        'backgroundColor' => '#677DEA',
+//dd($studentsAges),
+                        'data' => [
+                            Student::whereBetween('age', ['15', '19'])->count(), Student::whereBetween('age', ['19', '25'])->count(), Student::whereBetween('age', ['25', '35'])->count()
+                        ],
                     ]))
                 ->options([
                     'xaxis' => [
-//                        $student = Student::where('age', '!=', null)->get('age'),
-//                        'categories' => [$student->map(function ($student) {
-//                            return $student->age;
-//                        })],
+//                        $studentsAges = Student::all()->groupBy('age')->map->count(),
+//                        dd($studentsAges),
+                        'categories' => [
+//                          $studentsAges->keys()
+                            "15-19", "19-25", "25-35"
+
+                        ],
+
 
 //                        dd($student),
                     ],
                 ])
                 ->width('2/3'),
+
+//            (new HtmlCard())->width('1/3')->view('card'),
+            (new students())
 
         ];
 

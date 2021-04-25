@@ -29,7 +29,6 @@
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
@@ -154,6 +153,8 @@
       <path value="$PROJECT_DIR$/vendor/gkermer/nova-text-auto-complete" />
       <path value="$PROJECT_DIR$/vendor/anaseqal/nova-sidebar-icons" />
       <path value="$PROJECT_DIR$/vendor/digital-creative/clickable-table-row" />
+      <path value="$PROJECT_DIR$/vendor/creagia/nova-percentage-card" />
+      <path value="$PROJECT_DIR$/vendor/idf/nova-html-card" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

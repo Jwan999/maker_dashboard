@@ -18,7 +18,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/davidpiesse/nova-toggle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dillingham/nova-attach-many" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dniccum/phone-number" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
@@ -157,6 +156,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/gkermer/nova-text-auto-complete" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/anaseqal/nova-sidebar-icons" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/clickable-table-row" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/creagia/nova-percentage-card" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/idf/nova-html-card" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
