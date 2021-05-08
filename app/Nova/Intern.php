@@ -3,26 +3,28 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use OwenMelbz\RadioField\RadioButton;
 
-class User extends Resource
+class Intern extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\Intern::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -30,7 +32,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id',
     ];
 
     /**
@@ -42,24 +44,32 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make(__('ID'), 'id')->sortable(),
+            Text::make(__('Name'), 'name'),
+            Number::make(__('Phone'), 'phone'),
+            Text::make(__('Email'), 'email'),
+            Select::make(__('Governorate'), 'governorate')->options([
+                'Baghdad' => 'Baghdad',
+                'Other' => 'Other'
+            ]),
+            RadioButton::make(__('Gender'), 'gender')
+                ->options([
+                    'Female' => 'Female',
+                    'Male' => 'Male'
+                ])
+                ->stack() // optional (required to show hints)
+                ->marginBetween() // optional
+                ->skipTransformation() // optional
+                ->toggle([  // optional
+                    1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
+                ]),            Text::make(__('Position'), 'position'),
+            Text::make(__('Supervisor'), 'supervisor'),
 
-            Gravatar::make()->maxWidth(50),
+            Text::make(__('Tasks'), 'tasks'),
+            Text::make(__('Period'), 'period'),
+            Text::make(__('Salary'), 'salary'),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
 
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
-
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
         ];
     }
 
@@ -106,6 +116,4 @@ class User extends Resource
     {
         return [];
     }
-
-    public static $displayInNavigation = false;
 }

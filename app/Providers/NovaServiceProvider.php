@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Student;
+use App\Models\Training;
 use App\Nova\Metrics\governorate;
 use App\Nova\Metrics\students;
 use App\Nova\StudentsLocation;
+use Carbon\Carbon;
 use IDF\HtmlCard\HtmlCard;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
@@ -83,8 +85,29 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 'y' => rand(-25, 25),
             ];
         }
+//        dd(Training::select('date')->get());
+        $coursesData = array_fill(0, 12, 0);
+        $sessionsData = array_fill(0, 12, 0);
 
+        $sessions = Training::where('type','session')->get()
+            ->groupBy(function ($training) {
+                return Carbon::parse($training->date)->format('n');
+            })->map->count();
+
+
+        $courses = Training::where('type','course')->get()
+            ->groupBy(function ($training) {
+                return Carbon::parse($training->date)->format('n');
+            })->map->count();
+
+        foreach ($sessions as $key => $session) {
+            $sessionsData[$key - 1] = $session;
+        }
+        foreach ($courses as $key => $course) {
+            $coursesData[$key - 1] = $course;
+        }
         return [
+
             (new LineChart())
                 ->title('Trainings per month')
                 ->animations([
@@ -95,12 +118,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'barPercentage' => 0.5,
                     'label' => 'Sessions',
                     'borderColor' => '#677DEA',
-                    'data' => [3, 2, 4, 3, 5, 2, 5, 4, 4, 3, 1, 3],
+                    'data' => $sessionsData,
                 ], [
                     'barPercentage' => 0.5,
                     'label' => 'Courses',
                     'borderColor' => '#1B1F2C',
-                    'data' => [0, 1, 2, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+                    'data' => $coursesData,
                 ]))
                 ->options([
                     'layout' => [
@@ -112,7 +135,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         ],
                     ],
                     'xaxis' => [
-                        'categories' => ['Jan', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+                        'categories' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                     ],
                 ])
                 ->width('2/3'),
