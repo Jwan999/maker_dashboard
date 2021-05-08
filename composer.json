@@ -9,6 +9,7 @@
   "license": "MIT",
   "require": {
     "php": "^7.3|^8.0",
+    "ajhaupt7/image-upload-preview": "^1.0",
     "anaseqal/nova-import": "^0.0.6",
     "anaseqal/nova-sidebar-icons": "^0.0.3",
     "benjacho/belongs-to-many-field": "^1.8",

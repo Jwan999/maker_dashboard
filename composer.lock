@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce09b73e7bf8337682bd01b744a92064",
+    "content-hash": "2ce43c1579171f5b2afc80da0bb06e3d",
     "packages": [
+        {
+            "name": "ajhaupt7/image-upload-preview",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ajhaupt7/image-upload-preview.git",
+                "reference": "99a98ed2c5b01d16dfabaff503be96e6cbe7d187"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajhaupt7/image-upload-preview/zipball/99a98ed2c5b01d16dfabaff503be96e6cbe7d187",
+                "reference": "99a98ed2c5b01d16dfabaff503be96e6cbe7d187",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ajhaupt7\\ImageUploadPreview\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ajhaupt7\\ImageUploadPreview\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/ajhaupt7/image-upload-preview/issues",
+                "source": "https://github.com/ajhaupt7/image-upload-preview/tree/v1.0.0"
+            },
+            "time": "2018-08-30T15:48:50+00:00"
+        },
         {
             "name": "anaseqal/nova-import",
             "version": "0.0.6",

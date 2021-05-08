@@ -2,7 +2,9 @@
 
 namespace App\Nova;
 
+use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -46,6 +48,8 @@ class Story extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            ImageUploadPreview::make('Image')->disk('public'),
+
             Text::make(__('Name'), 'name'),
             Text::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'Email'),

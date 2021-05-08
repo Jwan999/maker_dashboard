@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
@@ -46,7 +47,8 @@ class Product extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Text::make(__('Description'), 'description'),
-            File::make('Image')->disk('public'),
+            ImageUploadPreview::make('Image')->disk('public'),
+
 
             Text::make(__('Materials'), 'materials'),
             Text::make(__('Machines used'), 'machines_used'),

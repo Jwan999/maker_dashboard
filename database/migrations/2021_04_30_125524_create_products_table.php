@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->string('materials');
             $table->string('machines_used');
-
             $table->string('made_by');
             $table->string('made_for');
             $table->timestamps();
