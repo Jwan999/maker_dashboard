@@ -29,7 +29,7 @@ class Training extends Resource
 {
     public static function indexQuery(NovaRequest $request, $query)
     {
-        return $query->where('type','course');
+        return $query->where('type', 'course');
     }
 
     /**
@@ -102,6 +102,10 @@ class Training extends Resource
                     'Course' => 'Course',
                     'Session' => 'Session'
                 ])
+                ->hideWhenUpdating()
+                ->hideFromDetail()
+                ->hideFromIndex()
+                ->default('Course')
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional
                 ->skipTransformation() // optional

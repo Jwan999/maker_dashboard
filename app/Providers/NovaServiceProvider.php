@@ -89,13 +89,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         $coursesData = array_fill(0, 12, 0);
         $sessionsData = array_fill(0, 12, 0);
 
-        $sessions = Training::where('type','session')->get()
+        $sessions = Training::where('type', 'session')->get()
             ->groupBy(function ($training) {
                 return Carbon::parse($training->date)->format('n');
             })->map->count();
 
-
-        $courses = Training::where('type','course')->get()
+        $courses = Training::where('type', 'course')->get()
             ->groupBy(function ($training) {
                 return Carbon::parse($training->date)->format('n');
             })->map->count();
