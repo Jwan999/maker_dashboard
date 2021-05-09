@@ -48,6 +48,9 @@ class Product extends Resource
             Text::make(__('Name'), 'name'),
             Text::make(__('Description'), 'description'),
             ImageUploadPreview::make('Image')->disk('public'),
+            File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
+                return 'design.' . $request->file('design')->getClientOriginalExtension();
+            }),
 
 
             Text::make(__('Materials'), 'materials'),
