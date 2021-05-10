@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\Training;
 use App\Nova\Metrics\governorate;
 use App\Nova\Metrics\students;
+use App\Nova\Session;
 use App\Nova\StudentsLocation;
 use Carbon\Carbon;
 use IDF\HtmlCard\HtmlCard;
@@ -227,6 +228,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
+        Nova::sortResourcesBy(function ($resource) {
+            return $resource::$priority ?? 99999;
+        });
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ce43c1579171f5b2afc80da0bb06e3d",
+    "content-hash": "db24399d93ee1639d921a28931a6eedd",
     "packages": [
         {
             "name": "ajhaupt7/image-upload-preview",
@@ -142,6 +142,51 @@
                 "source": "https://github.com/anaseqal/nova-sidebar-icons/tree/0.0.3"
             },
             "time": "2019-08-29T18:49:20+00:00"
+        },
+        {
+            "name": "armincms/chain",
+            "version": "0.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/armincms/chain.git",
+                "reference": "db516a189cc356b5d907ae30c8cb7a7f8301a5a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/armincms/chain/zipball/db516a189cc356b5d907ae30c8cb7a7f8301a5a2",
+                "reference": "db516a189cc356b5d907ae30c8cb7a7f8301a5a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Armincms\\Fields\\ChainServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Armincms\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/armincms/chain/issues",
+                "source": "https://github.com/armincms/chain/tree/0.4.2"
+            },
+            "time": "2020-11-13T13:20:18+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -1502,6 +1547,52 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "fourstacks/nova-repeatable-fields",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fourstacks/nova-repeatable-fields.git",
+                "reference": "b89dc86dba6349023554f67c9ae6f580ee08287e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fourstacks/nova-repeatable-fields/zipball/b89dc86dba6349023554f67c9ae6f580ee08287e",
+                "reference": "b89dc86dba6349023554f67c9ae6f580ee08287e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fourstacks\\NovaRepeatableFields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fourstacks\\NovaRepeatableFields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/fourstacks/nova-repeatable-fields/issues",
+                "source": "https://github.com/fourstacks/nova-repeatable-fields/tree/v1.3.0"
+            },
+            "abandoned": true,
+            "time": "2019-06-10T08:43:48+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -7707,6 +7798,69 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "whitecube/nova-flexible-content",
+            "version": "v0.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whitecube/nova-flexible-content.git",
+                "reference": "86dc57aad7d830caef4a7d8b35a9fff7b7e7e5ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whitecube/nova-flexible-content/zipball/86dc57aad7d830caef4a7d8b35a9fff7b7e7e5ac",
+                "reference": "86dc57aad7d830caef4a7d8b35a9fff7b7e7e5ac",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^3.2",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Whitecube\\NovaFlexibleContent\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whitecube\\NovaFlexibleContent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toon Van den Bos",
+                    "email": "toon@whitecube.be"
+                }
+            ],
+            "description": "Flexible Content & Repeater Fields for Laravel Nova.",
+            "keywords": [
+                "Flexible",
+                "field",
+                "group",
+                "laravel",
+                "layout",
+                "nova",
+                "repeat"
+            ],
+            "support": {
+                "issues": "https://github.com/whitecube/nova-flexible-content/issues",
+                "source": "https://github.com/whitecube/nova-flexible-content/tree/v0.2.8"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/whitecube",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-12T14:43:02+00:00"
         }
     ],
     "packages-dev": [

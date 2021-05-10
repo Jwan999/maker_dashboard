@@ -13,6 +13,9 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Trainer extends Resource
 {
+    public static $priority = 4;
+
+
     /**
      * The model the resource corresponds to.
      *

@@ -12,6 +12,9 @@ use OwenMelbz\RadioField\RadioButton;
 
 class Intern extends Resource
 {
+    public static $priority = 5;
+
+
     /**
      * The model the resource corresponds to.
      *

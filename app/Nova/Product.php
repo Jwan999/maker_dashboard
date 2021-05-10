@@ -12,6 +12,9 @@ use OwenMelbz\RadioField\RadioButton;
 
 class Product extends Resource
 {
+    public static $priority = 6;
+
+
     /**
      * The model the resource corresponds to.
      *

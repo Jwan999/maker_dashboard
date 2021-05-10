@@ -19,6 +19,9 @@ use Dniccum\PhoneNumber\PhoneNumber;
 
 class Student extends Resource
 {
+    public static $priority = 7;
+
+
     /**
      * The model the resource corresponds to.
      *
@@ -53,6 +56,7 @@ class Student extends Resource
      */
     public function fields(Request $request)
     {
+
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),

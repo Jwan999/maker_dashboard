@@ -27,6 +27,9 @@ use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
 
 class Training extends Resource
 {
+    public static $priority = 1;
+
+
     public static function indexQuery(NovaRequest $request, $query)
     {
         return $query->where('type', 'course');

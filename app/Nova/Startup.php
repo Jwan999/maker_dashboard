@@ -4,12 +4,20 @@ namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class Startup extends Resource
 {
+
+    public static $priority = 3;
+
+
     /**
      * The model the resource corresponds to.
      *
@@ -43,17 +51,23 @@ class Startup extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Phone'), 'phone'),
-            Text::make(__('Email'), 'email'),
+
             ImageUploadPreview::make('Logo')->disk('public'),
             Text::make(__('Idea'), 'idea'),
-            Text::make(__('Started since'), 'started_since'),
+//            Date::make(__('Started Since'), 'started_since')->sortable(),
             Text::make(__('Facebook'), 'facebook'),
             Text::make(__('Insta'), 'insta'),
 
 
-            Text::make(__('Founders'), 'founders'),
+            Flexible::make('Founders')
+                ->addLayout('Founder', 'wysiwyg', [
+                    Text::make('Name'),
+                    Text::make('Email'),
+                    Text::make('Number'),
+
+                ])->button('Add another founder'),
+
+
         ];
     }
 

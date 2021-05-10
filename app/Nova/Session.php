@@ -16,6 +16,8 @@ use OwenMelbz\RadioField\RadioButton;
 
 class Session extends Resource
 {
+    public static $priority = 2;
+
 
     public static function indexQuery(NovaRequest $request, $query)
     {

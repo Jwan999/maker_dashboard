@@ -159,6 +159,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/creagia/nova-percentage-card" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/idf/nova-html-card" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ajhaupt7/image-upload-preview" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/armincms/chain" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fourstacks/nova-repeatable-fields" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-flexible-content" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
