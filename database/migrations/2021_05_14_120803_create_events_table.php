@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLogoToStartupsTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class AddLogoToStartupsTable extends Migration
      */
     public function up()
     {
-        Schema::table('startups', function (Blueprint $table) {
-            $table->string('logo')->nullable();
+        Schema::create('events', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('date');
+            $table->string('duration');
 
+            $table->timestamps();
         });
     }
 
@@ -26,9 +31,6 @@ class AddLogoToStartupsTable extends Migration
      */
     public function down()
     {
-        Schema::table('startups', function (Blueprint $table) {
-            $table->dropColumn('logo');
-
-        });
+        Schema::dropIfExists('events');
     }
 }

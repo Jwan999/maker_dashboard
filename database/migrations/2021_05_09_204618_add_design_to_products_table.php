@@ -14,7 +14,7 @@ class AddDesignToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('design');
+            $table->string('design')->nullable();
 
         });
     }

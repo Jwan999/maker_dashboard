@@ -2,35 +2,29 @@
 
 namespace App\Nova;
 
-use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Whitecube\NovaFlexibleContent\Flexible;
 
-class Startup extends Resource
+class Event extends Resource
 {
-
-    public static $priority = 3;
-
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Startup::class;
+    public static $model = \App\Models\Event::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -38,7 +32,7 @@ class Startup extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -51,22 +45,17 @@ class Startup extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
-            ImageUploadPreview::make('Logo')->disk('public')->nullable(),
-            Text::make(__('Idea'), 'idea'),
-//            Date::make(__('Started Since'), 'started_since')->sortable(),
-            Text::make(__('Facebook'), 'facebook'),
-            Text::make(__('Insta'), 'insta'),
-
-
-            Flexible::make('Founders')
-                ->addLayout('Founder', 'wysiwyg', [
-                    Text::make('Name'),
-                    Text::make('Email'),
-                    Text::make('Number'),
-
-                ])->button('Add another founder'),
-
+            Text::make(__('Name'), 'name'),
+            Textarea::make(__('Description'), 'description')->rows(4),
+            Date::make(__('Starting Date'), 'date')->sortable(),
+            TextAutoComplete::make(__('Duration'), 'duration')->items([
+                '1 Hour',
+                '2 Hours',
+                '3 Hours',
+                '4 Hours',
+                '5 Hours',
+                '6 Hours',
+            ]),
 
         ];
     }

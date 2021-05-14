@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use OwenMelbz\RadioField\RadioButton;
 
@@ -49,11 +50,11 @@ class Product extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
-            Text::make(__('Description'), 'description'),
-            ImageUploadPreview::make('Image')->disk('public'),
+            Textarea::make(__('Description'), 'description'),
+            ImageUploadPreview::make('Image')->disk('public')->nullable(),
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . $request->file('design')->getClientOriginalExtension();
-            }),
+            })->nullable(),
 
 
             Text::make(__('Materials'), 'materials'),

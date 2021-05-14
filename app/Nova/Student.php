@@ -19,7 +19,7 @@ use Dniccum\PhoneNumber\PhoneNumber;
 
 class Student extends Resource
 {
-    public static $priority = 7;
+    public static $priority = 8;
 
 
     /**

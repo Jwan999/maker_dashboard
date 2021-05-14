@@ -4,33 +4,30 @@ namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Whitecube\NovaFlexibleContent\Flexible;
+use OwenMelbz\RadioField\RadioButton;
 
-class Startup extends Resource
+class Service extends Resource
 {
-
-    public static $priority = 3;
-
+    public static $priority = 7;
 
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Startup::class;
+    public static $model = \App\Models\Service::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -38,7 +35,7 @@ class Startup extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -51,22 +48,15 @@ class Startup extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make(__('Name'), 'name'),
+            Textarea::make(__('Description'), 'description'),
+            Text::make(__('Beneficiary'), 'beneficiary'),
+            Text::make(__('Price'), 'price'),
 
-            ImageUploadPreview::make('Logo')->disk('public')->nullable(),
-            Text::make(__('Idea'), 'idea'),
-//            Date::make(__('Started Since'), 'started_since')->sortable(),
-            Text::make(__('Facebook'), 'facebook'),
-            Text::make(__('Insta'), 'insta'),
-
-
-            Flexible::make('Founders')
-                ->addLayout('Founder', 'wysiwyg', [
-                    Text::make('Name'),
-                    Text::make('Email'),
-                    Text::make('Number'),
-
-                ])->button('Add another founder'),
-
+            ImageUploadPreview::make('Image')->disk('public')->nullable(),
+            File::make(__('File'), 'file')->disk('public')->storeAs(function (Request $request) {
+                return 'file.' . $request->file('file')->getClientOriginalExtension();
+            })->nullable(),
 
         ];
     }
