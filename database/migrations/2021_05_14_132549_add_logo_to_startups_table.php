@@ -14,8 +14,7 @@ class AddLogoToStartupsTable extends Migration
     public function up()
     {
         Schema::table('startups', function (Blueprint $table) {
-            $table->string('logo')->nullable();
-
+            $table->string('logo');
         });
     }
 
