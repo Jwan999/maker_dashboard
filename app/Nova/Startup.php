@@ -52,7 +52,7 @@ class Startup extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            ImageUploadPreview::make('Logo')->disk('public')->nullable(),
+            ImageUploadPreview::make('Logo')->disk('public')->nullable,
             Text::make(__('Idea'), 'idea'),
 //            Date::make(__('Started Since'), 'started_since')->sortable(),
             Text::make(__('Facebook'), 'facebook'),
