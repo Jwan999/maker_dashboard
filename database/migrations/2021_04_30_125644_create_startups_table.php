@@ -18,6 +18,7 @@ class CreateStartupsTable extends Migration
             $table->json('founders')->nullable();
             $table->string('idea')->default('-');
             $table->string('name');
+            $table->string('logo');
 
             $table->string('insta')->default('-');
             $table->string('facebook')->default('-');
