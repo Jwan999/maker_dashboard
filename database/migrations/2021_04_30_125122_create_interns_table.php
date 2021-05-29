@@ -15,16 +15,18 @@ class CreateInternsTable extends Migration
     {
         Schema::create('interns', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('governorate');
-            $table->string('gender');
-            $table->string('position');
-            $table->string('supervisor');
-            $table->string('tasks');
-            $table->string('period');
-            $table->string('salary');
+            $table->string('name')->default('-');
+            $table->string('phone')->default('-');
+            $table->string('email')->default('-');
+            $table->string('image');
+
+            $table->string('governorate')->default('-');
+            $table->string('gender')->default('-');
+            $table->string('position')->default('-');
+            $table->string('supervisor')->default('-');
+            $table->string('tasks')->default('-');
+            $table->string('period')->default('-');
+            $table->string('salary')->default('-');
             $table->timestamps();
         });
     }

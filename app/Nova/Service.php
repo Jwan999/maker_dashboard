@@ -53,7 +53,6 @@ class Service extends Resource
             Text::make(__('Beneficiary'), 'beneficiary'),
             Text::make(__('Price'), 'price'),
 
-            ImageUploadPreview::make('Image')->disk('public')->nullable(),
             File::make(__('File'), 'file')->disk('public')->storeAs(function (Request $request) {
                 return 'file.' . $request->file('file')->getClientOriginalExtension();
             })->nullable(),

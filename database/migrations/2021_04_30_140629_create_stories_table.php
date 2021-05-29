@@ -15,11 +15,11 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->default('-');
             $table->string('image');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('story');
+            $table->string('phone')->default('-');
+            $table->string('email')->default('-');
+            $table->string('story')->default('-');
             $table->timestamps();
         });
     }

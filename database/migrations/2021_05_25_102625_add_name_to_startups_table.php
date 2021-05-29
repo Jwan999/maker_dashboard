@@ -14,7 +14,7 @@ class AddNameToStartupsTable extends Migration
     public function up()
     {
         Schema::table('startups', function (Blueprint $table) {
-            $table->string('name');
+            $table->string('name')->default('-');
         });
     }
 

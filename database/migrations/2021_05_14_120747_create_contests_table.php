@@ -15,12 +15,13 @@ class CreateContestsTable extends Migration
     {
         Schema::create('contests', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->string('date');
-            $table->string('prize');
-            $table->string('sponsors');
-            $table->string('organizers');
+            $table->string('name')->default('-');
+            $table->string('description')->default('-');
+            $table->string('date')->default('-');
+            $table->string('prize')->default('-');
+            $table->string('sponsors')->default('-');
+            $table->string('organizers')->default('-');
+            $table->string('partners')->default('-');
 
             $table->timestamps();
         });

@@ -51,7 +51,8 @@ class Product extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Textarea::make(__('Description'), 'description'),
-            ImageUploadPreview::make('Image')->disk('public')->nullable(),
+            ImageUploadPreview::make('Image')->disk('public'),
+
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . $request->file('design')->getClientOriginalExtension();
             })->nullable(),
@@ -60,7 +61,6 @@ class Product extends Resource
             Text::make(__('Materials'), 'materials'),
             Text::make(__('Machines used'), 'machines_used'),
 
-            Text::make(__('Made by'), 'made_by'),
             RadioButton::make(__('Made for'), 'made_for')
                 ->options([
                     'Order' => 'Order',

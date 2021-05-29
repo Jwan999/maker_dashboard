@@ -160,8 +160,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/idf/nova-html-card" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ajhaupt7/image-upload-preview" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/armincms/chain" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/fourstacks/nova-repeatable-fields" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-flexible-content" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/comodolab/nova-help" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

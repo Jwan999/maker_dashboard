@@ -15,11 +15,13 @@ class CreateStartupsTable extends Migration
     {
         Schema::create('startups', function (Blueprint $table) {
             $table->id();
-            $table->json('founders');
-            $table->string('idea');
-            $table->string('insta');
-            $table->string('facebook');
-            $table->string('started_since');
+            $table->json('founders')->nullable();
+            $table->string('idea')->default('-');
+            $table->string('name');
+
+            $table->string('insta')->default('-');
+            $table->string('facebook')->default('-');
+            $table->string('started_since')->default('-');
 
             $table->timestamps();
         });

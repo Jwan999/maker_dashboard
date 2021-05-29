@@ -15,11 +15,10 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->string('Beneficiary');
-            $table->string('Price');
-            $table->string('Image')->nullable();
+            $table->string('name')->default('-');
+            $table->string('description')->default('-');
+            $table->string('Beneficiary')->default('-');
+            $table->string('Price')->default('-');
             $table->string('file')->nullable();
 
             $table->timestamps();
