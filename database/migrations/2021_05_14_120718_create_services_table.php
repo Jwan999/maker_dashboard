@@ -17,8 +17,8 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name')->default('-');
             $table->string('description')->default('-');
-            $table->string('Beneficiary')->default('-');
-            $table->string('Price')->default('-');
+            $table->string('beneficiary')->default('-');
+            $table->string('price')->default('-');
             $table->string('file')->nullable();
 
             $table->timestamps();
