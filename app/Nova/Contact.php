@@ -2,35 +2,25 @@
 
 namespace App\Nova;
 
-use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\KeyValue;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Whitecube\NovaFlexibleContent\Flexible;
 
-class Startup extends Resource
+class Contact extends Resource
 {
-
-    public static $priority = 3;
-
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Startup::class;
+    public static $model = \App\Models\Contact::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -38,45 +28,26 @@ class Startup extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
-            ImageUploadPreview::make('Logo')->disk('public')->nullable(),
-            Text::make(__('Startup Name'), 'name'),
-
-            Text::make(__('Idea'), 'idea'),
-            Date::make(__('Started Since'), 'started_since')->sortable(),
-            Text::make(__('Facebook'), 'facebook'),
-            Text::make(__('Insta'), 'insta'),
-
-
-            Flexible::make('Founders')
-                ->addLayout('Founder', 'wysiwyg', [
-                    Text::make('Name'),
-                    Text::make('Email'),
-                    Text::make('Number'),
-
-                ])->button('Add another founder'),
-
-
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function cards(Request $request)
@@ -87,7 +58,7 @@ class Startup extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function filters(Request $request)
@@ -98,7 +69,7 @@ class Startup extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function lenses(Request $request)
@@ -109,7 +80,7 @@ class Startup extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function actions(Request $request)

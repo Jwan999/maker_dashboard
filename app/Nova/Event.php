@@ -56,6 +56,8 @@ class Event extends Resource
                 '5 Hours',
                 '6 Hours',
             ]),
+            Text::make(__('Organizers'), 'organizers'),
+            Text::make(__('Location'), 'location'),
 
         ];
     }

@@ -51,6 +51,8 @@ class Contest extends Resource
             Text::make(__('Prize'), 'prize'),
             Text::make(__('Sponsors'), 'sponsors'),
             Text::make(__('Organizers'), 'organizers'),
+            Text::make(__('Partners'), 'partners'),
+
 
         ];
     }
