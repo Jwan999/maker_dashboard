@@ -49,7 +49,10 @@ class Intern extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            ImageUploadPreview::make('Image')->disk('public'),
+            ImageUploadPreview::make('Image')->disk('public')->updateRules(function (NovaRequest $request) {
+                $model = $request->findModelOrFail();
+                return $model->image ? [] : ['required'];
+            }),
 
             Text::make(__('Name'), 'name'),
             Number::make(__('Phone'), 'phone'),
