@@ -20,7 +20,6 @@ class CreateContactsTable extends Migration
             $table->string('location')->default('-');
             $table->string('email')->default('-');
             $table->string('number')->default('-');
-            $table->string('website')->default('-');
 
             $table->timestamps();
         });

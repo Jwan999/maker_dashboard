@@ -47,7 +47,6 @@ class Contact extends Resource
             Text::make(__('Location'), 'location'),
             Text::make(__('Email'), 'email')->default('test'),
             Text::make(__('Number'), 'number'),
-            Text::make(__('Website'), 'website')
 
         ];
     }
