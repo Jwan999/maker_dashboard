@@ -70,8 +70,10 @@ return [
             'label' => 'Default App Theme',
             'type' => 'select',
             'options' => [
-                'dark' => 'Dark theme',
-                'light' => 'Light theme',
+                'iot-maker' => 'IoT Maker Theme',
+                'mosul-space' => 'Mosul Space Theme',
+                'innovation-house' => 'Erbil Innovation House Theme',
+
             ],
         ],
 
