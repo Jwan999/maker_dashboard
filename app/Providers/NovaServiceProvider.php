@@ -35,7 +35,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-        Nova::style('iot-maker', asset('/css/theme.css'));
+        Nova::style('iot-maker', asset('/css/iotmaker.css'));
     }
 
     /**
@@ -119,12 +119,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->series(array([
                     'barPercentage' => 0.5,
                     'label' => 'Sessions',
-                    'borderColor' => '#677DEA',
+                    'borderColor' => '#fca000',
                     'data' => $sessionsData,
                 ], [
                     'barPercentage' => 0.5,
                     'label' => 'Courses',
-                    'borderColor' => '#1B1F2C',
+                    'borderColor' => '#269DDD',
                     'data' => $coursesData,
                 ]))
                 ->options([
@@ -147,7 +147,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->series(array([
 
                     'data' => [count(Student::where('gender', 'male')->get()), count(Student::where('gender', 'female')->get())],
-                    'backgroundColor' => ["#EC4899", "#414F8B"],
+                    'backgroundColor' => ["#fca000", "#269DDD"],
                 ]))
                 ->options([
                     'xaxis' => [
@@ -167,7 +167,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         $studentsAges = Student::all()->groupBy('age')->map->count(),
 
                         'label' => 'Age',
-                        'backgroundColor' => '#677DEA',
+                        'backgroundColor' => '#269DDD',
 //dd($studentsAges),
                         'data' => [
                             Student::whereBetween('age', ['15', '19'])->count(), Student::whereBetween('age', ['19', '25'])->count(), Student::whereBetween('age', ['25', '35'])->count()

@@ -15,7 +15,7 @@ class ThemeServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::booted(function () {
-            Nova::theme(asset('/css/theme.css'));
+            Nova::theme(asset('/css/iotmaker.css'));
         });
 
         $this->publishes([
