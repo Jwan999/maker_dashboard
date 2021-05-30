@@ -88,4 +88,6 @@ class Attendee extends Resource
     {
         return [];
     }
+    public static $displayInNavigation = false;
+
 }
