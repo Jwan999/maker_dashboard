@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -49,9 +50,9 @@ class Intern extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            ImageUploadPreview::make('Image')->disk('public')->updateRules(function (NovaRequest $request) {
+            ImageUploadPreview::make('Image')->disk('public')->default(function (NovaRequest $request) {
                 $model = $request->findModelOrFail();
-                return $model->image ? [] : ['required'];
+                return Storage::url($model->image);
             }),
 
             Text::make(__('Name'), 'name'),

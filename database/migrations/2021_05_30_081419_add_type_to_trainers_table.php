@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDesignToProductsTable extends Migration
+class AddTypeToTrainersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddDesignToProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('design')->nullable();
-
+        Schema::table('trainers', function (Blueprint $table) {
+            $table->string('type');
         });
     }
 
@@ -26,9 +25,8 @@ class AddDesignToProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('design');
-
+        Schema::table('trainers', function (Blueprint $table) {
+            $table->dropColumn('type');
         });
     }
 }

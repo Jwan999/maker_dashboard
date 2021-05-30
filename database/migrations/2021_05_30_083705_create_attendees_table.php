@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameToStartupsTable extends Migration
+class CreateAttendeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddNameToStartupsTable extends Migration
      */
     public function up()
     {
-        Schema::table('startups', function (Blueprint $table) {
-            $table->string('name')->default('-');
+        Schema::create('attendees', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class AddNameToStartupsTable extends Migration
      */
     public function down()
     {
-        Schema::table('startups', function (Blueprint $table) {
-            $table->dropColumn('name');
-        });
+        Schema::dropIfExists('attendees');
     }
 }

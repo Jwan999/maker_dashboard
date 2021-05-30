@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OwenMelbz\RadioField\RadioButton;
 
 class Trainer extends Resource
 {
@@ -53,6 +54,17 @@ class Trainer extends Resource
             Text::make(__('Name'), 'name')->sortable(),
             Number::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'email'),
+            RadioButton::make(__('Training Type'), 'type')
+                ->options([
+                    'external' => 'External',
+                    'internal' => 'Internal'
+                ])
+                ->stack() // optional (required to show hints)
+                ->marginBetween() // optional
+                ->skipTransformation() // optional
+                ->toggle([  // optional
+                    1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
+                ]),
 
         ];
     }
