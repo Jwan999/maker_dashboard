@@ -21,7 +21,6 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
     public function __construct(Training $training)
     {
-
         $this->training = $training;
     }
 
@@ -58,7 +57,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
     {
         $new = new Student;
 
-        $new->name = $this->safeGet($data, "name");
+        $new->name = $data['first'] ." ". $data["second"] . " " . $data["third"];
         $new->phone = $this->safeGet($data, "phone");
         $new->email = $this->safeGet($data, "email");
         $new->gender = $this->safeGet($data, "gender");
