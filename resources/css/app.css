@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*:root {*/
 /*    --primary: #20222a;*/
 /*    --primary-dark: #20222a;*/
@@ -17,12 +21,12 @@
     --danger: #f56565;
     --success: #48bb78;
     --warning: #f6e05e;
-    --info: #667eea;
+    --info: #FCA000;
     --primary: #c3dafe;
-    --primary-dark: #667eea;
-    --primary-70: rgba(102, 126, 234, 0.7);
-    --primary-50: rgba(102, 126, 234, 0.5);
-    --primary-30: rgba(102, 126, 234, 0.3);
+    --primary-dark: #FCA000;
+    --primary-70: #e39000;
+    --primary-50: #ca8000;
+    --primary-30: #b07000;
     --primary-10: rgba(102, 126, 234, 0.1);
     --logo: #2d3748;
     --sidebar-icon: #b3c1d1;
@@ -42,7 +46,7 @@
     --danger-light: #fed7d7;
     --danger-dark: #f56565;
     --info-light: #c3dafe;
-    --info-dark: #667eea;
+    --info-dark: #FCA000;
 }
 
 .bg-grad-sidebar {

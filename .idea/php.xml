@@ -159,6 +159,8 @@
       <path value="$PROJECT_DIR$/vendor/armincms/chain" />
       <path value="$PROJECT_DIR$/vendor/whitecube/nova-flexible-content" />
       <path value="$PROJECT_DIR$/vendor/comodolab/nova-help" />
+      <path value="$PROJECT_DIR$/vendor/bakerkretzmar/nova-settings-tool" />
+      <path value="$PROJECT_DIR$/vendor/spatie/valuestore" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

@@ -19,6 +19,8 @@ use Coroowicaksono\ChartJsIntegration\PieChart;
 use Coroowicaksono\ChartJsIntegration\LineChart;
 use Coroowicaksono\ChartJsIntegration\ScatterChart;
 use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
+use Bakerkretzmar\NovaSettingsTool\SettingsTool;
+
 
 use Coroowicaksono\ChartJsIntegration\BarChart;
 
@@ -216,6 +218,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new NovaImport,
             new NovaSidebarIcons,
+            new SettingsTool,
+
 
 
         ];

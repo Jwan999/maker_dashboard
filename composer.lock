@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f9e4e034dcc9ab84ab3f96b414dfe49",
+    "content-hash": "3347d2cb525c4e80f5490e3f2ffa1c02",
     "packages": [
         {
             "name": "ajhaupt7/image-upload-preview",
@@ -243,6 +243,66 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.3"
             },
             "time": "2021-03-11T06:42:03+00:00"
+        },
+        {
+            "name": "bakerkretzmar/nova-settings-tool",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bakerkretzmar/nova-settings-tool.git",
+                "reference": "19443a542db7797dfe4c97536f06cea33e863ed7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bakerkretzmar/nova-settings-tool/zipball/19443a542db7797dfe4c97536f06cea33e863ed7",
+                "reference": "19443a542db7797dfe4c97536f06cea33e863ed7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "spatie/valuestore": "^1.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.4",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bakerkretzmar\\NovaSettingsTool\\SettingsToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bakerkretzmar\\NovaSettingsTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Baker-Kretzmar",
+                    "email": "jacobtbk@gmail.com"
+                }
+            ],
+            "description": "A Laravel Nova tool to manage application settings.",
+            "homepage": "https://github.com/bakerkretzmar/nova-settings-tool",
+            "keywords": [
+                "Settings",
+                "laravel",
+                "nova",
+                "tool"
+            ],
+            "support": {
+                "issues": "https://github.com/bakerkretzmar/nova-settings-tool/issues",
+                "source": "https://github.com/bakerkretzmar/nova-settings-tool/tree/1.1.0"
+            },
+            "time": "2020-11-18T00:06:35+00:00"
         },
         {
             "name": "benjacho/belongs-to-many-field",
@@ -5117,6 +5177,73 @@
                 }
             ],
             "time": "2020-10-29T18:22:10+00:00"
+        },
+        {
+            "name": "spatie/valuestore",
+            "version": "1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/valuestore.git",
+                "reference": "eafde51f0068bcbb605fdf589a952677ada74a33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/valuestore/zipball/eafde51f0068bcbb605fdf589a952677ada74a33",
+                "reference": "eafde51f0068bcbb605fdf589a952677ada74a33",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Valuestore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jolita Grazyte",
+                    "email": "jolita@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily store some values",
+            "homepage": "https://github.com/spatie/valuestore",
+            "keywords": [
+                "json",
+                "spatie",
+                "valuestore"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/valuestore/issues",
+                "source": "https://github.com/spatie/valuestore/tree/1.2.5"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-30T16:21:03+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

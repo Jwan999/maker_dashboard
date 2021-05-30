@@ -162,6 +162,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/armincms/chain" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-flexible-content" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/comodolab/nova-help" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bakerkretzmar/nova-settings-tool" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/valuestore" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

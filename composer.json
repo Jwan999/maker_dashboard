@@ -13,6 +13,7 @@
     "anaseqal/nova-import": "^0.0.6",
     "anaseqal/nova-sidebar-icons": "^0.0.3",
     "armincms/chain": "^0.4.2",
+    "bakerkretzmar/nova-settings-tool": "^1.1",
     "benjacho/belongs-to-many-field": "^1.8",
     "comodolab/nova-help": "^0.4.0",
     "coroowicaksono/chart-js-integration": "^0.3.4",

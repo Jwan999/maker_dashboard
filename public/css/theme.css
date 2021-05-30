@@ -17,16 +17,16 @@
     --white-50: rgba(255, 255, 255, 0.5);
     --danger: #f56565;
     --success: #48bb78;
-    --warning: #f6e05e;
-    --info: #667eea;
-    --primary: #667eea;
-    --primary-dark: #667eea;
-    --primary-70: rgba(102, 126, 234, 0.7);
-    --primary-50: rgba(102, 126, 234, 0.5);
-    --primary-30: rgba(102, 126, 234, 0.3);
-    --primary-10: rgba(102, 126, 234, 0.1);
+    --warning: #fca000;
+    --info: #fca000;
+    --primary: #fca000;
+    --primary-dark: #fca000;
+    --primary-70: #e39000;
+    --primary-50: #ca8000;
+    --primary-30: #ca8000;
+    --primary-10: #b07000;
     --logo: #1a202c;
-    --sidebar-icon: #667eea;
+    --sidebar-icon: #fca000;
     --20: #f7fafc;
     --30: #f7fafc;
     --40: #edf2f7;
@@ -43,7 +43,7 @@
     --danger-light: #fed7d7;
     --danger-dark: #f56565;
     --info-light: #c3dafe;
-    --info-dark: #667eea;
+    --info-dark: #fca000;
 }
 
 .bg-grad-sidebar {
