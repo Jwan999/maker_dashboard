@@ -66,7 +66,7 @@ class Startup extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
 
             ImageUploadPreview::make('Logo')->disk('public')->nullable(),
             Text::make(__('Startup Name'), 'name'),

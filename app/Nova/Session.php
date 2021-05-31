@@ -75,7 +75,7 @@ class Session extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id'),
+//            ID::make(__('ID'), 'id'),
             Text::make(__('Name'), 'name')->sortable(),
 
             Date::make(__('Starting Date'), 'date')->sortable(),

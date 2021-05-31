@@ -65,7 +65,7 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Textarea::make(__('Description'), 'description')->rows(4),
             Date::make(__('Starting Date'), 'date')->sortable(),

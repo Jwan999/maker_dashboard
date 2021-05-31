@@ -56,7 +56,7 @@ class Contact extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Text::make(__('Position'), 'position'),
             Text::make(__('Location'), 'location'),
