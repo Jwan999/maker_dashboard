@@ -173,8 +173,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         'label' => 'Age',
                         'backgroundColor' => '#269DDD',
 //dd($studentsAges),
+                        $totalAge = count(Student::get()),
+                        $young = Student::whereBetween('age', ['15', '19'])->count() / $totalAge * 100,
+                        $old = Student::whereBetween('age', ['19', '25'])->count() / $totalAge * 100,
+                        $older = Student::whereBetween('age', ['25', '35'])->count() / $totalAge * 100,
+
                         'data' => [
-                            Student::whereBetween('age', ['15', '19'])->count(), Student::whereBetween('age', ['19', '25'])->count(), Student::whereBetween('age', ['25', '35'])->count()
+                            number_format($young), number_format($old), number_format($older)
                         ],
                     ]))
                 ->options([

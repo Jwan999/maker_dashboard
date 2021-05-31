@@ -65,10 +65,13 @@ class Intern extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            ImageUploadPreview::make('Image')->disk('public')->default(function (NovaRequest $request) {
-                $model = $request->findModelOrFail();
-                return Storage::url($model->image);
-            }),
+            ImageUploadPreview::make('Image')->disk('public')
+//                ->default(function (NovaRequest $request) {
+//                    $model = $request->findModelOrFail();
+//                    return Storage::url($model->image);
+//                })
+            ,
+
 
             Text::make(__('Name'), 'name'),
             Number::make(__('Phone'), 'phone'),
@@ -93,6 +96,7 @@ class Intern extends Resource
             Text::make(__('Tasks'), 'tasks'),
             Text::make(__('Period'), 'period'),
             Text::make(__('Salary'), 'salary'),
+            Text::make(__('Paid by'), 'paid_by'),
 
 
         ];

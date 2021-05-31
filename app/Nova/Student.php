@@ -77,11 +77,12 @@ class Student extends Resource
             Text::make(__('Name'), 'name')->sortable(),
 
             Text::make(__('Phone Number'), 'phone'),
-            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::all()),
+            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::select('name', 'date')->get()),
+//            dd(\App\Models\Training::select('name', 'date')->get()),
             Text::make(__('University'), 'university'),
 
             Text::make(__('Email'), 'email'),
-            BelongsToMany::make('Trainings'),
+//            BelongsToMany::make('Trainings'),
 
             RadioButton::make(__('Gender'), 'gender')
                 ->options([
