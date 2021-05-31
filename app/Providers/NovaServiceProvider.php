@@ -147,15 +147,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->series(array([
 
                     $total = count(Student::get()),
-                    $femalePercentage = count(Student::where('gender', 'female')->get()) / $total * 100 . "%",
-                    $malePercentage = count(Student::where('gender', 'male')->get()) / $total * 100 . "%",
+                    $femalePercentage = count(Student::where('gender', 'female')->get()) / $total * 100,
+                    $malePercentage = count(Student::where('gender', 'male')->get()) / $total * 100,
 
                     'data' => [$malePercentage, $femalePercentage],
                     'backgroundColor' => ["#fca000", "#269DDD"],
                 ]))
                 ->options([
                     'xaxis' => [
-                        'categories' => ['Female', 'Male']
+                        'categories' => ['Female: ' . $femalePercentage . "%", 'Male: ' . $malePercentage . "%"]
                     ],
                 ])->width('1/3'),
 
