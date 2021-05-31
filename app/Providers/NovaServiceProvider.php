@@ -146,7 +146,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->title('Gender')
                 ->series(array([
 
-                    'data' => [count(Student::where('gender', 'male')->get()), count(Student::where('gender', 'female')->get())],
+                    $total = count(Student::get()),
+                    $femalePercentage = count(Student::where('gender', 'female')->get()) / $total * 100 . "%",
+                    $malePercentage = count(Student::where('gender', 'male')->get()) / $total * 100 . "%",
+
+                    'data' => [$malePercentage, $femalePercentage],
                     'backgroundColor' => ["#fca000", "#269DDD"],
                 ]))
                 ->options([
@@ -218,7 +222,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new NovaImport,
             new NovaSidebarIcons,
             new SettingsTool,
-
 
 
         ];
