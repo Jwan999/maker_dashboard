@@ -150,7 +150,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     $femalePercentage = number_format((float)count(Student::where('gender', 'female')->get()) / $total * 100),
                     $malePercentage = number_format((float)count(Student::where('gender', 'male')->get()) / $total * 100),
 
-                    'data' => [$malePercentage, $femalePercentage],
+                    'data' => [$femalePercentage, $malePercentage],
                     'backgroundColor' => ["#fca000", "#269DDD"],
                 ]))
                 ->options([
