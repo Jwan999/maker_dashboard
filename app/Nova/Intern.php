@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\ID;
@@ -65,13 +66,7 @@ class Intern extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            ImageUploadPreview::make('Image')->disk('public')
-//                ->default(function (NovaRequest $request) {
-//                    $model = $request->findModelOrFail();
-//                    return Storage::url($model->image);
-//                })
-            ,
-
+            Filepond::make('Image')->disk('public'),
 
             Text::make(__('Name'), 'name'),
             Number::make(__('Phone'), 'phone'),

@@ -3,7 +3,10 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+use App\Others\FixedFilepondController;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
@@ -14,7 +17,8 @@ use Whitecube\NovaFlexibleContent\Flexible;
 
 class Startup extends Resource
 {
-    public static function icon(){
+    public static function icon()
+    {
         return '
         
 <svg class="sidebar-icon" viewBox="0 0 114 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -68,7 +72,7 @@ class Startup extends Resource
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
 
-            ImageUploadPreview::make('Logo')->disk('public')->nullable(),
+            Filepond::make('Logo')->disk('public'),
             Text::make(__('Startup Name'), 'name'),
 
             Text::make(__('Idea'), 'idea'),

@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
@@ -60,7 +61,7 @@ class Story extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            ImageUploadPreview::make('Image')->disk('public'),
+            Filepond::make('Image')->disk('public'),
 
             Text::make(__('Name'), 'name'),
             Text::make(__('Phone'), 'phone'),

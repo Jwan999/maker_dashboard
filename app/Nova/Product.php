@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
@@ -66,7 +67,7 @@ class Product extends Resource
 //            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Textarea::make(__('Description'), 'description'),
-            ImageUploadPreview::make('Image')->disk('public'),
+            Filepond::make('Image')->disk('public'),
 
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . $request->file('design')->getClientOriginalExtension();
