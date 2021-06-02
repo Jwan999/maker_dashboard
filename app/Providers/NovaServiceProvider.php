@@ -172,8 +172,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                     array([
                         $studentsAges = Student::all()->groupBy('age')->map->count(),
-
-                        'label' => 'Age',
+                        'label' => 'Age %:',
                         'backgroundColor' => '#269DDD',
 //dd($studentsAges),
                         $totalAge = count(Student::get()),
