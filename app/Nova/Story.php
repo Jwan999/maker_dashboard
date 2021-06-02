@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Story extends Resource
 {
-    public static function icon(){
+    public static function icon()
+    {
         return '
 <svg class="sidebar-icon" viewBox="0 0 134 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -24,7 +26,8 @@ class Story extends Resource
         ';
     }
 
-    public static function label() {
+    public static function label()
+    {
         return 'Success stories';
     }
 
@@ -66,7 +69,8 @@ class Story extends Resource
             Text::make(__('Name'), 'name'),
             Text::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'Email'),
-            Text::make(__('Story'), 'story'),
+            Textarea::make(__('Story'), 'story'),
+
         ];
     }
 

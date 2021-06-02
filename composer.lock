@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cca91c4eaf4156b2e29d3cd1dbd76e2e",
+    "content-hash": "a88b7b51020f5faed51d80996cc2195c",
     "packages": [
         {
             "name": "ajhaupt7/image-upload-preview",
@@ -7627,6 +7627,61 @@
                 }
             ],
             "time": "2021-05-27T12:28:50+00:00"
+        },
+        {
+            "name": "techouse/total-records",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/techouse/total-records.git",
+                "reference": "b823af4097e13ad51696ee614f436e760b1caf03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/techouse/total-records/zipball/b823af4097e13ad51696ee614f436e760b1caf03",
+                "reference": "b823af4097e13ad51696ee614f436e760b1caf03",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.6 || ^6.0 || ^7.0 || ^8.0",
+                "laravel/nova": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Techouse\\TotalRecords\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Techouse\\TotalRecords\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Klemen Tušar",
+                    "email": "techouse@gmail.com"
+                }
+            ],
+            "description": "A Laravel Nova card that displays the total number of records of a specific model.",
+            "keywords": [
+                "card",
+                "laravel",
+                "model record count",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/techouse/total-records/issues",
+                "source": "https://github.com/techouse/total-records/tree/v1.3.0"
+            },
+            "time": "2020-09-12T09:27:22+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

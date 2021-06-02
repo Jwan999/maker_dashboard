@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Student;
+use App\Models\Trainer;
 use App\Models\Training;
 use App\Nova\Metrics\governorate;
 use App\Nova\Metrics\students;
+use App\Nova\Product;
 use App\Nova\Session;
 use App\Nova\StudentsLocation;
 use Carbon\Carbon;
@@ -20,6 +22,7 @@ use Coroowicaksono\ChartJsIntegration\LineChart;
 use Coroowicaksono\ChartJsIntegration\ScatterChart;
 use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
 use Bakerkretzmar\NovaSettingsTool\SettingsTool;
+use Techouse\TotalRecords\TotalRecords;
 
 
 use Coroowicaksono\ChartJsIntegration\BarChart;
@@ -188,7 +191,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 //                        dd($studentsAges),
                         'categories' => [
 //                          $studentsAges->keys()
-                            "15-19", "19-25", "25-35"
+                            "percent of 15-19", "percent of 19-25 ", "percent of 25-35"
 
                         ],
 
@@ -197,9 +200,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ],
                 ])
                 ->width('2/3'),
-
-            (new HtmlCard())->width('1/3')->view('card'),
             (new students()),
+            (new HtmlCard())->width('1/3')->view('card'),
+            (new HtmlCard())->width('1/3')->view('trainers'),
+            (new HtmlCard())->width('1/3')->view('interns'),
+
 
         ];
 

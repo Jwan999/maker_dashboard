@@ -163,6 +163,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/comodolab/nova-help" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bakerkretzmar/nova-settings-tool" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/valuestore" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/techouse/total-records" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

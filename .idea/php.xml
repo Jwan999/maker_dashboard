@@ -161,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/bakerkretzmar/nova-settings-tool" />
       <path value="$PROJECT_DIR$/vendor/spatie/valuestore" />
       <path value="$PROJECT_DIR$/vendor/digital-creative/nova-filepond" />
+      <path value="$PROJECT_DIR$/vendor/techouse/total-records" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
