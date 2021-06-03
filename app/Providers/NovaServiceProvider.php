@@ -96,12 +96,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         $coursesData = [];
         $sessionsData = [];
         $combined = [];
-        $sessions = Training::where('type', 'session')->orderby('date')->get()
+        $sessions = Training::where('type', 'session')->get()
             ->groupBy(function ($training) {
                 return Carbon::parse($training->date)->format('Y M');
             })->map->count();
 
-        $courses = Training::where('type', 'course')->orderby('date')->get()
+        $courses = Training::where('type', 'course')->get()
             ->groupBy(function ($training) {
                 return Carbon::parse($training->date)->format('Y M');
             })->map->count();
@@ -127,6 +127,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         $months = array_keys($combined);
 sort($months);
+sort($combined);
         foreach ($months as $month) {
             /** @var Collection $sessions */
 
