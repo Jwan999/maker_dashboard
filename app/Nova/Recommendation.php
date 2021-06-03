@@ -5,19 +5,17 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Space extends Resource
+class Recommendation extends Resource
 {
-
-    public static $displayInNavigation = false;
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Space::class;
+    public static $model = \App\Models\Recommendation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -38,21 +36,29 @@ class Space extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make("Name")
+//            ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make(__('Name'), 'name'),
+            Text::make(__('Phone'), 'phone'),
+            Text::make(__('Email'), 'Email'),
+            Text::make(__('Recommender'), 'Recommender'),
+            Textarea::make(__('Recommendation'), 'recommendation'),
+            Text::make(__('Known from'), 'known_from'),
+
+
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -63,7 +69,7 @@ class Space extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -74,7 +80,7 @@ class Space extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -85,7 +91,7 @@ class Space extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)
