@@ -126,7 +126,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
 
         $months = array_keys($combined);
-
+sort($months);
         foreach ($months as $month) {
             /** @var Collection $sessions */
 
