@@ -12,6 +12,7 @@ use App\Nova\Session;
 use App\Nova\StudentsLocation;
 use Carbon\Carbon;
 use IDF\HtmlCard\HtmlCard;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -92,25 +93,50 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             ];
         }
 //        dd(Training::select('date')->get());
-        $coursesData = array_fill(0, 12, 0);
-        $sessionsData = array_fill(0, 12, 0);
-
+        $coursesData = [];
+        $sessionsData = [];
+        $combined = [];
         $sessions = Training::where('type', 'session')->get()
             ->groupBy(function ($training) {
-                return Carbon::parse($training->date)->format('n');
+                return Carbon::parse($training->date)->format('M Y');
             })->map->count();
 
         $courses = Training::where('type', 'course')->get()
             ->groupBy(function ($training) {
-                return Carbon::parse($training->date)->format('n');
+                return Carbon::parse($training->date)->format('M Y');
             })->map->count();
 
-        foreach ($sessions as $key => $session) {
-            $sessionsData[$key - 1] = $session;
+
+        foreach ($sessions as $key => $value) {
+            $exists = array_key_exists($key, $combined);
+            if ($exists) {
+                $combined[$key] = $combined[$key] + $value;
+            } else {
+                $combined[$key] = $value;
+            }
         }
-        foreach ($courses as $key => $course) {
-            $coursesData[$key - 1] = $course;
+        foreach ($courses as $key => $value) {
+            $exists = array_key_exists($key, $combined);
+            if ($exists) {
+                $combined[$key] = $combined[$key] + $value;
+            } else {
+                $combined[$key] = $value;
+            }
         }
+
+
+
+        $months = array_keys($combined);
+
+        foreach ($months as $month) {
+            /** @var Collection $sessions */
+
+            $sessionsData[] = $sessions->has($month) ? $sessions[$month] : 0;
+            $coursesData[] = $courses->has($month) ? $courses[$month] : 0;
+        }
+
+
+//        dd($coursesData,$sessionsData,$months);
         return [
 
             (new LineChart())
@@ -140,7 +166,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         ],
                     ],
                     'xaxis' => [
-                        'categories' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                        'categories' => $months
                     ],
                 ])
                 ->width('2/3'),
