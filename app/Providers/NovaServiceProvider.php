@@ -98,12 +98,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         $combined = [];
         $sessions = Training::where('type', 'session')->orderby('date')->get()
             ->groupBy(function ($training) {
-                return Carbon::parse($training->date)->format('M Y');
+                return Carbon::parse($training->date)->format('Y M');
             })->map->count();
 
         $courses = Training::where('type', 'course')->orderby('date')->get()
             ->groupBy(function ($training) {
-                return Carbon::parse($training->date)->format('M Y');
+                return Carbon::parse($training->date)->format('Y M');
             })->map->count();
 
 
