@@ -110,16 +110,16 @@ class Training extends Resource
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
                 ->falseValue(false),
-            Help::make('If the trainer is not in the list please add it through <a href="/resources/trainers/new">here</a>')->displayAsHtml()->icon('<?xml version="1.0" encoding="UTF-8"?>
+            Help::make('If the trainer is not in the list please add the create button')->displayAsHtml()->icon('
 <svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="info-circle-(1)" fill="#4A5568" fill-rule="nonzero">
             <path d="M44,0 C19.699471,0 7.81597009e-15,19.699471 7.81597009e-15,44 C7.81597009e-15,68.300529 19.699471,88 44,88 C68.300529,88 88,68.300529 88,44 C87.9729868,19.710669 68.289331,0.0270132007 44,0 Z M44,79.2 C24.5595768,79.2 8.8,63.4404232 8.8,44 C8.8,24.5595768 24.5595768,8.8 44,8.8 C63.4404232,8.8 79.2,24.5595768 79.2,44 C79.1777652,63.4312058 63.4312058,79.1777652 44,79.2 L44,79.2 Z M44,41.8 C41.5699471,41.8 39.6,43.7699471 39.6,46.2 L39.6,59.4 C39.6,61.8300529 41.5699471,63.8 44,63.8 C46.4300529,63.8 48.4,61.8300529 48.4,59.4 L48.4,46.2 C48.4,43.7699471 46.4300529,41.8 44,41.8 Z M44,24.2 C40.9624339,24.2 38.5,26.6624339 38.5,29.7 C38.5,32.7375661 40.9624339,35.2 44,35.2 C47.0375661,35.2 49.5,32.7375661 49.5,29.7 C49.5,26.6624339 47.0375661,24.2 44,24.2 L44,24.2 Z" id="Shape"></path>
         </g>
     </g>
-</svg>'),
+</svg>')->hideWhenUpdating(),
 
-            BelongsTo::make(__("Trainer"), "trainer", Trainer::Class),
+            BelongsTo::make(__("Trainer"), "trainer", Trainer::Class)->showCreateRelationButton(),
 
 //            Select::make(__("Training Type"),"type")->options([
 //                'course' => 'Course',
