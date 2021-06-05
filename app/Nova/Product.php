@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use OwenMelbz\RadioField\RadioButton;
+use Psy\Util\Str;
 
 class Product extends Resource
 {
@@ -67,7 +68,11 @@ class Product extends Resource
 //            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
             Textarea::make(__('Description'), 'description'),
-            Filepond::make('Image')->disk('public'),
+            Filepond::make('Image')->disk('public')->storeAs(function (Request $request) { // this is optional, use in case you need generate custom file names
+//                dd($request);
+                return Str::random(20) . '.' . $request->file->getExtension();
+            })
+            ,
 
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . $request->file('design')->getClientOriginalExtension();

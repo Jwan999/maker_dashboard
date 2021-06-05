@@ -126,8 +126,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
 
         $months = array_keys($combined);
-sort($months);
-sort($combined);
+        sort($months);
+        sort($combined);
         foreach ($months as $month) {
             /** @var Collection $sessions */
 
@@ -198,7 +198,7 @@ sort($combined);
 
                     array([
                         $studentsAges = Student::all()->groupBy('age')->map->count(),
-                        'label' => 'Age %:',
+                        'label' => 'Age %',
                         'backgroundColor' => '#269DDD',
 //dd($studentsAges),
                         $totalAge = count(Student::get()),

@@ -66,7 +66,7 @@ class Event extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'n\ame'),
+            Text::make(__('Name'), 'name'),
             Textarea::make(__('Description'), 'description')->rows(4),
             Date::make(__('Starting Date'), 'date')->sortable(),
             TextAutoComplete::make(__('Duration'), 'duration')->items([
