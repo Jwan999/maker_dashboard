@@ -227,9 +227,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->width('2/3'),
             (new students()),
             (new HtmlCard())->width('1/3')->view('card'),
-            (new HtmlCard())->width('1/3')->view('trainers'),
             (new HtmlCard())->width('1/3')->view('interns'),
+            (new HtmlCard())->width('1/3')->view('services'),
 
+
+            (new HtmlCard())->width('1/3')->view('products'),
+            (new HtmlCard())->width('1/3')->view('trainers'),
 
         ];
 
