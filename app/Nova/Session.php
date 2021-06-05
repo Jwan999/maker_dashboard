@@ -3,6 +3,8 @@
 namespace App\Nova;
 
 use App\Nova\Actions\StudentsImporter;
+use App\Nova\Metrics\GenderRatio;
+use App\Nova\Metrics\students;
 use Davidpiesse\NovaToggle\Toggle;
 use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
@@ -123,7 +125,10 @@ class Session extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+
+        return [
+            (new GenderRatio($this::$model))->onlyOnDetail()
+        ];
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a88b7b51020f5faed51d80996cc2195c",
+    "content-hash": "b0877a662fa3e4e28522b7277cc02cd2",
     "packages": [
         {
             "name": "ajhaupt7/image-upload-preview",
@@ -2365,6 +2365,60 @@
                 "source": "https://github.com/InteractionDesignFoundation/nova-html-card/tree/master"
             },
             "time": "2020-03-16T16:51:12+00:00"
+        },
+        {
+            "name": "inspheric/nova-url-field",
+            "version": "v1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inspheric/nova-url-field.git",
+                "reference": "e8badc5936b04a3a7c022770a747550a2efbed72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inspheric/nova-url-field/zipball/e8badc5936b04a3a7c022770a747550a2efbed72",
+                "reference": "e8badc5936b04a3a7c022770a747550a2efbed72",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Inspheric\\Fields\\UrlFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Inspheric\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova url field.",
+            "keywords": [
+                "field",
+                "href",
+                "laravel",
+                "nova",
+                "url"
+            ],
+            "support": {
+                "issues": "https://github.com/inspheric/nova-url-field/issues",
+                "source": "https://github.com/inspheric/nova-url-field/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://burtonsenior.com/donate/inspheric/nova-url-field",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-03-25T17:13:48+00:00"
         },
         {
             "name": "laravel/framework",

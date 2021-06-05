@@ -29,6 +29,7 @@
     "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
     "guzzlehttp/guzzle": "^7.0.1",
     "idf/nova-html-card": "^1.2",
+    "inspheric/nova-url-field": "^1.4",
     "laravel/framework": "^8.12",
     "laravel/nova": "*",
     "laravel/tinker": "^2.5",

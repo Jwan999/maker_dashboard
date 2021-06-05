@@ -7,6 +7,7 @@ use App\Others\FixedFilepondController;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Inspheric\Fields\Url;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
@@ -77,8 +78,8 @@ class Startup extends Resource
 
             Text::make(__('Idea'), 'idea'),
             Date::make(__('Started Since'), 'started_since')->sortable(),
-            Text::make(__('Facebook'), 'facebook'),
-            Text::make(__('Insta'), 'insta'),
+            Url::make(__('Facebook'), 'facebook')->clickable(),
+            Url::make(__('Insta'), 'insta')->clickable(),
 
 
             Flexible::make('Founders')

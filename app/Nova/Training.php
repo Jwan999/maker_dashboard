@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\StudentsImporter;
+use App\Nova\Metrics\GenderRatio;
 use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
 use Comodolab\Nova\Fields\Help\Help;
@@ -154,7 +155,9 @@ class Training extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new GenderRatio($this::$model))->onlyOnDetail()
+        ];
     }
 
     /**
