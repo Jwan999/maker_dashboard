@@ -64,6 +64,13 @@
 
                 <div data-testid="content" class="px-view py-view mx-auto">
                     @yield('content')
+                    <p class="mt-8 text-center text-lg text-80">
+{{--                        <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
+                        {{--    <span class="px-1">&middot;</span>--}}
+                        &copy; {{ date('Y') }} IoT Maker partnered with Field ready.
+                        {{--    <span class="px-1">&middot;</span>--}}
+                        {{--    v{{ \Laravel\Nova\Nova::version() }}--}}
+                    </p>
 
                     @include('nova::partials.footer')
                 </div>
