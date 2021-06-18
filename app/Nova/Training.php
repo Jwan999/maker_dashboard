@@ -86,7 +86,9 @@ class Training extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id'),
-            Text::make(__('Name'), 'name')->sortable(),
+            Text::make(__('Name'), 'name')->sortable()->resolveUsing(function($attribute,$resource,$requestAttribute) {
+                return $resource->getOriginal("name");
+            }),
 
             Date::make(__('Starting Date'), 'date')->sortable(),
 

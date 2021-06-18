@@ -9,11 +9,14 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $appends = ["is_adult"];
     protected $casts = [
         'date_of_birth' => 'datetime'
     ];
 
-
+//public function getIsAdultAttribute(){
+//    return $this->age >= 18;
+//}
     public function trainings(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Training::class);

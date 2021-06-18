@@ -60,7 +60,6 @@ class Student extends Resource
 //        'id',
         'name',
         'email',
-        'trainings'
     ];
 
     /**

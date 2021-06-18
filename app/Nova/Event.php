@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use App\Imports\AttendeesImport;
+use App\Nova\Actions\AttendeesImporter;
 use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -79,6 +82,8 @@ class Event extends Resource
             ]),
             Text::make(__('Organizers'), 'organizers'),
             Text::make(__('Location'), 'location'),
+            BelongsToMany::make('attendees'),
+
 
         ];
     }
@@ -124,6 +129,8 @@ class Event extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new AttendeesImporter)->showOnTableRow()
+        ];
     }
 }

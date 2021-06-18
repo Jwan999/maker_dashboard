@@ -2,25 +2,24 @@
 
 namespace App\Imports;
 
-use App\Models\Student;
-use App\Models\Training;
-use Carbon\Carbon;
+use App\Models\Attendee;
+use App\Models\Event;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class StudentsImport implements ToCollection, WithHeadingRow
+class AttendeesImport implements ToCollection, WithHeadingRow
 {
     /**
-     * @var Training
+     * @var Event
      */
-    private Training $training;
+    private Event $event;
 
-    public function __construct(Training $training)
+    public function __construct(Event $event)
     {
-        $this->training = $training;
+        $this->event = $event;
     }
 
     public function collection(Collection $collection)
@@ -28,12 +27,12 @@ class StudentsImport implements ToCollection, WithHeadingRow
         DB::beginTransaction();
         try {
             foreach ($collection as $data) {
-                $old = Student::where("email", "=", $data["email"])->first();
+                $old = Attendee::where("email", "=", $data["email"])->first();
                 if (!$this->checkRow($data))
                     continue;
 
                 $model = $old ?: $this->create($data);
-                $this->training->students()->attach($model->id);
+                $this->event->attendees()->attach($model->id);
 
             }
             DB::commit();
@@ -46,7 +45,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
     public function checkRow($row)
     {
         $pass = null;
-        $fields = ["name", "phone", "email"];
+        $fields = ["name", "number", "email"];
         foreach ($fields as $field) {
             $pass = isset($row[$field]) && $row[$field] != null;
         }
@@ -55,17 +54,14 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
     private function create($data)
     {
-        $new = new Student;
+        $new = new Attendee;
 
-        $new->name = $data->has("first") ? $data["first"] . " " . $data["second"] . " " . $data["third"] : $data["name"];
-        $new->phone = $this->safeGet($data, "phone");
+        $new->name = $this->safeGet($data, "name");;
+        $new->number = $this->safeGet($data, "number");
         $new->email = $this->safeGet($data, "email");
         $new->gender = $this->safeGet($data, "gender");
-        $new->field_of_study = $this->safeGet($data, "field_of_study");
-
         $new->age = $this->safeGet($data, "age");
-        $new->governorate = $this->safeGet($data, "governorate");
-        $new->university = $this->safeGet($data, "university");
+
         $new->save();
         return $new;
     }

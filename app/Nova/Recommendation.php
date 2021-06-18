@@ -2,21 +2,21 @@
 
 namespace App\Nova;
 
-use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Attendee extends Resource
+class Recommendation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Attendee::class;
+    public static $model = \App\Models\Recommendation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -44,13 +44,10 @@ class Attendee extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Text::make(__('Number'), 'number'),
-            Text::make(__('Email'), 'email'),
-            Text::make(__('Gender'), 'gender'),
-            Text::make(__('Age'), 'age'),
-            BelongsToMany::make('events'),
-
+            BelongsTo::make("Recommender", "recommender", Trainer::Class)->searchable(),
+            BelongsTo::make("Student", "student", Student::Class)->searchable(),
+            BelongsTo::make("Training", "training", Training::Class)->searchable(),
+            Textarea::make(__('ID'), 'id'),
         ];
     }
 
@@ -97,7 +94,4 @@ class Attendee extends Resource
     {
         return [];
     }
-
-    public static $displayInNavigation = false;
-
 }

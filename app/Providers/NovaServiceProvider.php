@@ -260,6 +260,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new NovaImport,
             new NovaSidebarIcons,
             new SettingsTool,
+            new \Czemu\NovaCalendarTool\NovaCalendarTool,
 
 
         ];

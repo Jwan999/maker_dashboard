@@ -12,4 +12,10 @@ class Event extends Model
     protected $casts = [
         'date' => 'date'
     ];
+
+    public function attendees(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Attendee::class);
+    }
+
 }
