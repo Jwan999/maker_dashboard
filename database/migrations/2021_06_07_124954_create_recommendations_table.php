@@ -15,7 +15,9 @@ class CreateRecommendationsTable extends Migration
     {
         Schema::create('recommendations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('recommender');
+            $table->string('student');
+            $table->string('training');
             $table->string('recommendation');
             $table->timestamps();
         });

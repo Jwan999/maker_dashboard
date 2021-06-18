@@ -47,7 +47,7 @@ class Recommendation extends Resource
             BelongsTo::make("Recommender", "recommender", Trainer::Class)->searchable(),
             BelongsTo::make("Student", "student", Student::Class)->searchable(),
             BelongsTo::make("Training", "training", Training::Class)->searchable(),
-            Textarea::make(__('ID'), 'id'),
+            Textarea::make(__('Recommendation'), 'recommendation'),
         ];
     }
 
