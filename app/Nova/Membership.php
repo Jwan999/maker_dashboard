@@ -49,7 +49,7 @@ class Membership extends Resource
             BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton(),
             Date::make(__('Starts at'), 'starts_at')->sortable(),
             Date::make(__('Ends at'), 'ends_at')->sortable(),
-            Text::make(__('Is Active'), 'is_active')->sortable()->exceptOnForms(),
+            Boolean::make(__('Is Active'), 'is_active')->sortable()->exceptOnForms(),
 
         ];
     }
