@@ -16,8 +16,8 @@ class CreateMembershipsTable extends Migration
         Schema::create('memberships', function (Blueprint $table) {
             $table->id();
             $table->foreignId("student_id");
-            $table->timestamp("starts_at");
-            $table->timestamp("ends_at");
+            $table->timestamp("starts_at")->nullable();
+            $table->timestamp("ends_at")->nullable();
             $table->string("notes")->nullable();
 
             $table->timestamps();
