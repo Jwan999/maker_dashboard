@@ -6,6 +6,7 @@ use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -87,6 +88,7 @@ class Intern extends Resource
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]), Text::make(__('Position'), 'position'),
             Text::make(__('Supervisor'), 'supervisor'),
+            Date::make(__('Started at'), 'starting_date')->sortable(),
 
             Text::make(__('Tasks'), 'tasks'),
             Text::make(__('Period'), 'period'),
