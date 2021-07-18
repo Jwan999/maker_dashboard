@@ -42,8 +42,11 @@ class BasePolicy
      */
     public function create(User $user)
     {
-        return !$user->name == 'guest';
-
+        $value = true;
+        if ($user->name == 'Guest') {
+            $value = false;
+        }
+        return $value;
     }
 
     /**
@@ -55,7 +58,11 @@ class BasePolicy
      */
     public function update(User $user, Base $base)
     {
-        return $user->name != 'guest';
+        $value = true;
+        if ($user->name == 'Guest') {
+            $value = false;
+        }
+        return $value;
     }
 
     /**
@@ -67,7 +74,11 @@ class BasePolicy
      */
     public function delete(User $user, Base $base)
     {
-        return !$user->name == 'guest';
+        $value = true;
+        if ($user->name == 'Guest') {
+            $value = false;
+        }
+        return $value;
     }
 
     /**
@@ -79,7 +90,11 @@ class BasePolicy
      */
     public function restore(User $user, Base $base)
     {
-        return !$user->name == 'guest';
+        $value = true;
+        if ($user->name == 'Guest') {
+            $value = false;
+        }
+        return $value;
     }
 
     /**
@@ -91,6 +106,10 @@ class BasePolicy
      */
     public function forceDelete(User $user, Base $base)
     {
-        return !$user->name == 'guest';
+        $value = true;
+        if ($user->name == 'Guest') {
+            $value = false;
+        }
+        return $value;
     }
 }
