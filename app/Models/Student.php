@@ -9,7 +9,7 @@ class Student extends Base
 {
     use HasFactory;
 
-    protected $appends = ["is_adult"];
+//    protected $appends = ["is_adult"];
     protected $casts = [
         'date_of_birth' => 'datetime'
     ];

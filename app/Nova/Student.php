@@ -76,7 +76,7 @@ class Student extends Resource
             Text::make(__('Name'), 'name')->sortable(),
 
             Text::make(__('Phone Number'), 'phone'),
-            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::select('name', 'date')->get()),
+            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::select('name', 'date')->get())->hideWhenCreating()->hideWhenUpdating(),
 //            dd(\App\Models\Training::select('name', 'date')->get()),
             Text::make(__('University'), 'university'),
 
