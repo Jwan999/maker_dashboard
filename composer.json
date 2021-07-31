@@ -35,6 +35,7 @@
     "laravel/tinker": "^2.5",
     "maatwebsite/excel": "^3.1",
     "maker/iotmaker": "*",
+    "orlyapps/nova-belongsto-depend": "^3.0",
     "owenmelbz/nova-radio-field": "^1.0",
     "rcknr/nova-multiselect-filter": "^1.3 ",
     "simplesquid/nova-advanced-number-field": "^2.0",

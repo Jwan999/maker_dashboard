@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Orlyapps\NovaBelongsToDepend\NovaBelongsToDepend;
 
 class Recommendation extends Resource
 {
@@ -62,8 +63,17 @@ class Recommendation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make("Recommender", "recommender", Trainer::Class)->searchable(),
-            BelongsTo::make("Student", "student", Student::Class)->searchable(),
-            BelongsTo::make("Training", "training", Training::Class)->searchable(),
+            NovaBelongsToDepend::make('Training')
+                ->options(\App\Models\Training::all()),
+            NovaBelongsToDepend::make('Student')
+                ->optionsResolve(function ($training) {
+                    return $training->students;
+                })
+                ->dependsOn('Training')
+                ->rules('required'),
+
+//            BelongsTo::make("", "student", Student::Class)->searchable(),
+//            BelongsTo::make("Training", "training", Training::Class)->searchable(),
             Textarea::make(__('Recommendation'), 'recommendation'),
         ];
     }

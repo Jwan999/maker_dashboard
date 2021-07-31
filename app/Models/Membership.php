@@ -12,7 +12,7 @@ class Membership extends Base
 
     protected $casts = [
         'starts_at' => 'date',
-        'ends_at' => 'date',
+//        'ends_at' => 'date',
 
     ];
 
@@ -24,9 +24,8 @@ class Membership extends Base
 
     public function getIsActiveAttribute()
     {
-        $now = Carbon::now()->format("Y/m/d");
-        $end = $this->ends_at->format("Y/m/d");
-
-        return $end > $now;
+        /** @var Carbon $expiresAt */
+        $expiresAt = $this->starts_at->addMonths($this->duration);
+        return Carbon::now()->isBefore($expiresAt);
     }
 }

@@ -165,13 +165,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/valuestore" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/techouse/total-records" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/inspheric/nova-url-field" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/google/auth" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/czemu/nova-calendar-tool" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/google/apiclient-services" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/google/apiclient" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-google-calendar" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/orlyapps/nova-belongsto-depend" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

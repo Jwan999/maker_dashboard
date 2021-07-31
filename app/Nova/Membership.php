@@ -3,11 +3,13 @@
 namespace App\Nova;
 
 use Davidpiesse\NovaToggle\Toggle;
+use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -48,7 +50,15 @@ class Membership extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton(),
             Date::make(__('Starts at'), 'starts_at')->sortable(),
-            Date::make(__('Ends at'), 'ends_at')->sortable(),
+            Select::make(__('Duration'), 'duration')->options([
+                1=>'1 Month',
+                2=>'2 Months',
+                3=>'3 Months',
+                4=>'4 Months',
+                5=>'5 Months',
+                6=>'6 Months',
+            ])->displayUsingLabels(),
+//            Date::make(__('Ends at'), 'ends_at')->sortable(),
             Boolean::make(__('Is Active'), 'is_active')->sortable()->exceptOnForms(),
 
         ];

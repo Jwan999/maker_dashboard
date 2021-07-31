@@ -17,9 +17,8 @@ class CreateMembershipsTable extends Migration
             $table->id();
             $table->foreignId("student_id");
             $table->timestamp("starts_at")->nullable();
-            $table->timestamp("ends_at")->nullable();
+            $table->string("duration")->nullable();
             $table->string("notes")->nullable();
-
             $table->timestamps();
         });
     }
