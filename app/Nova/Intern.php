@@ -86,7 +86,8 @@ class Intern extends Resource
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
-                ]), Text::make(__('Position'), 'position'),
+                ]),
+            Text::make(__('Position'), 'position'),
             Text::make(__('Supervisor'), 'supervisor'),
             Date::make(__('Started at'), 'starting_date')->sortable(),
 
