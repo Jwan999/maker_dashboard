@@ -62,7 +62,8 @@ class Recommendation extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            BelongsTo::make("Recommender", "recommender", Trainer::Class)->searchable(),
+//            BelongsTo::make(__("Recommender"), "recommender", \App\Models\Trainer::class),
+            BelongsTo::make('Recommender', 'recommender', 'App\Nova\Trainer'),
             NovaBelongsToDepend::make('Training')
                 ->options(\App\Models\Training::all()),
             NovaBelongsToDepend::make('Student')

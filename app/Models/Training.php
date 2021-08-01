@@ -10,6 +10,7 @@ class Training extends Base
     use HasFactory;
 
     protected $with = ["students"];
+
     public function getNameAttribute($name)
     {
         $fullname = $name;
