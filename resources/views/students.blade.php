@@ -54,17 +54,16 @@ $students = Student::get()->count();
             {{ $students }}
         </h1>
         <p>
-            Students from baghdad
+            Number of students
         </p>
+
     </div>
     <div>
         <h1 class="text-4xl mt-2">
             {{$percentage }} %
         </h1>
         <p>
-
-
-            Number of students
+            Students from baghdad
         </p>
     </div>
 </div>
