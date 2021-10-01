@@ -16,12 +16,12 @@ class ThemeServiceProvider extends ServiceProvider
     {
         Nova::booted(function () {
 
-            if (str_contains(url(''), 'http://127.0.0.1:8000')) {
-                Nova::theme(asset('/css/iotkids.css'));
+            if (str_contains(url(''), 'iotkids')) {
+                Nova::theme(asset('/css/iotkids.css?v=1'));
             } elseif (str_contains(url(''), 'iotmaker')) {
-                Nova::theme(asset('/css/app.css'));
+                Nova::theme(asset('/css/app.css?v=1'));
             } else {
-                Nova::theme(asset('/css/app.css'));
+                Nova::theme(asset('/css/app.css?v=1'));
             }
 
         });
