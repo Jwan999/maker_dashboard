@@ -7,8 +7,7 @@ $percentage = number_format((float)Student::where('governorate', 'Baghdad')->cou
 
 $students = Student::get()->count();
 
-//if ($percentage == 0)
-//    $percentage = 'There are no data right nowُ';
+//if ($percentage == 0) ; $percentage = 3;
 
 ?>
 

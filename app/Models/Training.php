@@ -25,7 +25,8 @@ class Training extends Base
 //    }
 
     protected $casts = [
-        'date' => 'date'
+        'date' => 'date',
+        'end_date' => 'date'
     ];
 
     public function students()

@@ -166,6 +166,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/techouse/total-records" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/inspheric/nova-url-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/orlyapps/nova-belongsto-depend" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/acme/date-range" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/serializable-closure" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

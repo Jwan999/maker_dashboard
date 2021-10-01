@@ -19,7 +19,7 @@ class CreateStoriesTable extends Migration
             $table->string('image');
             $table->string('phone')->default('-');
             $table->string('email')->default('-');
-            $table->text('story')->default('-');
+            $table->text('story');
             $table->timestamps();
         });
     }

@@ -31,6 +31,8 @@ use Coroowicaksono\ChartJsIntegration\BarChart;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
+
+
     /**
      * Bootstrap any application services.
      *
@@ -39,7 +41,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-        Nova::style('iot-maker', asset('/css/iotmaker.css'));
+
+//        Nova::style('iot-maker', asset('/css/iotkids.css'));
     }
 
     /**
@@ -126,6 +129,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
 
         $months = array_keys($combined);
+
         sort($months);
         sort($combined);
         foreach ($months as $month) {
@@ -134,7 +138,20 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $sessionsData[] = $sessions->has($month) ? $sessions[$month] : 0;
             $coursesData[] = $courses->has($month) ? $courses[$month] : 0;
         }
+        if (str_contains(url(''), 'iotkids')) {
+//            --primary: #269DDD;
+//    --primary-dark: #269DDD;
+//            --sidebar-icon: #fca000;
 
+            $primary = '#46C4F9';
+            $primaryDark = '#F172AB';
+        } elseif (str_contains(url(''), 'iotmaker')) {
+            $primary = '#269DDD';
+            $primaryDark = '#fca000';
+        } else {
+            $primary = '#46C4F9';
+            $primaryDark = '#F172AB';
+        }
 
 //        dd($coursesData,$sessionsData,$months);
         return [
@@ -148,12 +165,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->series(array([
                     'barPercentage' => 0.5,
                     'label' => 'Sessions',
-                    'borderColor' => '#fca000',
+                    'borderColor' => $primary,
                     'data' => $sessionsData,
                 ], [
                     'barPercentage' => 0.5,
                     'label' => 'Courses',
-                    'borderColor' => '#269DDD',
+                    'borderColor' => $primaryDark,
                     'data' => $coursesData,
                 ]))
                 ->options([
@@ -180,7 +197,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     $malePercentage = number_format((float)count(Student::where('gender', 'male')->get()) / $total * 100),
 
                     'data' => [$femalePercentage, $malePercentage],
-                    'backgroundColor' => ["#fca000", "#269DDD"],
+                    'backgroundColor' => [$primary, $primaryDark],
                 ]))
                 ->options([
                     'xaxis' => [
@@ -199,7 +216,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     array([
                         $studentsAges = Student::all()->groupBy('age')->map->count(),
                         'label' => 'Age %',
-                        'backgroundColor' => '#269DDD',
+                        'backgroundColor' => $primary,
 //dd($studentsAges),
                         $totalAge = count(Student::get()),
                         $young = Student::whereBetween('age', ['15', '19'])->count() / $totalAge * 100,
@@ -230,11 +247,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
 //            (new HtmlCard())->width('1/3')->view('card'),
             (new HtmlCard())->width('1/3')->view('interns'),
+
+//            if (str_contains(url(''), 'iotkids')){
             (new HtmlCard())->width('1/3')->view('services'),
+
+//            }
 
 
             (new HtmlCard())->width('1/3')->view('products'),
             (new HtmlCard())->width('1/3')->view('trainers'),
+
 
             (new HtmlCard())->width('1/3')->view('startups'),
 

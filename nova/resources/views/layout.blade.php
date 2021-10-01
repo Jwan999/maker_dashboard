@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('app.css', 'vendor/nova') }}">
 
-    <!-- Tool Styles -->
+<!-- Tool Styles -->
     @foreach(\Laravel\Nova\Nova::availableStyles(request()) as $name => $path)
         @if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://']))
             <link rel="stylesheet" href="{!! $path !!}">
@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="{{ $publicPath }}">
     @endforeach
 </head>
+
 <body class="min-w-site bg-40 text-90 font-medium min-h-full">
 <div id="nova">
     <div v-cloak class="flex min-h-screen">
@@ -65,21 +66,37 @@
                 </dropdown>
             </div>
 
+
             <div data-testid="content" class="px-view py-view mx-auto">
                 @yield('content')
-                <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
-                    {{--                                            <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
-                    {{--    <span class="px-1">&middot;</span>--}}
-                    &copy; {{ date('Y') }} IoT Maker partnered with
-                    <div class="w-16 mx-4">
-                        <img src="/fieldready.png" alt="test">
+
+                @if (str_contains(url(''), 'iotkids'))
+                    IoT Kids
+
+                @elseif (str_contains(url(''), 'iotmaker'))
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+                        {{--                                            <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
+                        {{--    <span class="px-1">&middot;</span>--}}
+                        &copy; {{ date('Y') }} IoT Maker partnered with
+                        <div class="w-16 mx-4">
+                            <img src="/fieldready.png" alt="test">
+                        </div>
+                        {{--    <span class="px-1">&middot;<    /span>--}}
+                        {{--                        v{{ \Laravel\Nova\Nova::version() }}--}}
                     </div>
-                    {{--    <span class="px-1">&middot;<    /span>--}}
-                    {{--                        v{{ \Laravel\Nova\Nova::version() }}--}}
-                </div>
+
+                @else
+                    You Not A Maker
+
+                @endif
+
+
+
 
                 @include('nova::partials.footer')
             </div>
+
+
         </div>
     </div>
 </div>
