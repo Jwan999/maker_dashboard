@@ -22,6 +22,7 @@ use Laravel\Nova\Tests\Feature\SelectTest;
 use Davidpiesse\NovaToggle\Toggle;
 use OwenMelbz\RadioField\RadioButton;
 use Laravel\Nova\Fields\BelongsToMany;
+use Saumini\Count\RelationshipCount;
 use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
 
 
@@ -89,7 +90,7 @@ class Training extends Resource
             Text::make(__('Name'), 'name')->sortable()->resolveUsing(function ($attribute, $resource, $requestAttribute) {
                 return $resource->getOriginal("name");
             }),
-
+            RelationshipCount::make('Number of students', 'students'),
             Date::make(__('Starting Date'), 'date')->sortable(),
             Date::make(__('End Date'), 'end_date')->sortable(),
 

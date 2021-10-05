@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84f343d3f0b3f9c11b78a464652c9204",
+    "content-hash": "a75f0f234342477ec708ebc8be0eb1f0",
     "packages": [
         {
             "name": "acme/date-range",
@@ -5637,6 +5637,51 @@
                 "source": "https://github.com/rcknr/nova-multiselect-filter/tree/1.3.1"
             },
             "time": "2020-01-14T08:41:54+00:00"
+        },
+        {
+            "name": "saumini/count",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nsaumini/nova-field-count.git",
+                "reference": "55db5d804cf5489ccb077b0cef3e2d4202b1acda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nsaumini/nova-field-count/zipball/55db5d804cf5489ccb077b0cef3e2d4202b1acda",
+                "reference": "55db5d804cf5489ccb077b0cef3e2d4202b1acda",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Saumini\\Count\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Saumini\\Count\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/nsaumini/nova-field-count/issues",
+                "source": "https://github.com/nsaumini/nova-field-count/tree/master"
+            },
+            "time": "2018-11-16T16:28:19+00:00"
         },
         {
             "name": "simplesquid/nova-advanced-number-field",
