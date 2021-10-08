@@ -75,7 +75,9 @@ class Product extends Resource
 //            }
 //            ),
 
-            File::make(__('Design file'), 'design')->disk('public')->nullable(),
+            File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
+                return 'design.' . now() . '.' . $request->file('design')->getClientOriginalExtension();
+            })->nullable(),
 
 
             Text::make(__('Materials'), 'materials'),
