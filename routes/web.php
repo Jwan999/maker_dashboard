@@ -19,5 +19,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/api/current', [\App\Http\Controllers\CurrentTrainingController::class, 'show']);
+
 
 
