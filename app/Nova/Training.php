@@ -13,7 +13,9 @@ use Laravel\Nova\Fields\BooleanGroup;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Textarea;
 use NovaAttachMany\AttachMany;
 use Benjacho\BelongsToManyField\BelongsToManyField;
 use Laravel\Nova\Fields\Text;
@@ -134,6 +136,22 @@ class Training extends Resource
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]),
             BelongsToMany::make('Students'),
+            Select::make('Icon')->options([
+                'cinema_4d' => 'Cinema 4D',
+                '3d' => '3D',
+                'programming' => 'Programming',
+                'cnc' => 'CNC',
+                'crafts' => 'Crafts',
+                'autocad' => 'Autocad',
+                'illustration' => 'Graphic Design',
+            ]),
+            Textarea::make(__('Description'), 'description'),
+            Text::make(__('Time'), 'time'),
+            Number::make(__('Number of Lectures'), 'lectures'),
+//            Text::make(__('Date'), 'date'),
+            Text::make(__('Days'), 'days'),
+            Text::make(__('Form link'), 'form_link'),
+            Text::make(__('Paid'), 'paid'),
 
 
         ];

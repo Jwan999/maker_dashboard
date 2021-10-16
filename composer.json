@@ -60,6 +60,10 @@
         {
             "type": "path",
             "url": "./nova-components/DateRange"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Asdikaee"
         }
     ],
     "require-dev": {
