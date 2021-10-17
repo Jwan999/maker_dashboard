@@ -11,7 +11,7 @@ class TrainingController extends Controller
     {
 //        dd(date("Y-m-d"));
 
-        $trainings = Training::where('date', '>', date("Y-m-d"))->select('name', 'icon', 'description', 'paid', 'form_link', 'lectures', 'time', 'days')->get();
+        $trainings = Training::where('date', '>', date("Y-m-d"))->select('name', 'icon', 'description', 'paid', 'form_link', 'lectures', 'time', 'days','id')->get();
 //        dd($trainings);
 //        Training::where('date', '>', now())->get()
 //        \Carbon\Carbon::parse($trainings->date)->format('d/m/Y')
