@@ -144,6 +144,7 @@ class Training extends Resource
                 'crafts' => 'Crafts',
                 'autocad' => 'Autocad',
                 'illustration' => 'Graphic Design',
+                'interface' => 'Finance or Microsoft',
             ]),
             Textarea::make(__('Description'), 'description'),
             Text::make(__('Time'), 'time'),
