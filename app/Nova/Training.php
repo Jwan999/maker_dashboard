@@ -112,7 +112,7 @@ class Training extends Resource
                 '7 Days',
                 '8 Days',
 
-            ]),
+            ])->hideFromIndex(),
 
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
@@ -145,13 +145,13 @@ class Training extends Resource
                 'autocad' => 'Autocad',
                 'illustration' => 'Graphic Design',
                 'interface' => 'Finance or Microsoft',
-            ]),
-            Textarea::make(__('Description'), 'description'),
-            Text::make(__('Time'), 'time'),
-            Number::make(__('Number of Lectures'), 'lectures'),
+            ])->hideFromIndex(),
+            Textarea::make(__('Description'), 'description')->hideFromIndex(),
+            Text::make(__('Time'), 'time')->hideFromIndex(),
+            Number::make(__('Number of Lectures'), 'lectures')->hideFromIndex(),
 //            Text::make(__('Date'), 'date'),
-            Text::make(__('Days'), 'days'),
-            Text::make(__('Form link'), 'form_link'),
+            Text::make(__('Days'), 'days')->hideFromIndex(),
+            Text::make(__('Form link'), 'form_link')->hideFromIndex(),
             Text::make(__('Paid'), 'paid'),
 
 
