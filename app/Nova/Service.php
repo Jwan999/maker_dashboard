@@ -81,7 +81,7 @@ class Service extends Resource
             Text::make(__('Price'), 'price'),
 
             File::make(__('File'), 'file')->disk('public')->storeAs(function (Request $request) {
-                return 'file.' . $request->file('file')->getClientOriginalExtension();
+                return 'file.' . now() . $request->file('file')->getClientOriginalExtension();
             })->nullable(),
 
         ];

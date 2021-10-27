@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
+//use Beyondcode\ProductView\ProductView;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
@@ -96,7 +97,7 @@ class Product extends Resource
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]),
-
+//            ProductView::make('')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
         ];
     }
 

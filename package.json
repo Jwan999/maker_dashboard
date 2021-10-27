@@ -11,7 +11,9 @@
         "build-students-importer": "cd nova-components/StudentsImporter && npm run dev",
         "build-students-importer-prod": "cd nova-components/StudentsImporter && npm run prod",
         "build-date-range": "cd nova-components/DateRange && npm run dev",
-        "build-date-range-prod": "cd nova-components/DateRange && npm run prod"
+        "build-date-range-prod": "cd nova-components/DateRange && npm run prod",
+        "build-product-view": "cd nova-components/ProductView && npm run dev",
+        "build-product-view-prod": "cd nova-components/ProductView && npm run prod"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.6",
