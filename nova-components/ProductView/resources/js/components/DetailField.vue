@@ -29,31 +29,37 @@
         </button>
 
       </div>
-      <div class="flex justify-center mt-4">
-        <img class="rounded-2xl lg:max-w-md max-w-full"
-             :src="'/storage/'+product.image"
-             alt="">
-      </div>
-      <h1 class="bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3">
-        {{ product.materials }}
-      </h1>
-      <h1 class="text-3xl text-gray-800 mt-6">{{ product.name }}</h1>
+      <div class="flex lg:justify-between flex-wrap my-10">
 
-      <p class="text-gray-700 mt-4">
-        {{ product.description }}
-      </p>
-      <div class="mt-6">
-        <h1>
-          Design file
-        </h1>
-        <h1>
-          Made for
-        </h1>
-        <h1>
-          Machines used
-        </h1>
+        <div class="lg:w-5/12 w-full">
+          <h1 class="bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3">
+            {{ product.materials }}
+          </h1>
+          <h1 class="text-3xl text-gray-800 mt-6">{{ product.name }}</h1>
+
+          <p class="text-gray-700 mt-4">
+            {{ product.description }}
+          </p>
+          <div class="mt-6">
+            <h1>
+              Design file
+            </h1>
+            <h1>
+              Made for
+            </h1>
+            <h1>
+              Machines used
+            </h1>
+          </div>
+          <!--    <panel-item :field="field"/>-->
+        </div>
+        <div class="flex justify-end lg:w-6/12 w-full">
+          <img class="rounded-2xl lg:max-w-lg max-w-full"
+               :src="'/storage/'+product.image"
+               alt="">
+        </div>
       </div>
-      <!--    <panel-item :field="field"/>-->
+
     </div>
   </field>
 
