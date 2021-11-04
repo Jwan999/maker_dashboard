@@ -29,7 +29,12 @@
         </button>
 
       </div>
-      <div class="flex lg:justify-between flex-wrap-reverse my-10">
+      <div class="flex lg:justify-between flex-wrap my-10">
+        <div class="flex justify-end lg:w-6/12 w-full">
+          <img class="rounded-2xl lg:max-w-md max-w-full"
+               :src="'/storage/'+product.image"
+               alt="">
+        </div>
 
         <div class="lg:w-5/12 w-full">
           <h1 class="bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3">
@@ -53,11 +58,7 @@
           </div>
           <!--    <panel-item :field="field"/>-->
         </div>
-        <div class="flex justify-end lg:w-6/12 w-full">
-          <img class="rounded-2xl lg:max-w-md max-w-full"
-               :src="'/storage/'+product.image"
-               alt="">
-        </div>
+
       </div>
 
     </div>
