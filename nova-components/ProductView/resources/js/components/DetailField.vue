@@ -30,13 +30,13 @@
 
       </div>
       <div class="flex lg:justify-between flex-wrap my-10">
-        <div class="flex justify-end lg:w-6/12 w-full">
-          <img class="rounded-2xl lg:max-w-md max-w-full"
+        <div class="flex justify-start lg:w-6/12 w-full">
+          <img class="rounded-2xl lg:max-h-80 max-h-full"
                :src="'/storage/'+product.image"
                alt="">
         </div>
 
-        <div class="lg:w-5/12 w-full">
+        <div class="lg:w-6/12 w-full">
           <h1 class="bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3">
             {{ product.materials }}
           </h1>

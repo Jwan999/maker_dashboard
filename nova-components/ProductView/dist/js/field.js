@@ -393,6 +393,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -599,51 +600,47 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "flex lg:justify-between flex-wrap-reverse my-10" },
-        [
-          _c("div", { staticClass: "lg:w-5/12 w-full" }, [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3"
-              },
-              [
-                _vm._v(
-                  "\n          " + _vm._s(_vm.product.materials) + "\n        "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("h1", { staticClass: "text-3xl text-gray-800 mt-6" }, [
-              _vm._v(_vm._s(_vm.product.name))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-700 mt-4" }, [
+      _c("div", { staticClass: "flex lg:justify-between flex-wrap my-10" }, [
+        _c("div", { staticClass: "flex justify-start lg:w-6/12 w-full" }, [
+          _c("img", {
+            staticClass: "rounded-2xl lg:max-h-80 max-h-full",
+            attrs: { src: "/storage/" + _vm.product.image, alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "lg:w-6/12 w-full" }, [
+          _c(
+            "h1",
+            {
+              staticClass:
+                "bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3"
+            },
+            [
               _vm._v(
-                "\n          " + _vm._s(_vm.product.description) + "\n        "
+                "\n          " + _vm._s(_vm.product.materials) + "\n        "
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-6" }, [
-              _c("h1", [_vm._v("\n            Design file\n          ")]),
-              _vm._v(" "),
-              _c("h1", [_vm._v("\n            Made for\n          ")]),
-              _vm._v(" "),
-              _c("h1", [_vm._v("\n            Machines used\n          ")])
-            ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("h1", { staticClass: "text-3xl text-gray-800 mt-6" }, [
+            _vm._v(_vm._s(_vm.product.name))
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "flex justify-end lg:w-6/12 w-full" }, [
-            _c("img", {
-              staticClass: "rounded-2xl lg:max-w-md max-w-full",
-              attrs: { src: "/storage/" + _vm.product.image, alt: "" }
-            })
+          _c("p", { staticClass: "text-gray-700 mt-4" }, [
+            _vm._v(
+              "\n          " + _vm._s(_vm.product.description) + "\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-6" }, [
+            _c("h1", [_vm._v("\n            Design file\n          ")]),
+            _vm._v(" "),
+            _c("h1", [_vm._v("\n            Made for\n          ")]),
+            _vm._v(" "),
+            _c("h1", [_vm._v("\n            Machines used\n          ")])
           ])
-        ]
-      )
+        ])
+      ])
     ])
   ])
 }
