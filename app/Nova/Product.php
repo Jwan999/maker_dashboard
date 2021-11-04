@@ -3,7 +3,7 @@
 namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
-//use Beyondcode\ProductView\ProductView;
+use Beyondcode\ProductView\ProductView;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
@@ -67,9 +67,9 @@ class Product extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Textarea::make(__('Description'), 'description'),
-            Filepond::make('Image')->disk('public'),
+            Text::make(__('Name'), 'name')->hideFromDetail(),
+            Textarea::make(__('Description'), 'description')->hideFromDetail(),
+            Filepond::make('Image')->disk('public')->hideFromDetail(),
 //                ->storeAs(function (Request $request) { // this is optional, use in case you need generate custom file names
 ////                dd($request);
 //                return Str::random(20) . '.' . $request->file->getExtension();
@@ -78,11 +78,11 @@ class Product extends Resource
 
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . now() . '.' . $request->file('design')->getClientOriginalExtension();
-            })->nullable(),
+            })->nullable()->hideFromDetail(),
 
 
-            Text::make(__('Materials'), 'materials'),
-            Text::make(__('Machines used'), 'machines_used'),
+            Text::make(__('Materials'), 'materials')->hideFromDetail(),
+            Text::make(__('Machines used'), 'machines_used')->hideFromDetail(),
 
             RadioButton::make(__('Made for'), 'made_for')
                 ->options([
@@ -96,8 +96,8 @@ class Product extends Resource
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
-                ]),
-//            ProductView::make('')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
+                ])->hideFromDetail(),
+            ProductView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
         ];
     }
 

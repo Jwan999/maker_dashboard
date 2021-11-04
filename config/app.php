@@ -178,7 +178,8 @@ return [
         App\Providers\NovaServiceProvider::class,
         maker\IotMaker\ThemeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+//        Maatwebsite\Excel\ExcelServiceProvider::class,
+//        Beyondcode\ProductView\ProductView::class,
 
     ],
 
@@ -233,7 +234,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+//        'ProductView' => Beyondcode\ProductView\ProductView::class,
     ],
 
 ];

@@ -64,10 +64,6 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/Asdikaee"
-        },
-        {
-            "type": "path",
             "url": "./nova-components/ProductView"
         }
     ],

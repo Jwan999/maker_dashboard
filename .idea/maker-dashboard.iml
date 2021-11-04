@@ -174,6 +174,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/acme/date-range" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/saumini/count" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/product-view" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
