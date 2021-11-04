@@ -394,6 +394,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -401,7 +403,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       products: [],
       product: {},
-      productIndex: null
+      productIndex: null,
+      lastIndex: null
     };
   },
 
@@ -412,43 +415,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // let id = this.resource.id.value
       axios.get('/api/products').then(function (response) {
         _this.products = response.data;
+
         _this.product = _this.products.filter(function (product) {
           return product.id == _this.resource.id.value;
         })[0];
         _this.productIndex = _this.products.indexOf(_this.product);
+        _this.lastIndex = _this.products.length - 1;
         // console.log(this.products)
       });
     },
     paginate: function paginate(page) {
-      var endIndex = this.products.length - 1;
-      if (page == 'next' && this.productIndex <= endIndex) {
-        console.log(this.productIndex <= endIndex);
-        console.log(endIndex);
-        console.log(this.productIndex);
-        // && this.productIndex >= this.products.length--
-        // console.log(this.products.length)
+      if (page == 'next' && this.productIndex < this.lastIndex) {
 
         this.product = this.products[this.productIndex + 1];
         this.productIndex = this.productIndex + 1;
         console.log(this.product);
-        // console.log(this.productIndex)
-        // console.log(this.product)
-        // this.product = this.products[this.productIndex+1]
-        // console.log('next')
-        // console.log(this.products[this.productIndex])
-        // console.log(this.product)
       } else if (page == 'previous' && this.productIndex >= 1) {
         this.product = this.products[this.productIndex - 1];
         this.productIndex = this.productIndex - 1;
-        // console.log(this.productIndex)
-        // console.log(this.product)
-
-
-        // console.log(this.products.length - 1)
-        // this.product = this.products[this.products.length - 1]
-        // && this.productIndex > 1
-        // this.product = this.products[this.productIndex-1]
-        // console.log('pre')
       }
     }
   },
@@ -478,8 +462,11 @@ var render = function() {
         _c(
           "button",
           {
-            staticClass:
-              "bg-primary text-sm text-white px-5 py-2 rounded-lg font-bold",
+            staticClass: "text-sm text-white px-5 py-2 rounded-lg font-bold",
+            class:
+              _vm.productIndex >= 1
+                ? "bg-primary text-white"
+                : "bg-gray-300 text-gray-600",
             on: {
               click: function($event) {
                 return _vm.paginate("previous")
@@ -542,6 +529,10 @@ var render = function() {
           {
             staticClass:
               "bg-primary text-sm text-white px-5 py-2 rounded-lg font-bold",
+            class:
+              _vm.productIndex < _vm.lastIndex
+                ? "bg-primary text-white"
+                : "bg-gray-300 text-gray-600",
             on: {
               click: function($event) {
                 return _vm.paginate("next")
@@ -603,7 +594,7 @@ var render = function() {
       _c("div", { staticClass: "flex lg:justify-between flex-wrap my-10" }, [
         _c("div", { staticClass: "flex justify-start lg:w-6/12 w-full" }, [
           _c("img", {
-            staticClass: "rounded-2xl lg:max-h-80 max-h-full",
+            staticClass: "rounded-xl lg:max-h-80 h-full",
             attrs: { src: "/storage/" + _vm.product.image, alt: "" }
           })
         ]),

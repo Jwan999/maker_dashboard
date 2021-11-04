@@ -3,7 +3,9 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <div>
       <div class="flex justify-end space-x-4">
-        <button @click="paginate('previous')" class="bg-primary text-sm text-white px-5 py-2 rounded-lg font-bold">
+        <button @click="paginate('previous')"
+                :class="productIndex >= 1 ? 'bg-primary text-white': 'bg-gray-300 text-gray-600'"
+                class="text-sm text-white px-5 py-2 rounded-lg font-bold">
           <svg class="w-4 h-4" viewBox="0 0 314 632" version="1.1"
                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -15,7 +17,8 @@
             </g>
           </svg>
         </button>
-        <button @click="paginate('next')" class="bg-primary text-sm text-white px-5 py-2 rounded-lg font-bold">
+        <button :class="productIndex < lastIndex ? 'bg-primary text-white': 'bg-gray-300 text-gray-600'"
+                @click="paginate('next')" class="bg-primary text-sm text-white px-5 py-2 rounded-lg font-bold">
           <svg class="w-4 h-4" viewBox="0 0 137 275" version="1.1" xmlns="http://www.w3.org/2000/svg"
                xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -31,8 +34,8 @@
       </div>
       <div class="flex lg:justify-between flex-wrap my-10">
         <div class="flex justify-start lg:w-6/12 w-full">
-          <img class="rounded-2xl lg:max-h-80 max-h-full"
-               :src="'/storage/'+product.image"
+          <img class="rounded-xl lg:max-h-80 h-full"
+               :src="'/storage/' + product.image"
                alt="">
         </div>
 
@@ -65,7 +68,6 @@
   </field>
 
 </template>
-
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 export default {
@@ -74,7 +76,8 @@ export default {
     return {
       products: [],
       product: {},
-      productIndex: null
+      productIndex: null,
+      lastIndex: null,
     }
   },
   methods: {
@@ -82,42 +85,25 @@ export default {
       // let id = this.resource.id.value
       axios.get('/api/products').then(response => {
         this.products = response.data
+
         this.product = this.products.filter(product => product.id == this.resource.id.value)[0]
         this.productIndex = this.products.indexOf(this.product)
+        this.lastIndex = this.products.length - 1
         // console.log(this.products)
       })
 
     },
     paginate(page) {
-      let endIndex = this.products.length - 1
-      if (page == 'next' && this.productIndex <= endIndex) {
-        console.log(this.productIndex <= endIndex)
-        console.log(endIndex)
-        console.log(this.productIndex)
-        // && this.productIndex >= this.products.length--
-        // console.log(this.products.length)
+      if (page == 'next' && this.productIndex < this.lastIndex) {
 
         this.product = this.products[this.productIndex + 1]
         this.productIndex = this.productIndex + 1
         console.log(this.product)
-        // console.log(this.productIndex)
-        // console.log(this.product)
-        // this.product = this.products[this.productIndex+1]
-        // console.log('next')
-        // console.log(this.products[this.productIndex])
-        // console.log(this.product)
+
       } else if (page == 'previous' && this.productIndex >= 1) {
         this.product = this.products[this.productIndex - 1]
         this.productIndex = this.productIndex - 1
-        // console.log(this.productIndex)
-        // console.log(this.product)
 
-
-        // console.log(this.products.length - 1)
-        // this.product = this.products[this.products.length - 1]
-        // && this.productIndex > 1
-        // this.product = this.products[this.productIndex-1]
-        // console.log('pre')
       }
     }
 
