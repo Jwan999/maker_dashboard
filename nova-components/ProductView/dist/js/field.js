@@ -396,6 +396,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -421,7 +446,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         })[0];
         _this.productIndex = _this.products.indexOf(_this.product);
         _this.lastIndex = _this.products.length - 1;
-        // console.log(this.products)
+
+        console.log(_this.product);
       });
     },
     paginate: function paginate(page) {
@@ -591,7 +617,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "flex lg:justify-between flex-wrap my-10" }, [
+      _c("div", { staticClass: "flex lg:justify-between flex-wrap mb-6" }, [
         _c("div", { staticClass: "flex justify-start lg:w-6/12 w-full" }, [
           _c("img", {
             staticClass: "rounded-xl lg:max-h-80 h-full",
@@ -600,11 +626,15 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "lg:w-6/12 w-full" }, [
+          _c("h1", { staticClass: "text-3xl text-gray-800" }, [
+            _vm._v(_vm._s(_vm.product.name))
+          ]),
+          _vm._v(" "),
           _c(
             "h1",
             {
               staticClass:
-                "bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3"
+                "bg-gray-300 text-sm text-gray-700 mt-5 px-3 py-1 inline-block rounded-full"
             },
             [
               _vm._v(
@@ -613,22 +643,84 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("h1", { staticClass: "text-3xl text-gray-800 mt-6" }, [
-            _vm._v(_vm._s(_vm.product.name))
-          ]),
-          _vm._v(" "),
           _c("p", { staticClass: "text-gray-700 mt-4" }, [
             _vm._v(
               "\n          " + _vm._s(_vm.product.description) + "\n        "
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "mt-6" }, [
-            _c("h1", [_vm._v("\n            Design file\n          ")]),
+          _c("div", { staticClass: "mt-4" }, [
+            _c("div", { staticClass: "flex items-center space-x-2" }, [
+              _c("h1", { staticClass: "text-gray-500" }, [
+                _vm._v("\n              Design file:\n            ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "text-primary flex items-center text-sm",
+                  attrs: {
+                    href: "/storage/" + _vm.product.design,
+                    download: ""
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-5 h-5 text-primary fill-current mr-2",
+                      attrs: {
+                        viewBox: "0 0 24 24",
+                        xmlns: "http://www.w3.org/2000/svg"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M12 15.25C11.59 15.25 11.25 14.91 11.25 14.5V8.5C11.25 8.09 11.59 7.75 12 7.75C12.41 7.75 12.75 8.09 12.75 8.5V14.5C12.75 14.91 12.41 15.25 12 15.25Z"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M11.9995 16.2499C11.8095 16.2499 11.6195 16.1799 11.4695 16.0299L8.46945 13.0299C8.17945 12.7399 8.17945 12.2599 8.46945 11.9699C8.75945 11.6799 9.23945 11.6799 9.52945 11.9699L11.9995 14.4399L14.4695 11.9699C14.7595 11.6799 15.2395 11.6799 15.5295 11.9699C15.8195 12.2599 15.8195 12.7399 15.5295 13.0299L12.5295 16.0299C12.3795 16.1799 12.1895 16.2499 11.9995 16.2499Z"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v("\n              Download File\n            ")
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _c("h1", [_vm._v("\n            Made for\n          ")]),
+            _c("h1", [
+              _c("span", { staticClass: "text-gray-500" }, [
+                _vm._v("\n            Made for:\n            ")
+              ]),
+              _vm._v(
+                "\n            " + _vm._s(_vm.product.made_for) + "\n          "
+              )
+            ]),
             _vm._v(" "),
-            _c("h1", [_vm._v("\n            Machines used\n          ")])
+            _c("h1", [
+              _c("span", { staticClass: "text-gray-500" }, [
+                _vm._v("\n              Machines used:\n            ")
+              ]),
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.product.machines_used) +
+                  "\n          "
+              )
+            ])
           ])
         ])
       ])

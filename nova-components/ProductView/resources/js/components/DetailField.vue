@@ -32,7 +32,7 @@
         </button>
 
       </div>
-      <div class="flex lg:justify-between flex-wrap my-10">
+      <div class="flex lg:justify-between flex-wrap mb-6">
         <div class="flex justify-start lg:w-6/12 w-full">
           <img class="rounded-xl lg:max-h-80 h-full"
                :src="'/storage/' + product.image"
@@ -40,23 +40,48 @@
         </div>
 
         <div class="lg:w-6/12 w-full">
-          <h1 class="bg-gray-300 text-gray-700 px-3 py-1 inline-block rounded-full mt-3">
+          <h1 class="text-3xl text-gray-800">{{ product.name }}</h1>
+          <h1 class="bg-gray-300 text-sm text-gray-700 mt-5 px-3 py-1 inline-block rounded-full">
             {{ product.materials }}
           </h1>
-          <h1 class="text-3xl text-gray-800 mt-6">{{ product.name }}</h1>
-
           <p class="text-gray-700 mt-4">
             {{ product.description }}
           </p>
-          <div class="mt-6">
+
+          <div class="mt-4">
+
+            <div class="flex items-center space-x-2">
+              <h1 class="text-gray-500">
+                Design file:
+              </h1>
+              <a class="text-primary flex items-center text-sm" :href="'/storage/'+product.design" download>
+                <svg class="w-5 h-5 text-primary fill-current mr-2" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                      d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                  />
+                  <path
+                      d="M12 15.25C11.59 15.25 11.25 14.91 11.25 14.5V8.5C11.25 8.09 11.59 7.75 12 7.75C12.41 7.75 12.75 8.09 12.75 8.5V14.5C12.75 14.91 12.41 15.25 12 15.25Z"
+                  />
+                  <path
+                      d="M11.9995 16.2499C11.8095 16.2499 11.6195 16.1799 11.4695 16.0299L8.46945 13.0299C8.17945 12.7399 8.17945 12.2599 8.46945 11.9699C8.75945 11.6799 9.23945 11.6799 9.52945 11.9699L11.9995 14.4399L14.4695 11.9699C14.7595 11.6799 15.2395 11.6799 15.5295 11.9699C15.8195 12.2599 15.8195 12.7399 15.5295 13.0299L12.5295 16.0299C12.3795 16.1799 12.1895 16.2499 11.9995 16.2499Z"
+                  />
+                </svg>
+                Download File
+              </a>
+            </div>
+
             <h1>
-              Design file
+              <span class="text-gray-500">
+              Made for:
+              </span>
+              {{ product.made_for }}
             </h1>
             <h1>
-              Made for
-            </h1>
-            <h1>
-              Machines used
+              <span class="text-gray-500">
+                Machines used:
+              </span>
+              {{ product.machines_used }}
             </h1>
           </div>
           <!--    <panel-item :field="field"/>-->
@@ -89,7 +114,9 @@ export default {
         this.product = this.products.filter(product => product.id == this.resource.id.value)[0]
         this.productIndex = this.products.indexOf(this.product)
         this.lastIndex = this.products.length - 1
-        // console.log(this.products)
+
+
+        console.log(this.product)
       })
 
     },
