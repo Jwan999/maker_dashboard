@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a7977c902b29d8d827615be18d982f4",
+    "content-hash": "19d050437e08121ae546739b910818e1",
     "packages": [
         {
             "name": "acme/date-range",

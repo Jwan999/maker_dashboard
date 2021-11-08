@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('app.css', 'vendor/nova') }}">
 
-<!-- Tool Styles -->
+    <!-- Tool Styles -->
     @foreach(\Laravel\Nova\Nova::availableStyles(request()) as $name => $path)
         @if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://']))
             <link rel="stylesheet" href="{!! $path !!}">
@@ -71,7 +71,12 @@
                 @yield('content')
 
                 @if (str_contains(url(''), 'iotkids'))
-                    <h1 class="mt-4">IoT Kids</h1>
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+
+                        &copy; {{ date('Y') }} IoT Kids
+
+                    </div>
+                    <span class="mt-4">IoT Kids</span>
 
                 @elseif (str_contains(url(''), 'iotmaker'))
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
