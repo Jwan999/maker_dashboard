@@ -47,10 +47,18 @@ $sessions = Training::where('type', 'Session')->get()->count();
     .h {
         height: 8rem;
     }
+
+    .sessions-color {
+        color: var(--info)
+    }
+
+    .trainings-color {
+        color: var(--info-dark)
+    }
 </style>
 <div class="flex justify-around items-center px-4 py-6 h">
     <div>
-        <h1 class="text-4xl mt-2 text-center">
+        <h1 class="text-4xl mt-2 text-center trainings-color">
             {{ $trainings }}
         </h1>
         <p>
@@ -59,7 +67,7 @@ $sessions = Training::where('type', 'Session')->get()->count();
 
     </div>
     <div>
-        <h1 class="text-4xl mt-2 text-center">
+        <h1 class="text-4xl mt-2 text-center sessions-color">
             {{ $sessions }}
         </h1>
         <p>
