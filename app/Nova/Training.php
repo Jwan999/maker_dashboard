@@ -118,7 +118,8 @@ class Training extends Resource
                 ->trueValue(true)
                 ->falseValue(false),
 
-            BelongsTo::make(__("Trainer"), "trainer", Trainer::Class)->showCreateRelationButton(),
+            BelongsToMany::make(__("Trainer"), "trainers"),
+            BelongsToManyField::make(__("Trainer"), "trainers", Trainer::Class),
 
             RadioButton::make(__('Training Type'), 'type')
                 ->options([

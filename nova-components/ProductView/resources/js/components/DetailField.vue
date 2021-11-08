@@ -2,7 +2,7 @@
   <field>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <div>
-      <div class="flex justify-end space-x-4">
+      <div class="flex justify-end space-x-4 lg:mb-0 mb-4">
         <button @click="paginate('previous')"
                 :class="productIndex >= 1 ? 'bg-primary text-white': 'bg-gray-300 text-gray-600'"
                 class="text-sm text-white px-5 py-2 rounded-lg font-bold">
@@ -115,7 +115,6 @@ export default {
         this.productIndex = this.products.indexOf(this.product)
         this.lastIndex = this.products.length - 1
 
-
         console.log(this.product)
       })
 
@@ -126,10 +125,15 @@ export default {
         this.product = this.products[this.productIndex + 1]
         this.productIndex = this.productIndex + 1
         console.log(this.product)
+        this.$router.push({name: "details", resourceName: "products", resourceId: this.product.id})
+        console.log(this.resourceId)
+
 
       } else if (page == 'previous' && this.productIndex >= 1) {
         this.product = this.products[this.productIndex - 1]
         this.productIndex = this.productIndex - 1
+        this.$router.push({name: "details", resourceName: "products", resourceId: this.product.id})
+
 
       }
     }

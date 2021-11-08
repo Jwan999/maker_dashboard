@@ -456,9 +456,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.product = this.products[this.productIndex + 1];
         this.productIndex = this.productIndex + 1;
         console.log(this.product);
+        this.$router.push({ name: "details", resourceName: "products", resourceId: this.product.id });
+        console.log(this.resourceId);
       } else if (page == 'previous' && this.productIndex >= 1) {
         this.product = this.products[this.productIndex - 1];
         this.productIndex = this.productIndex - 1;
+        this.$router.push({ name: "details", resourceName: "products", resourceId: this.product.id });
       }
     }
   },
@@ -484,7 +487,7 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("div", [
-      _c("div", { staticClass: "flex justify-end space-x-4" }, [
+      _c("div", { staticClass: "flex justify-end space-x-4 lg:mb-0 mb-4" }, [
         _c(
           "button",
           {

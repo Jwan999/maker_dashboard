@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Benjacho\BelongsToManyField\BelongsToManyField;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
@@ -69,6 +70,8 @@ class Trainer extends Resource
             Text::make(__('Name'), 'name')->sortable(),
             Number::make(__('Phone'), 'phone'),
             Text::make(__('Email'), 'email'),
+            Filepond::make('Image')->disk('public'),
+
             RadioButton::make(__('Training Type'), 'type')
                 ->options([
                     'external' => 'External',

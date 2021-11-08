@@ -158,8 +158,6 @@
       <path value="$PROJECT_DIR$/vendor/armincms/chain" />
       <path value="$PROJECT_DIR$/vendor/whitecube/nova-flexible-content" />
       <path value="$PROJECT_DIR$/vendor/comodolab/nova-help" />
-      <path value="$PROJECT_DIR$/vendor/bakerkretzmar/nova-settings-tool" />
-      <path value="$PROJECT_DIR$/vendor/spatie/valuestore" />
       <path value="$PROJECT_DIR$/vendor/digital-creative/nova-filepond" />
       <path value="$PROJECT_DIR$/vendor/techouse/total-records" />
       <path value="$PROJECT_DIR$/vendor/inspheric/nova-url-field" />

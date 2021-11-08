@@ -22,7 +22,6 @@ use Coroowicaksono\ChartJsIntegration\PieChart;
 use Coroowicaksono\ChartJsIntegration\LineChart;
 use Coroowicaksono\ChartJsIntegration\ScatterChart;
 use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
-use Bakerkretzmar\NovaSettingsTool\SettingsTool;
 use Techouse\TotalRecords\TotalRecords;
 
 
@@ -187,6 +186,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ],
                 ])
                 ->width('2/3'),
+            (new HtmlCard())->width('1/3')->view('trainingsAndSessions'),
 
             (new PieChart())
                 ->title('Gender')
@@ -249,7 +249,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('interns'),
 
 //            if (str_contains(url(''), 'iotkids')){
-            (new HtmlCard())->width('1/3')->view('services'),
+            (new HtmlCard())->width('1/3')->view('services')->canSee(function ($request) {
+                if (str_contains(url(''), 'iotkids')) {
+                    return false;
+                } else if(str_contains(url(''), 'iotmaker')) {
+                    return true;
+                }
+            }),
 
 //            }
 
@@ -257,8 +263,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('products'),
             (new HtmlCard())->width('1/3')->view('trainers'),
 
-
-            (new HtmlCard())->width('1/3')->view('startups'),
+            (new HtmlCard())->width('1/3')->view('startups')->canSee(function ($request) {
+                if (str_contains(url(''), 'iotkids')) {
+                    return false;
+                } else if(str_contains(url(''), 'iotmaker')) {
+                    return true;
+                }
+            }),
 
 
         ];
@@ -286,7 +297,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new NovaImport,
             new NovaSidebarIcons,
-            new SettingsTool,
 //            new \Czemu\NovaCalendarTool\NovaCalendarTool,
 
 

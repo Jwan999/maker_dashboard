@@ -71,7 +71,7 @@
                 @yield('content')
 
                 @if (str_contains(url(''), 'iotkids'))
-                    IoT Kids
+                    <h1 class="mt-4">IoT Kids</h1>
 
                 @elseif (str_contains(url(''), 'iotmaker'))
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">

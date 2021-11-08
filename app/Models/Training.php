@@ -34,9 +34,9 @@ class Training extends Base
         return $this->belongsToMany(Student::class);
     }
 
-    public function trainer()
+    public function trainers()
     {
-        return $this->belongsTo(Trainer::class);
+        return $this->belongsToMany(Trainer::class);
 
     }
 
