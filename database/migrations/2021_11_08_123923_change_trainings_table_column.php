@@ -14,6 +14,7 @@ class ChangeTrainingsTableColumn extends Migration
     public function up()
     {
         Schema::table('trainings', function (Blueprint $table) {
+            $table->dropForeign('trainings_trainer_id_foreign');
             $table->dropColumn('trainer_id');
         });
     }
