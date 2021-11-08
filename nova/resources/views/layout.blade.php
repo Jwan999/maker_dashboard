@@ -76,7 +76,6 @@
                         &copy; {{ date('Y') }} IoT Kids
 
                     </div>
-                    <span class="mt-4">IoT Kids</span>
 
                 @elseif (str_contains(url(''), 'iotmaker'))
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
