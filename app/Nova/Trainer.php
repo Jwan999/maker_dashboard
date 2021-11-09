@@ -3,6 +3,8 @@
 namespace App\Nova;
 
 use Benjacho\BelongsToManyField\BelongsToManyField;
+use Beyondcode\ProductView\ProductView;
+use Beyondcode\TrainerView\TrainerView;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -67,10 +69,10 @@ class Trainer extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->sortable(),
-            Number::make(__('Phone'), 'phone'),
-            Text::make(__('Email'), 'email'),
-            Filepond::make('Image')->disk('public'),
+            Text::make(__('Name'), 'name')->sortable()->hideFromDetail(),
+            Number::make(__('Phone'), 'phone')->hideFromDetail(),
+            Text::make(__('Email'), 'email')->hideFromDetail(),
+            Filepond::make('Image')->disk('public')->hideFromDetail(),
 
             RadioButton::make(__('Training Type'), 'type')
                 ->options([
@@ -82,7 +84,8 @@ class Trainer extends Resource
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
-                ]),
+                ])->hideFromDetail(),
+            TrainerView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
 
         ];
     }

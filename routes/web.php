@@ -21,6 +21,7 @@ Route::get('/welcome', function () {
 
 Route::get('/api/current', [\App\Http\Controllers\TrainingController::class, 'show']);
 Route::get('/api/products', [\App\Http\Controllers\ProductController::class, 'show']);
+Route::get('/api/trainers', [\App\Http\Controllers\TrainerController::class, 'show']);
 
 
 

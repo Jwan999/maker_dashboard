@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19d050437e08121ae546739b910818e1",
+    "content-hash": "28147f6ef4379fa19c4b74ec46162cf4",
     "packages": [
         {
             "name": "acme/date-range",
@@ -349,6 +349,42 @@
             "autoload": {
                 "psr-4": {
                     "Beyondcode\\ProductView\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "beyondcode/trainer-view",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/TrainerView",
+                "reference": "c27fe8a74f23003a605a234d02a9243868925106"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Beyondcode\\TrainerView\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Beyondcode\\TrainerView\\": "src/"
                 }
             },
             "license": [
