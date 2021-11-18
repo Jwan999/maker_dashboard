@@ -101,7 +101,7 @@ class Session extends Resource
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
                 ->falseValue(false),
-            BelongsTo::make(__("Trainer"), "trainers", Trainer::Class),
+//            BelongsTo::make(__("Trainer"), "trainers", Trainer::Class),
 //            Select::make(__("Training Type"),"type")->options([
 //                'course' => 'Course',
 //                'session' => 'Session'
