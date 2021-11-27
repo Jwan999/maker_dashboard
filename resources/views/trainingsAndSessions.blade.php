@@ -49,11 +49,11 @@ $sessions = Training::where('type', 'Session')->get()->count();
     }
 
     .sessions-color {
-        color: var(--info)
+        color: var(--primary)
     }
 
     .trainings-color {
-        color: var(--info-dark)
+        color: var(--primary-dark)
     }
 </style>
 <div class="flex justify-around items-center px-4 py-6 h">
