@@ -421,53 +421,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['resource', 'resourceName', 'resourceId', 'field'],
-  data: function data() {
-    return {
-      products: [],
-      product: {},
-      productIndex: null,
-      lastIndex: null
-    };
-  },
+    props: ['resource', 'resourceName', 'resourceId', 'field'],
 
-  methods: {
-    getProducts: function getProducts() {
-      var _this = this;
-
-      // let id = this.resource.id.value
-      axios.get('/api/products').then(function (response) {
-        _this.products = response.data;
-
-        _this.product = _this.products.filter(function (product) {
-          return product.id == _this.resource.id.value;
-        })[0];
-        _this.productIndex = _this.products.indexOf(_this.product);
-        _this.lastIndex = _this.products.length - 1;
-
-        console.log(_this.product);
-      });
+    data: function data() {
+        return {
+            products: [],
+            product: {},
+            productIndex: null,
+            lastIndex: null
+        };
     },
-    paginate: function paginate(page) {
-      if (page == 'next' && this.productIndex < this.lastIndex) {
 
-        this.product = this.products[this.productIndex + 1];
-        this.productIndex = this.productIndex + 1;
-        console.log(this.product);
-        this.$router.push({ name: "details", resourceName: "products", resourceId: this.product.id });
-        console.log(this.resourceId);
-      } else if (page == 'previous' && this.productIndex >= 1) {
-        this.product = this.products[this.productIndex - 1];
-        this.productIndex = this.productIndex - 1;
-        this.$router.push({ name: "details", resourceName: "products", resourceId: this.product.id });
-      }
+    methods: {
+        getProducts: function getProducts() {
+            var _this = this;
+
+            axios.get('/api/products').then(function (response) {
+                _this.products = response.data;
+
+                _this.product = _this.products.filter(function (product) {
+                    return product.id == _this.resource.id.value;
+                })[0];
+                _this.productIndex = _this.products.indexOf(_this.product);
+                _this.lastIndex = _this.products.length - 1;
+            });
+        },
+        paginate: function paginate(page) {
+            if (page == 'next' && this.productIndex < this.lastIndex) {
+
+                this.product = this.products[this.productIndex + 1];
+                this.productIndex = this.productIndex + 1;
+
+                this.$router.push({
+                    name: 'detail',
+                    params: {
+                        resourceId: this.product.id,
+                        resourceName: "products"
+                    }
+                });
+            } else if (page == 'previous' && this.productIndex >= 1) {
+                this.product = this.products[this.productIndex - 1];
+                this.productIndex = this.productIndex - 1;
+
+                this.$router.push({
+                    name: 'detail',
+                    params: {
+                        resourceId: this.product.id,
+                        resourceName: "products"
+                    }
+                });
+            }
+        }
+    },
+    mounted: function mounted() {
+        this.getProducts();
     }
-  },
-  mounted: function mounted() {
-    this.getProducts();
-  }
 });
 
 /***/ }),
@@ -641,21 +652,27 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n          " + _vm._s(_vm.product.materials) + "\n        "
+                "\n                    " +
+                  _vm._s(_vm.product.materials) +
+                  "\n                "
               )
             ]
           ),
           _vm._v(" "),
           _c("p", { staticClass: "text-gray-700 mt-4" }, [
             _vm._v(
-              "\n          " + _vm._s(_vm.product.description) + "\n        "
+              "\n                    " +
+                _vm._s(_vm.product.description) +
+                "\n                "
             )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "mt-4" }, [
             _c("div", { staticClass: "flex items-center space-x-2" }, [
               _c("h1", { staticClass: "text-gray-500" }, [
-                _vm._v("\n              Design file:\n            ")
+                _vm._v(
+                  "\n                            Design file:\n                        "
+                )
               ]),
               _vm._v(" "),
               _c(
@@ -700,28 +717,32 @@ var render = function() {
                       })
                     ]
                   ),
-                  _vm._v("\n              Download File\n            ")
+                  _vm._v(
+                    "\n                            Download File\n                        "
+                  )
                 ]
               )
             ]),
             _vm._v(" "),
             _c("h1", [
               _c("span", { staticClass: "text-gray-500" }, [
-                _vm._v("\n            Made for:\n            ")
+                _vm._v("\n          Made for:\n          ")
               ]),
               _vm._v(
-                "\n            " + _vm._s(_vm.product.made_for) + "\n          "
+                "\n                        " +
+                  _vm._s(_vm.product.made_for) +
+                  "\n                    "
               )
             ]),
             _vm._v(" "),
             _c("h1", [
               _c("span", { staticClass: "text-gray-500" }, [
-                _vm._v("\n              Machines used:\n            ")
+                _vm._v("\n            Machines used:\n          ")
               ]),
               _vm._v(
-                "\n            " +
+                "\n                        " +
                   _vm._s(_vm.product.machines_used) +
-                  "\n          "
+                  "\n                    "
               )
             ])
           ])
