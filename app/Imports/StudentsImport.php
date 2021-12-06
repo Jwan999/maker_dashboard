@@ -34,7 +34,6 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
                 $model = $old ?: $this->create($data);
                 $this->training->students()->attach($model->id);
-
             }
             DB::commit();
         } catch (\Exception $exception) {

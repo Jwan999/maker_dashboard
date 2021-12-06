@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\StudentsImporter;
 use App\Nova\Metrics\GenderRatio;
 use App\Nova\Metrics\students;
+use Benjacho\BelongsToManyField\BelongsToManyField;
 use Davidpiesse\NovaToggle\Toggle;
 use Gkermer\TextAutoComplete\TextAutoComplete;
 use Illuminate\Http\Request;
@@ -12,9 +13,13 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use OwenMelbz\RadioField\RadioButton;
+use Saumini\Count\RelationshipCount;
 
 class Session extends Resource
 {
@@ -85,43 +90,74 @@ class Session extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id'),
-            Text::make(__('Name'), 'name')->sortable(),
-
+            Text::make(__('Name'), 'name')->sortable()->resolveUsing(function ($attribute, $resource, $requestAttribute) {
+                return $resource->getOriginal("name");
+            }),
+            RelationshipCount::make('Number of students', 'students'),
             Date::make(__('Starting Date'), 'date')->sortable(),
+            Date::make(__('End Date'), 'end_date')->sortable(),
 
             TextAutoComplete::make(__('Duration'), 'period')->items([
-                '1 Hour',
-                '2 Hours',
-                '3 Hours',
-                '4 Hours',
-                '5 Hours',
-                '6 Hours',
-            ]),
+                '1 Month',
+                '1 Day',
+                '2 Months',
+                '2 Days',
+                '3 Months',
+                '3 Days',
+                '4 Months',
+                '4 Days',
+                '5 Months',
+                '5 Days',
+                '6 Months',
+                '6 Days',
+                '7 Days',
+                '8 Days',
+
+            ])->hideFromIndex(),
 
             Toggle::make(__('In Person'), 'in_person')
                 ->trueValue(true)
                 ->falseValue(false),
-//            BelongsTo::make(__("Trainer"), "trainers", Trainer::Class),
-//            Select::make(__("Training Type"),"type")->options([
-//                'course' => 'Course',
-//                'session' => 'Session'
-//            ])->displayUsingLabels(),
+
+            BelongsToMany::make(__("Trainer"), "trainers"),
+            BelongsToManyField::make(__("Trainers"), "trainers", Trainer::Class),
+
             RadioButton::make(__('Training Type'), 'type')
                 ->options([
                     'Course' => 'Course',
                     'Session' => 'Session'
                 ])
-                ->hideFromIndex()
-                ->hideFromDetail()
                 ->hideWhenUpdating()
-                ->default('Session')
+                ->hideFromDetail()
+                ->hideFromIndex()
+                ->default('Course')
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]),
-            BelongsToMany::make('Students'),];
+            BelongsToMany::make('Students'),
+            Select::make('Icon')->options([
+                'cinema_4d' => 'Cinema 4D',
+                '3d' => '3D',
+                'programming' => 'Programming',
+                'cnc' => 'CNC',
+                'crafts' => 'Crafts',
+                'autocad' => 'Autocad',
+                'illustration' => 'Graphic Design',
+                'interface' => 'Finance or Microsoft',
+            ])->hideFromIndex(),
+            Textarea::make(__('Description'), 'description')->hideFromIndex(),
+            Text::make(__('Time'), 'time')->hideFromIndex(),
+            Number::make(__('Number of Lectures'), 'lectures')->hideFromIndex(),
+//            Text::make(__('Date'), 'date'),
+            Text::make(__('Days'), 'days')->hideFromIndex(),
+            Text::make(__('Form link'), 'form_link')->hideFromIndex(),
+            Text::make(__('Paid'), 'paid'),
+
+
+        ];
     }
 
     /**
