@@ -137,18 +137,22 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $sessionsData[] = $sessions->has($month) ? $sessions[$month] : 0;
             $coursesData[] = $courses->has($month) ? $courses[$month] : 0;
         }
-
-//        if (str_contains(url(''), 'iotkids')) {
-//
-//            $primary = '#46C4F9';
-//            $primaryDark = '#F172AB';
-//        } elseif (str_contains(url(''), 'iotmaker')) {
-        $primary = 'var(--primary)';
-        $primaryDark = 'var(--primary-dark)';
-//        } else {
-//            $primary = '#46C4F9';
-//            $primaryDark = '#F172AB';
-//        }
+        if (str_contains(url(''), 'iotkids')) {
+            $primary = '#46C4F9';
+            $primaryDark = '#F172AB';
+        } elseif (str_contains(url(''), 'iotmaker')) {
+            $primary = '#269DDD';
+            $primaryDark = '#fca000';
+        } elseif (str_contains(url(''), 'fallujahmakerspace')) {
+            $primary = '#269DDD';
+            $primaryDark = '#fca000';
+        } elseif (str_contains(url(''), 'erbilmakerspace')) {
+            $primary = '#000000';
+            $primaryDark = '#F04E42';
+        } else {
+            $primary = '#46C4F9';
+            $primaryDark = '#F172AB';
+        }
 
         return [
 
