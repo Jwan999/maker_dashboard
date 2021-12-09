@@ -28,6 +28,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
         DB::beginTransaction();
         try {
             foreach ($collection as $data) {
+
                 $old = Student::where("email", "=", $data["email"])->first();
                 if (!$this->checkRow($data))
                     continue;

@@ -89,6 +89,14 @@
                         {{--                        v{{ \Laravel\Nova\Nova::version() }}--}}
                     </div>
 
+                @elseif(str_contains(url(''), 'fallujahmakerspace'))
+
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+
+                        &copy; {{ date('Y') }} Fallujah Maker Space
+
+                    </div>
+
                 @else
                     You Not A Maker
 
