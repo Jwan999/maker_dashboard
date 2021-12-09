@@ -96,6 +96,13 @@
                         &copy; {{ date('Y') }} Fallujah Maker Space
 
                     </div>
+                @elseif(str_contains(url(''), 'erbilmakerspace'))
+
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+
+                        &copy; {{ date('Y') }} Erbil Maker Space
+
+                    </div>
 
                 @else
                     You Not A Maker

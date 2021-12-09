@@ -4,11 +4,11 @@ if (str_contains(url(''), 'iotkids')) {
     echo '<h1>IoT Kids</h1>';
 } elseif (str_contains(url(''), 'iotmaker')) {
     echo '<h1>IoT Maker</h1>';
-    }
-elseif (str_contains(url(''), 'fallujahmakerspace')) {
+} elseif (str_contains(url(''), 'fallujahmakerspace')) {
     echo '<h1>Fallujah</h1>';
-}
-else{
+} elseif (str_contains(url(''), 'erbilmakerspace')) {
+    echo '<h1>Erbil</h1>';
+} else {
     echo 'You Not A Maker';
 }
 
