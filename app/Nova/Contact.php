@@ -24,6 +24,16 @@ class Contact extends Resource
 ';
     }
 
+    public static function availableForNavigation(Request $request)
+    {
+        if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
     /**
      * The model the resource corresponds to.
      *

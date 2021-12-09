@@ -46,6 +46,9 @@ class StudentsImport implements ToCollection, WithHeadingRow
     public function checkRow($row)
     {
         $pass = null;
+        if(["email"] == null){
+
+        }
         $fields = ["name", "phone", "email"];
         foreach ($fields as $field) {
             $pass = isset($row[$field]) && $row[$field] != null;

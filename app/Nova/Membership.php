@@ -21,7 +21,7 @@ class Membership extends Resource
     public static function icon()
     {
         return '
-        
+
 
 
 <svg class="sidebar-icon" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -42,6 +42,8 @@ class Membership extends Resource
     public static function availableForNavigation(Request $request)
     {
         if (auth()->user()->email == 'iotkids@makershive.org') {
+            return false;
+        } else if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
             return false;
         } else {
             return true;

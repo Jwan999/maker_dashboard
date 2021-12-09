@@ -21,7 +21,7 @@ class Startup extends Resource
     public static function icon()
     {
         return '
-        
+
 <svg class="sidebar-icon" viewBox="0 0 114 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-26" transform="translate(1.000000, 0.999215)" fill="var(--sidebar-icon)" fill-rule="nonzero" stroke="var(--sidebar-icon)" stroke-width="6">
@@ -39,6 +39,8 @@ class Startup extends Resource
     public static function availableForNavigation(Request $request)
     {
         if (auth()->user()->email == 'iotkids@makershive.org') {
+            return false;
+        } else if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
             return false;
         } else {
             return true;

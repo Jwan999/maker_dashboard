@@ -255,6 +255,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 } else if(str_contains(url(''), 'iotmaker')) {
                     return true;
                 }
+                else if(str_contains(url(''), 'fallujahmakerspace')) {
+                    return false;
+                }
             }),
 
 //            }
@@ -269,6 +272,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 } else if(str_contains(url(''), 'iotmaker')) {
                     return true;
                 }
+                else if(str_contains(url(''), 'fallujahmakerspace')) {
+                    return false;
+                }
+
             }),
 
 
