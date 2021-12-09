@@ -22,14 +22,14 @@
     --success: #48bb78;
     --warning: #f6e05e;
     --info: #46c4f9;
-    --primary: #F04E42;
+    --primary: #000000;
     --primary-dark: #F04E42;
     --primary-70: #000000;
     --primary-50: #000000;
     --primary-30: #000000;
     --primary-10: rgba(102, 126, 234, 0.1);
-    --logo: #2d3748;
-    --sidebar-icon: white;
+    --logo: #000;
+    --sidebar-icon: #F04E42;
     --20: #f7fafc;
     --30: #f7fafc;
     --40: #edf2f7;
