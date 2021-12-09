@@ -137,22 +137,19 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $sessionsData[] = $sessions->has($month) ? $sessions[$month] : 0;
             $coursesData[] = $courses->has($month) ? $courses[$month] : 0;
         }
-        if (str_contains(url(''), 'iotkids')) {
-//            --primary: #269DDD;
-//    --primary-dark: #269DDD;
-//            --sidebar-icon: #fca000;
 
-            $primary = '#46C4F9';
-            $primaryDark = '#F172AB';
-        } elseif (str_contains(url(''), 'iotmaker')) {
-            $primary = '#269DDD';
-            $primaryDark = '#fca000';
-        } else {
-            $primary = '#46C4F9';
-            $primaryDark = '#F172AB';
-        }
+//        if (str_contains(url(''), 'iotkids')) {
+//
+//            $primary = '#46C4F9';
+//            $primaryDark = '#F172AB';
+//        } elseif (str_contains(url(''), 'iotmaker')) {
+        $primary = 'var(--primary)';
+        $primaryDark = 'var(--primary-dark)';
+//        } else {
+//            $primary = '#46C4F9';
+//            $primaryDark = '#F172AB';
+//        }
 
-//        dd($coursesData,$sessionsData,$months);
         return [
 
             (new LineChart())
@@ -252,10 +249,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('services')->canSee(function ($request) {
                 if (str_contains(url(''), 'iotkids')) {
                     return false;
-                } else if(str_contains(url(''), 'iotmaker')) {
+                } else if (str_contains(url(''), 'iotmaker')) {
                     return true;
-                }
-                else if(str_contains(url(''), 'fallujahmakerspace')) {
+                } else if (str_contains(url(''), 'fallujahmakerspace')) {
                     return false;
                 }
             }),
@@ -269,10 +265,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('startups')->canSee(function ($request) {
                 if (str_contains(url(''), 'iotkids')) {
                     return false;
-                } else if(str_contains(url(''), 'iotmaker')) {
+                } else if (str_contains(url(''), 'iotmaker')) {
                     return true;
-                }
-                else if(str_contains(url(''), 'fallujahmakerspace')) {
+                } else if (str_contains(url(''), 'fallujahmakerspace')) {
                     return false;
                 }
 
