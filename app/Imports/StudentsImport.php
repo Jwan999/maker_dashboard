@@ -46,9 +46,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
     public function checkRow($row)
     {
         $pass = null;
-        if(["email"] == null){
 
-        }
         $fields = ["name", "phone", "email"];
         foreach ($fields as $field) {
             $pass = isset($row[$field]) && $row[$field] != null;
@@ -62,7 +60,9 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
         $new->name = $data->has("first") ? $data["first"] . " " . $data["second"] . " " . $data["third"] : $data["name"];
         $new->phone = $this->safeGet($data, "phone");
-        $new->email = $this->safeGet($data, "email");
+        $new->email = $data->has("email") ? $data["email"] : $data["phone"] . "@iotkids.org";
+//        $this->safeGet($data, "email")
+
         $new->gender = $this->safeGet($data, "gender");
         $new->field_of_study = $this->safeGet($data, "field_of_study");
 

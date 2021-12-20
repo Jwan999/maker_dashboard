@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OwenMelbz\RadioField\RadioButton;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class Startup extends Resource
@@ -86,6 +87,22 @@ class Startup extends Resource
 
             Filepond::make('Logo')->disk('public'),
             Text::make(__('Startup Name'), 'name'),
+
+            RadioButton::make(__('Startup location'), 'location')
+                ->options([
+                    'Virtual' => 'Virtual',
+                    'In space' => 'In space'
+                ])
+                ->hideWhenUpdating()
+                ->hideFromDetail()
+                ->hideFromIndex()
+                ->default('In space')
+                ->stack() // optional (required to show hints)
+                ->marginBetween() // optional
+                ->skipTransformation() // optional
+                ->toggle([  // optional
+                    1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
+                ]),
 
             Text::make(__('Idea'), 'idea'),
             Date::make(__('Started Since'), 'started_since')->sortable(),

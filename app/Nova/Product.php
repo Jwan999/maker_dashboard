@@ -8,6 +8,7 @@ use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -80,6 +81,7 @@ class Product extends Resource
                 return 'design.' . now() . '.' . $request->file('design')->getClientOriginalExtension();
             })->nullable()->hideFromDetail(),
 
+            Number::make(__('Number of items made'), 'qty')->hideFromDetail(),
 
             Text::make(__('Materials'), 'materials')->hideFromDetail(),
             Text::make(__('Machines used'), 'machines_used')->hideFromDetail(),
