@@ -55,7 +55,7 @@
                     </p>
                 </div>
             </div>
-            {{ startup.founders }}
+            {{ // startup.founders }}
             <div class="mt-6">
                 <div>
                     <!--                    v-for="founder in startup.founders"-->
