@@ -446,6 +446,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -660,11 +661,7 @@ var render = function() {
           _c("img", {
             staticClass:
               "rounded-full shadow object-cover img-border-color h-52 w-52 p-4",
-            attrs: {
-              src:
-                "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png",
-              alt: ""
-            }
+            attrs: { src: "/storage/" + _vm.startup.logo, alt: "" }
           })
         ]),
         _vm._v(" "),
