@@ -43,9 +43,8 @@
             <div class="flex items-center space-x-6">
                 <div class="">
                     <img class="rounded-full shadow object-cover img-border-color h-52 w-52 p-4"
-                         :src="'/storage/' + startup.logo" alt="">
-                    <!--                         src="https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"-->
-
+                         :src="'/storage/'+startup.logo"
+                         alt="">
                 </div>
                 <div class="w-8/12">
 
@@ -55,7 +54,7 @@
                     </p>
                 </div>
             </div>
-            {{ // startup.founders }}
+            <!--            {{ startup.founders }}-->
             <div class="mt-6">
                 <div>
                     <!--                    v-for="founder in startup.founders"-->
