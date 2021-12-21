@@ -43,11 +43,12 @@
             <div class="flex items-center space-x-6">
                 <div class="">
                     <img class="rounded-full shadow object-cover img-border-color h-52 w-52 p-4"
-                         src="https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"
-                         alt="">
+                         :src="'/storage/' + startup.logo" alt="">
+                    <!--                         src="https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"-->
+
                 </div>
                 <div class="w-8/12">
-                    <!--:src="'/storage/' + startup.logo"-->
+
                     <h1 class="text-3xl text-gray-900">{{ startup.name }}</h1>
                     <p class="text-lg text-gray-700">
                         {{ startup.idea }}
