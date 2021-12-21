@@ -27456,7 +27456,7 @@ exports = module.exports = __webpack_require__(15)(false);
 
 
 // module
-exports.push([module.i, "\n.img-border-color {\n    border: 5px solid var(--primary-dark);\n}\n", ""]);
+exports.push([module.i, "\n.img-border-color {\n    border: 5px solid var(--primary-10);\n}\n", ""]);
 
 // exports
 
