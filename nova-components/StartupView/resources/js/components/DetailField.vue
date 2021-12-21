@@ -49,7 +49,7 @@
                 <div class="w-8/12">
 
                     <h1 class="text-3xl text-gray-900">{{ startup.name }}</h1>
-                    <p class="text-lg text-gray-700">
+                    <p class="text-lg text-gray-700 mt-3">
                         {{ startup.idea }}
                     </p>
                 </div>

@@ -669,7 +669,7 @@ var render = function() {
             _vm._v(_vm._s(_vm.startup.name))
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-lg text-gray-700" }, [
+          _c("p", { staticClass: "text-lg text-gray-700 mt-3" }, [
             _vm._v(
               "\n                    " +
                 _vm._s(_vm.startup.idea) +
