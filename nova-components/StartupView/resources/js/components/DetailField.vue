@@ -1,6 +1,6 @@
 <style>
 .img-border-color {
-    border: 5px solid var(--primary-dark);
+    border: 5px solid var(--primary-10);
 }
 </style>
 
