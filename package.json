@@ -15,7 +15,9 @@
         "build-product-view": "cd nova-components/ProductView && npm run dev",
         "build-product-view-prod": "cd nova-components/ProductView && npm run prod",
         "build-trainer-view": "cd nova-components/TrainerView && npm run dev",
-        "build-trainer-view-prod": "cd nova-components/TrainerView && npm run prod"
+        "build-trainer-view-prod": "cd nova-components/TrainerView && npm run prod",
+        "build-startup-view": "cd nova-components/StartupView && npm run dev",
+        "build-startup-view-prod": "cd nova-components/StartupView && npm run prod"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.0",

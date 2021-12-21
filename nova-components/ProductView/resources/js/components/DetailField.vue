@@ -72,18 +72,11 @@
                             </a>
                         </div>
 
-                        <h1>
-              <span class="text-gray-500">
-              Made for:
-              </span>
-                            {{ product.made_for }}
-                        </h1>
-                        <h1>
-              <span class="text-gray-500">
-                Machines used:
-              </span>
-                            {{ product.machines_used }}
-                        </h1>
+                        <h1><span class="text-gray-500">Made for:</span>{{ product.made_for }}</h1>
+                        <h1><span class="text-gray-500">Machines used:</span>{{ product.machines_used }}</h1>
+                        <h1><span class="text-gray-500">Price:</span>{{ product.price }}</h1>
+                        <h1><span class="text-gray-500">Quantity:</span>{{ product.qty }}</h1>
+
                     </div>
                     <!--    <panel-item :field="field"/>-->
                 </div>

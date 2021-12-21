@@ -16,6 +16,7 @@
         "armincms/chain": "^0.4.2",
         "benjacho/belongs-to-many-field": "^2.0",
         "beyondcode/product-view": "*",
+        "beyondcode/trainer-view": "*",
         "comodolab/nova-help": "^0.4.0",
         "coroowicaksono/chart-js-integration": "^0.3.4",
         "creagia/nova-percentage-card": "^2.1",
@@ -43,8 +44,9 @@
         "saumini/count": "^1.0",
         "simplesquid/nova-advanced-number-field": "^2.0",
         "techouse/total-records": "^1.3",
+        "treestoneit/text-wrap": "^1.1",
         "whitecube/nova-flexible-content": "^0.2.8",
-        "beyondcode/trainer-view": "*"
+        "beyondcode/startup-view": "*"
     },
     "repositories": [
         {
@@ -70,6 +72,10 @@
         {
             "type": "path",
             "url": "./nova-components/TrainerView"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/StartupView"
         }
     ],
     "require-dev": {

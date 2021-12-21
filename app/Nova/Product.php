@@ -99,7 +99,10 @@ class Product extends Resource
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ])->hideFromDetail(),
+            Text::make(__('Price'), 'price')->hideFromDetail(),
+
             ProductView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
+
         ];
     }
 

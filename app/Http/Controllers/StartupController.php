@@ -46,7 +46,8 @@ class StartupController extends Controller
      */
     public function show(Startup $startup)
     {
-        //
+        $startups = Startup::all();
+        return json_encode($startups);
     }
 
     /**

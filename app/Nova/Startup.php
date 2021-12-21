@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
 use App\Others\FixedFilepondController;
+use Beyondcode\StartupView\StartupView;
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -85,8 +86,8 @@ class Startup extends Resource
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
 
-            Filepond::make('Logo')->disk('public'),
-            Text::make(__('Startup Name'), 'name'),
+            Filepond::make('Logo')->disk('public')->hideFromDetail(),
+            Text::make(__('Startup Name'), 'name')->hideFromDetail(),
 
             RadioButton::make(__('Startup location'), 'location')
                 ->options([
@@ -102,12 +103,12 @@ class Startup extends Resource
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
-                ]),
+                ])->hideFromDetail(),
 
-            Text::make(__('Idea'), 'idea'),
-            Date::make(__('Started Since'), 'started_since')->sortable(),
-            Url::make(__('Facebook'), 'facebook')->clickable(),
-            Url::make(__('Insta'), 'insta')->clickable(),
+            Text::make(__('Idea'), 'idea')->hideFromDetail(),
+            Date::make(__('Started Since'), 'started_since')->sortable()->hideFromDetail(),
+            Url::make(__('Facebook'), 'facebook')->clickable()->hideFromDetail(),
+            Url::make(__('Insta'), 'insta')->clickable()->hideFromDetail(),
 
 
             Flexible::make('Founders')
@@ -116,8 +117,8 @@ class Startup extends Resource
                     Text::make('Email'),
                     Text::make('Number'),
 
-                ])->button('Add another founder'),
-
+                ])->button('Add another founder')->hideFromDetail(),
+            StartupView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
 
         ];
     }

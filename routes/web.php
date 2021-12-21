@@ -23,5 +23,6 @@ Route::get('/api/current', [\App\Http\Controllers\TrainingController::class, 'sh
 Route::get('/api/products', [\App\Http\Controllers\ProductController::class, 'show']);
 Route::get('/api/trainers', [\App\Http\Controllers\TrainerController::class, 'show']);
 
+Route::get('/api/startups', [\App\Http\Controllers\StartupController::class, 'show']);
 
 
