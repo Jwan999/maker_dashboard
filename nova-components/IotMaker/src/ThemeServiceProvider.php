@@ -21,7 +21,7 @@ class ThemeServiceProvider extends ServiceProvider
             } elseif (str_contains(url(''), 'iotmaker')) {
                 Nova::theme(asset('/css/iotmaker.css?v=1'));
             } elseif (str_contains(url(''), 'fallujahmakerspace')) {
-                Nova::theme(asset('/css/fallujah.css?v=1'));
+                Nova::theme(asset('/css/fallujah.css?v=2'));
             } elseif (str_contains(url(''), 'erbilmakerspace')) {
                 Nova::theme(asset('/css/erbil.css?v=2'));
             } else {
