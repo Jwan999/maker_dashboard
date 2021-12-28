@@ -21,15 +21,15 @@
     --danger: #f56565;
     --success: #48bb78;
     --warning: #f6e05e;
-    --info: #46c4f9;
-    --primary: #46C4F9;
-    --primary-dark: #F172AB;
-    --primary-70: #3fb0e0;
-    --primary-50: #389dc7;
-    --primary-30: #389dc7;
+    --info: #2d3748;
+    --primary: #2d3748;
+    --primary-dark: #233881;
+    --primary-70: #2d3748;
+    --primary-50: #293241;
+    --primary-30: #242c3a;
     --primary-10: rgba(102, 126, 234, 0.1);
     --logo: #2d3748;
-    --sidebar-icon: #F172AB;
+    --sidebar-icon: #F6C556;
     --20: #f7fafc;
     --30: #f7fafc;
     --40: #edf2f7;
@@ -51,16 +51,16 @@
 
 .bg-grad-sidebar {
     background-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            from(#2d3748),
-            to(#2d3748)
+        linear,
+        left bottom,
+        left top,
+        from(#2d3748),
+        to(#2d3748)
     );
 
     background-image: linear-gradient(
-            0deg,
-            #2d3748,
-            #2d3748
+        0deg,
+        #2d3748,
+        #2d3748
     );
 }
