@@ -54,13 +54,13 @@
         linear,
         left bottom,
         left top,
-        from(#2d3748),
-        to(#2d3748)
+        from(#252525),
+        to(#252525)
     );
 
     background-image: linear-gradient(
         0deg,
-        #2d3748,
-        #2d3748
+        #252525,
+        #252525
     );
 }
