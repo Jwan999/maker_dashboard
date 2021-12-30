@@ -6,6 +6,8 @@ if (str_contains(url(''), 'iotkids')) {
     echo '<h1>IoT Maker</h1>';
 } elseif (str_contains(url(''), 'fallujahmakerspace')) {
     echo '<h1>Fallujah</h1>';
+} elseif (str_contains(url(''), 'maarifmakerspace')) {
+    echo '<h1>Maarif</h1>';
 } elseif (str_contains(url(''), '3dworld')) {
     echo '<h1>3D World</h1>';
 } elseif (str_contains(url(''), 'sulimakerspace')) {

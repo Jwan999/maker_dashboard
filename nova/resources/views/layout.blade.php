@@ -90,9 +90,9 @@
                         {{--                                            <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
                         {{--    <span class="px-1">&middot;</span>--}}
                         &copy; {{ date('Y') }} IoT Maker partnered with
-                        <div class="w-16 mx-4">
-                            <img src="/fieldready.png" alt="test">
-                        </div>
+                        {{--                        <div class="w-16 mx-4">--}}
+                        {{--                            <img src="/fieldready.png" alt="test">--}}
+                        {{--                        </div>--}}
                         {{--    <span class="px-1">&middot;<    /span>--}}
                         {{--                        v{{ \Laravel\Nova\Nova::version() }}--}}
                     </div>
@@ -102,6 +102,13 @@
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
 
                         &copy; {{ date('Y') }} Fallujah Maker Space
+
+                    </div>
+                @elseif(str_contains(url(''), 'maarifmakerspace'))
+
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+
+                        &copy; {{ date('Y') }} Maarif Maker Space
 
                     </div>
                 @elseif(str_contains(url(''), '3dworld'))
