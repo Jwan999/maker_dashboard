@@ -6,7 +6,10 @@ if (str_contains(url(''), 'iotkids')) {
     echo '<h1>IoT Maker</h1>';
 } elseif (str_contains(url(''), 'fallujahmakerspace')) {
     echo '<h1>Fallujah</h1>';
-} elseif (str_contains(url(''), 'erbilmakerspace')) {
+}elseif (str_contains(url(''), 'sulimakerspace')) {
+    echo '<h1>Suli</h1>';
+}
+elseif (str_contains(url(''), 'erbilmakerspace')) {
     echo '<h1>Erbil</h1>';
 } else {
     echo 'You Not A Maker';

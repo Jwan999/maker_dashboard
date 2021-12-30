@@ -146,6 +146,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
             $primary = '#0C0C0C';
             $primaryDark = '#FFAF13';
+        } elseif (str_contains(url(''), 'maarifmakerspace')) {
+            $primary = '#0C0C0C';
+            $primaryDark = '#FFAF13';
+
+        } elseif (str_contains(url(''), 'sulimakerspace')) {
+            $primary = '#018881';
+            $primaryDark = '#67CEF7';
+
         } elseif (str_contains(url(''), 'erbilmakerspace')) {
             $primary = '#000000';
             $primaryDark = '#F04E42';
