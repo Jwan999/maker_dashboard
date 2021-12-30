@@ -22,14 +22,14 @@
     --success: #48bb78;
     --warning: #f6e05e;
     --info: #46c4f9;
-    --primary: #FFAF13;
-    --primary-dark: #0C0C0C;
-    --primary-70: #0C0C0C;
-    --primary-50: #242424;
-    --primary-30: #242424;
-    --primary-10: #3d3d3d;
-    --logo: #0C0C0C;
-    --sidebar-icon: #FFAF13;
+    --primary: #4364A5;
+    --primary-dark: #EF5642;
+    --primary-70: #041016;
+    --primary-50: #1d282d;
+    --primary-30: #1d282d;
+    --primary-10: #364045;
+    --logo: #041016;
+    --sidebar-icon: #EF5642;
     --20: #f7fafc;
     --30: #f7fafc;
     --40: #edf2f7;
@@ -54,13 +54,13 @@
         linear,
         left bottom,
         left top,
-        from(#0C0C0C),
-        to(#0C0C0C)
+        from(#041016),
+        to(#041016)
     );
 
     background-image: linear-gradient(
         0deg,
-        #0C0C0C,
-        #0C0C0C
+        #041016,
+        #041016
     );
 }

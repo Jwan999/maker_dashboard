@@ -104,6 +104,13 @@
                         &copy; {{ date('Y') }} Fallujah Maker Space
 
                     </div>
+                @elseif(str_contains(url(''), '3dworld'))
+
+                    <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
+
+                        &copy; {{ date('Y') }} 3D World Maker Space
+
+                    </div>
                 @elseif(str_contains(url(''), 'sulimakerspace'))
 
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
