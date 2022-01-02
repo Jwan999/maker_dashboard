@@ -3,9 +3,14 @@
 use App\Models\Student;
 
 //dd($allStudents)
-$percentage = number_format((float)Student::where('governorate', 'Baghdad')->count() / Student::all()->count() * 100, 2, '.', '');
+if (Student::get()->count() == 0) {
+    $percentage = 00;
+    $students = 0;
+} else {
+    $percentage = number_format((float)Student::where('governorate', 'Baghdad')->count() / Student::all()->count() * 100, 2, '.', '');
+    $students = Student::get()->count();
+}
 
-$students = Student::get()->count();
 
 //if ($percentage == 0) ; $percentage = 3;
 

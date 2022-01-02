@@ -146,11 +146,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
             $primary = '#0C0C0C';
             $primaryDark = '#FFAF13';
-        }elseif (str_contains(url(''), '3dworld')) {
+        } elseif (str_contains(url(''), '3dworld')) {
             $primary = '#4364A5';
             $primaryDark = '#EF5642';
-        }
-        elseif (str_contains(url(''), 'maarifmakerspace')) {
+        } elseif (str_contains(url(''), 'maarifmakerspace')) {
             $primary = '#0C0C0C';
             $primaryDark = '#FFAF13';
 
@@ -165,6 +164,31 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#46C4F9';
             $primaryDark = '#F172AB';
         }
+        $total = count(Student::get());
+
+        if ($total < 1) {
+            $femalePercentage = 0;
+            $malePercentage = 0;
+        } else {
+
+            $femalePercentage = number_format((float)count(Student::where('gender', 'female')->get()) / $total * 100);
+            $malePercentage = number_format((float)count(Student::where('gender', 'male')->get()) / $total * 100);
+
+        }
+        $totalAge = count(Student::get());
+
+        if ($totalAge < 1) {
+            $young = 0;
+            $old = 0;
+            $older = 0;
+
+        } else {
+            $young = Student::whereBetween('age', ['15', '19'])->count() / $totalAge * 100;
+            $old = Student::whereBetween('age', ['19', '25'])->count() / $totalAge * 100;
+            $older = Student::whereBetween('age', ['25', '35'])->count() / $totalAge * 100;
+
+        }
+
 
         return [
 
@@ -201,13 +225,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->width('2/3'),
             (new HtmlCard())->width('1/3')->view('trainingsAndSessions'),
 
+
             (new PieChart())
                 ->title('Gender')
                 ->series(array([
 
-                    $total = count(Student::get()),
-                    $femalePercentage = number_format((float)count(Student::where('gender', 'female')->get()) / $total * 100),
-                    $malePercentage = number_format((float)count(Student::where('gender', 'male')->get()) / $total * 100),
+//                    $total = count(Student::get()),
+//                    $femalePercentage = number_format((float)count(Student::where('gender', 'female')->get()) / $total * 100),
+//                    $malePercentage = number_format((float)count(Student::where('gender', 'male')->get()) / $total * 100),
 
                     'data' => [$femalePercentage, $malePercentage],
                     'backgroundColor' => [$primary, $primaryDark],
@@ -231,10 +256,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         'label' => 'Age %',
                         'backgroundColor' => $primary,
 //dd($studentsAges),
-                        $totalAge = count(Student::get()),
-                        $young = Student::whereBetween('age', ['15', '19'])->count() / $totalAge * 100,
-                        $old = Student::whereBetween('age', ['19', '25'])->count() / $totalAge * 100,
-                        $older = Student::whereBetween('age', ['25', '35'])->count() / $totalAge * 100,
+//                        $totalAge = count(Student::get()),
+//                        $young = Student::whereBetween('age', ['15', '19'])->count() / $totalAge * 100,
+//                        $old = Student::whereBetween('age', ['19', '25'])->count() / $totalAge * 100,
+//                        $older = Student::whereBetween('age', ['25', '35'])->count() / $totalAge * 100,
 
                         'data' => [
                             number_format($young), number_format($old), number_format($older)
