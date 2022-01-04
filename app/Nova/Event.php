@@ -49,7 +49,7 @@ class Event extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -57,7 +57,7 @@ class Event extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -70,9 +70,9 @@ class Event extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Textarea::make(__('Description'), 'description')->rows(4),
-            Date::make(__('Starting Date'), 'date')->sortable(),
+            Text::make(__('Name'), 'name')->required(),
+            Textarea::make(__('Description'), 'description')->rows(4)->required(),
+            Date::make(__('Starting Date'), 'date')->sortable()->required(),
             TextAutoComplete::make(__('Duration'), 'duration')->items([
                 '1 Hour',
                 '2 Hours',
@@ -80,10 +80,10 @@ class Event extends Resource
                 '4 Hours',
                 '5 Hours',
                 '6 Hours',
-            ]),
-            Text::make(__('Organizers'), 'organizers'),
-            Text::make(__('Location'), 'location'),
-            Number::make(__('Number Of Participants'), 'number_of_participants'),
+            ])->required(),
+            Text::make(__('Organizers'), 'organizers')->required(),
+            Text::make(__('Location'), 'location')->required(),
+            Number::make(__('Number Of Participants'), 'number_of_participants')->required(),
 
             BelongsToMany::make('attendees'),
 

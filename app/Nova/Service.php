@@ -59,7 +59,7 @@ class Service extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -67,7 +67,7 @@ class Service extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name'
     ];
 
     /**
@@ -80,14 +80,14 @@ class Service extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Textarea::make(__('Description'), 'description'),
-            Text::make(__('Beneficiary'), 'beneficiary'),
-            Text::make(__('Price'), 'price'),
+            Text::make(__('Name'), 'name')->required(),
+            Textarea::make(__('Description'), 'description')->required(),
+            Text::make(__('Beneficiary'), 'beneficiary')->required(),
+            Text::make(__('Price'), 'price')->required(),
 
             File::make(__('File'), 'file')->disk('public')->storeAs(function (Request $request) {
                 return 'file.' . now() . '.' . $request->file('file')->getClientOriginalExtension();
-            })->nullable(),
+            })->nullable()->required(),
 
         ];
     }

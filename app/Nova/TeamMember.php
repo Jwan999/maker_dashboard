@@ -15,7 +15,7 @@ class TeamMember extends Resource
     public static function icon()
     {
         return '
-        
+
 <svg class="sidebar-icon" viewBox="0 0 480 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="partnership" transform="translate(2.000000, 2.000000)" fill="var(--sidebar-icon)" fill-rule="nonzero" stroke="var(--sidebar-icon)" stroke-width="10">
@@ -40,7 +40,7 @@ class TeamMember extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -48,7 +48,6 @@ class TeamMember extends Resource
      * @var array
      */
     public static $search = [
-        'id',
         'name',
     ];
 
@@ -61,12 +60,12 @@ class TeamMember extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Residence'), 'residence')->sortable(),
-            Number::make(__('Phone'), 'phone'),
-            Text::make(__('Email'), 'email'),
-            Date::make(__('Employment date'), 'employment_date')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
+            Text::make(__('Name'), 'name')->sortable()->required(),
+            Text::make(__('Residence'), 'residence')->sortable()->required(),
+            Number::make(__('Phone'), 'phone')->required(),
+            Text::make(__('Email'), 'email')->required(),
+            Date::make(__('Employment date'), 'employment_date')->sortable()->required(),
             Textarea::make(__('Recent Accomplishment'), 'recent_accomplishment'),
             Textarea::make(__('Qualifications'), 'qualifications'),
             Textarea::make(__('Past Positions'), 'past_positions'),

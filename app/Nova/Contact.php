@@ -46,7 +46,7 @@ class Contact extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -54,7 +54,7 @@ class Contact extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -67,11 +67,11 @@ class Contact extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Text::make(__('Position'), 'position'),
-            Text::make(__('Location'), 'location'),
-            Text::make(__('Email'), 'email')->default('test'),
-            Text::make(__('Number'), 'number'),
+            Text::make(__('Name'), 'name')->required(),
+            Text::make(__('Position'), 'position')->required(),
+            Text::make(__('Location'), 'location')->required(),
+            Text::make(__('Email'), 'email')->required(),
+            Text::make(__('Number'), 'number')->required(),
 
         ];
     }

@@ -55,7 +55,7 @@ class Contest extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -63,7 +63,7 @@ class Contest extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','name'
     ];
 
     /**
@@ -77,13 +77,13 @@ class Contest extends Resource
         return [
 
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name'),
-            Textarea::make(__('Description'), 'description'),
-            Date::make(__('Starting Date'), 'date')->sortable(),
-            Text::make(__('Prize'), 'prize'),
-            Text::make(__('Sponsors'), 'sponsors'),
-            Text::make(__('Organizers'), 'organizers'),
-            Text::make(__('Partners'), 'partners'),
+            Text::make(__('Name'), 'name')->required(),
+            Textarea::make(__('Description'), 'description')->required(),
+            Date::make(__('Starting Date'), 'date')->sortable()->required(),
+            Text::make(__('Prize'), 'prize')->required(),
+            Text::make(__('Sponsors'), 'sponsors')->required(),
+            Text::make(__('Organizers'), 'organizers')->required(),
+            Text::make(__('Partners'), 'partners')->required(),
 
 
         ];

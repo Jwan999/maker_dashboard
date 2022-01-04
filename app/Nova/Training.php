@@ -91,41 +91,41 @@ class Training extends Resource
 //            ID::make(__('ID'), 'id'),
             Text::make(__('Name'), 'name')->sortable()->resolveUsing(function ($attribute, $resource, $requestAttribute) {
                 return $resource->getOriginal("name");
-            }),
+            })->required(),
             RelationshipCount::make('Number of students', 'students'),
-            Date::make(__('Starting Date'), 'date')->sortable(),
-            Date::make(__('End Date'), 'end_date')->sortable(),
+            Date::make(__('Starting Date'), 'date')->sortable()->required(),
+            Date::make(__('End Date'), 'end_date')->sortable()->required(),
 
-            TextAutoComplete::make(__('Duration'), 'period')->items([
-                '1 Month',
-                '1 Day',
-                '2 Months',
-                '2 Days',
-                '3 Months',
-                '3 Days',
-                '4 Months',
-                '4 Days',
-                '5 Months',
-                '5 Days',
-                '6 Months',
-                '6 Days',
-                '7 Days',
-                '8 Days',
+//            TextAutoComplete::make(__('Duration'), 'period')->items([
+//                '1 Month',
+//                '1 Day',
+//                '2 Months',
+//                '2 Days',
+//                '3 Months',
+//                '3 Days',
+//                '4 Months',
+//                '4 Days',
+//                '5 Months',
+//                '5 Days',
+//                '6 Months',
+//                '6 Days',
+//                '7 Days',
+//                '8 Days',
+//
+//            ])->hideFromIndex(),
 
-            ])->hideFromIndex(),
-
-            Toggle::make(__('In Person'), 'in_person')
+            Toggle::make(__('In Person'), 'in_person')->required()
                 ->trueValue(true)
                 ->falseValue(false),
 
-            BelongsToMany::make(__("Trainer"), "trainers"),
-            BelongsToManyField::make(__("Trainers"), "trainers", Trainer::Class),
+//            BelongsToMany::make(__("Trainer"), "trainers"),
+            BelongsToManyField::make(__("Trainers"), "trainers", Trainer::Class)->required(),
 
             RadioButton::make(__('Training Type'), 'type')
                 ->options([
                     'Course' => 'Course',
                     'Session' => 'Session'
-                ])
+                ])->required()
                 ->hideWhenUpdating()
                 ->hideFromDetail()
                 ->hideFromIndex()
@@ -137,23 +137,23 @@ class Training extends Resource
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ]),
             BelongsToMany::make('Students'),
-            Select::make('Icon')->options([
-                'cinema_4d' => 'Cinema 4D',
-                '3d' => '3D',
-                'programming' => 'Programming',
-                'cnc' => 'CNC',
-                'crafts' => 'Crafts',
-                'autocad' => 'Autocad',
-                'illustration' => 'Graphic Design',
-                'interface' => 'Finance or Microsoft',
-            ])->hideFromIndex(),
-            Textarea::make(__('Description'), 'description')->hideFromIndex(),
-            Text::make(__('Time'), 'time')->hideFromIndex(),
+//            Select::make('Icon')->options([
+//                'cinema_4d' => 'Cinema 4D',
+//                '3d' => '3D',
+//                'programming' => 'Programming',
+//                'cnc' => 'CNC',
+//                'crafts' => 'Crafts',
+//                'autocad' => 'Autocad',
+//                'illustration' => 'Graphic Design',
+//                'interface' => 'Finance or Microsoft',
+//            ])->hideFromIndex(),
+            Textarea::make(__('Description'), 'description')->hideFromIndex()->required(),
+            Text::make(__('Training hours'), 'time')->hideFromIndex(),
             Number::make(__('Number of Lectures'), 'lectures')->hideFromIndex(),
 //            Text::make(__('Date'), 'date'),
-            Text::make(__('Days'), 'days')->hideFromIndex(),
+            Text::make(__('Training days'), 'days')->hideFromIndex(),
             Text::make(__('Form link'), 'form_link')->hideFromIndex(),
-            Text::make(__('Paid'), 'paid'),
+            Text::make(__('Paid'), 'paid')->required(),
 
 
         ];

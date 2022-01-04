@@ -83,9 +83,9 @@ class Membership extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton(),
-            Date::make(__('Starts at'), 'starts_at')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
+            BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton()->required(),
+            Date::make(__('Starts at'), 'starts_at')->sortable()->required(),
             Select::make(__('Duration'), 'duration')->options([
                 1 => '1 Month',
                 2 => '2 Months',
@@ -93,14 +93,14 @@ class Membership extends Resource
                 4 => '4 Months',
                 5 => '5 Months',
                 6 => '6 Months',
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->required(),
 
 
             RadioButton::make(__('Membership type'), 'type')
                 ->options([
                     'Golden Membership' => 'Golden Membership',
                     'Silver Membership' => 'Silver Membership'
-                ])
+                ])->required()
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional
                 ->skipTransformation() // optional

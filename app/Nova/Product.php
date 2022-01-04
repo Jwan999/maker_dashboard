@@ -68,9 +68,9 @@ class Product extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->hideFromDetail(),
-            Textarea::make(__('Description'), 'description')->hideFromDetail(),
-            Filepond::make('Image')->disk('public')->hideFromDetail(),
+            Text::make(__('Name'), 'name')->hideFromDetail()->required(),
+            Textarea::make(__('Description'), 'description')->hideFromDetail()->required(),
+            Filepond::make('Image')->disk('public')->hideFromDetail()->required(),
 //                ->storeAs(function (Request $request) { // this is optional, use in case you need generate custom file names
 ////                dd($request);
 //                return Str::random(20) . '.' . $request->file->getExtension();
@@ -79,12 +79,12 @@ class Product extends Resource
 
             File::make(__('Design file'), 'design')->disk('public')->storeAs(function (Request $request) {
                 return 'design.' . now() . '.' . $request->file('design')->getClientOriginalExtension();
-            })->nullable()->hideFromDetail(),
+            })->nullable()->hideFromDetail()->required(),
 
-            Number::make(__('Number of items made'), 'qty')->hideFromDetail(),
+            Number::make(__('Number of items made'), 'qty')->hideFromDetail()->required(),
 
-            Text::make(__('Materials'), 'materials')->hideFromDetail(),
-            Text::make(__('Machines used'), 'machines_used')->hideFromDetail(),
+            Text::make(__('Materials'), 'materials')->hideFromDetail()->required(),
+            Text::make(__('Machines used'), 'machines_used')->hideFromDetail()->required(),
 
             RadioButton::make(__('Made for'), 'made_for')
                 ->options([
@@ -92,14 +92,14 @@ class Product extends Resource
                     'Startup support' => 'Startup support',
                     'Company use' => 'Company use'
 
-                ])
+                ])->required()
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ])->hideFromDetail(),
-            Text::make(__('Price'), 'price')->hideFromDetail(),
+            Text::make(__('Price'), 'price')->hideFromDetail()->required(),
 
             ProductView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
 

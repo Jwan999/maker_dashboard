@@ -86,8 +86,8 @@ class Startup extends Resource
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
 
-            Filepond::make('Logo')->disk('public')->hideFromDetail(),
-            Text::make(__('Startup Name'), 'name')->hideFromDetail(),
+            Filepond::make('Logo')->disk('public')->hideFromDetail()->required(),
+            Text::make(__('Startup Name'), 'name')->hideFromDetail()->required(),
 
             RadioButton::make(__('Startup location'), 'location')
                 ->options([
@@ -103,12 +103,12 @@ class Startup extends Resource
                 ->skipTransformation() // optional
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
-                ])->hideFromDetail(),
+                ])->hideFromDetail()->required(),
 
-            Text::make(__('Idea'), 'idea')->hideFromDetail(),
-            Date::make(__('Started Since'), 'started_since')->sortable()->hideFromDetail(),
-            Url::make(__('Facebook'), 'facebook')->clickable()->hideFromDetail(),
-            Url::make(__('Insta'), 'insta')->clickable()->hideFromDetail(),
+            Text::make(__('Idea'), 'idea')->hideFromDetail()->required(),
+            Date::make(__('Started Since'), 'started_since')->sortable()->hideFromDetail()->required(),
+            Url::make(__('Facebook'), 'facebook')->clickable()->hideFromDetail()->required(),
+            Url::make(__('Insta'), 'insta')->clickable()->hideFromDetail()->required(),
 
 
             Flexible::make('Founders')
@@ -117,7 +117,7 @@ class Startup extends Resource
                     Text::make('Email'),
                     Text::make('Number'),
 
-                ])->button('Add another founder')->hideFromDetail(),
+                ])->button('Add a founder')->hideFromDetail()->required(),
             StartupView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
 
         ];

@@ -75,10 +75,10 @@ class Story extends Resource
 //            ID::make(__('ID'), 'id')->sortable(),
             Filepond::make('Image')->disk('public'),
 
-            Text::make(__('Name'), 'name'),
-            Text::make(__('Phone'), 'phone'),
-            Text::make(__('Email'), 'Email'),
-            Textarea::make(__('Story'), 'story'),
+            Text::make(__('Name'), 'name')->required(),
+            Text::make(__('Phone'), 'phone')->required(),
+            Text::make(__('Email'), 'Email')->required(),
+            Textarea::make(__('Story'), 'story')->required(),
 
         ];
     }

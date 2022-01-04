@@ -4,10 +4,10 @@ use App\Models\Student;
 
 //dd($allStudents)
 if (Student::get()->count() == 0) {
-    $percentage = 00;
+//    $percentage = 00;
     $students = 0;
 } else {
-    $percentage = number_format((float)Student::where('governorate', 'Baghdad')->count() / Student::all()->count() * 100, 2, '.', '');
+//    $percentage = number_format((float)Student::where('governorate', 'Baghdad')->count() / Student::all()->count() * 100, 2, '.', '');
     $students = Student::get()->count();
 }
 
@@ -62,12 +62,12 @@ if (Student::get()->count() == 0) {
         </p>
 
     </div>
-    <div>
-        <h1 class="text-4xl mt-2">
-            {{$percentage }} %
-        </h1>
-        <p>
-            Students from baghdad
-        </p>
-    </div>
+{{--    <div>--}}
+{{--        <h1 class="text-4xl mt-2">--}}
+{{--            {{$percentage }} %--}}
+{{--        </h1>--}}
+{{--        <p>--}}
+{{--            Students from baghdad--}}
+{{--        </p>--}}
+{{--    </div>--}}
 </div>

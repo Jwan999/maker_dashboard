@@ -72,12 +72,12 @@ class Recommendation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+//            ID::make(__('ID'), 'id')->sortable(),
 //            BelongsTo::make(__("Recommender"), "recommender", \App\Models\Trainer::class),
-            BelongsTo::make('Recommender', 'recommender', 'App\Nova\Trainer'),
-            NovaBelongsToDepend::make('Training')
+            BelongsTo::make('Recommender', 'recommender', 'App\Nova\Trainer')->required(),
+            NovaBelongsToDepend::make('Training')->required()
                 ->options(\App\Models\Training::all()),
-            NovaBelongsToDepend::make('Student')
+            NovaBelongsToDepend::make('Student')->required()
                 ->optionsResolve(function ($training) {
                     return $training->students;
                 })
@@ -86,7 +86,7 @@ class Recommendation extends Resource
 
 //            BelongsTo::make("", "student", Student::Class)->searchable(),
 //            BelongsTo::make("Training", "training", Training::Class)->searchable(),
-            Textarea::make(__('Recommendation'), 'recommendation'),
+            Textarea::make(__('Recommendation'), 'recommendation')->required(),
         ];
     }
 
