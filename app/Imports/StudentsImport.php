@@ -58,9 +58,10 @@ class StudentsImport implements ToCollection, WithHeadingRow
     {
         $new = new Student;
 
-        $new->name = $data->has("first") ? $data["first"] . " " . $data["second"] . " " . $data["third"] : $data["name"];
+        $new->name = $data->has("first") ? $data["first"] . " " . $data["second"] . " " . $data["third"] : $data["first"];
         $new->phone = $this->safeGet($data, "phone");
-        $new->email = $data->has("email") ? $data["email"] : $data["phone"] . "@iotkids.org";
+        $new->email = $data->has("email") && $data["email"] != NULL ? $data["email"] : $data["phone"] . "@iotkids.org";
+//        dd($data->has("email") ? $data["email"] : $data["phone"] . "@iotkids.org");
 //        $this->safeGet($data, "email")
 
         $new->gender = $this->safeGet($data, "gender");
