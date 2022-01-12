@@ -70,6 +70,7 @@ class Contact extends Resource
             Text::make(__('Name'), 'name')->required(),
             Text::make(__('Position'), 'position')->required(),
             Text::make(__('Location'), 'location')->required(),
+            Text::make(__('Work Place'), 'work_place'),
             Text::make(__('Email'), 'email')->required(),
             Text::make(__('Number'), 'number')->required(),
 
