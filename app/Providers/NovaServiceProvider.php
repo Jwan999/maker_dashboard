@@ -141,8 +141,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#46C4F9';
             $primaryDark = '#F172AB';
         } elseif (str_contains(url(''), 'iotmaker')) {
-            $primary = '#269DDD';
-            $primaryDark = '#fca000';
+            $primary = 'var(--primary)';
+            $primaryDark = 'var(--primary-dark)';
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
             $primary = '#0C0C0C';
             $primaryDark = '#FFAF13';
