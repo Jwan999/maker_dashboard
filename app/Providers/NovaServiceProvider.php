@@ -141,8 +141,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#46C4F9';
             $primaryDark = '#F172AB';
         } elseif (str_contains(url(''), 'iotmaker')) {
-            $primary = 'var(--primary)';
-            $primaryDark = 'var(--primary-dark)';
+            $primary = '#269DDD';
+            $primaryDark = '#fca000';
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
             $primary = '#0C0C0C';
             $primaryDark = '#FFAF13';
@@ -150,8 +150,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#4364A5';
             $primaryDark = '#EF5642';
         } elseif (str_contains(url(''), 'maarifmakerspace')) {
-            $primary = '#0C0C0C';
-            $primaryDark = '#FFAF13';
+            $primary = '#A361DE';
+            $primaryDark = '#272727';
 
         } elseif (str_contains(url(''), 'sulimakerspace')) {
             $primary = '#67CEF7';
