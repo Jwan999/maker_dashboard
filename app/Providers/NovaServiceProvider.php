@@ -150,7 +150,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#4364A5';
             $primaryDark = '#EF5642';
         } elseif (str_contains(url(''), 'maarifmakerspace')) {
-            $primary = '#A361DE';
+            $primary = '#FC5327';
             $primaryDark = '#FCB800';
 
         } elseif (str_contains(url(''), 'sulimakerspace')) {
