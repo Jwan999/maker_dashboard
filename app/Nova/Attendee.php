@@ -8,6 +8,8 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use PosLifestyle\DateRangeFilter\DateRangeFilter;
+use PosLifestyle\DateRangeFilter\Enums\Config;
 
 class Attendee extends Resource
 {
@@ -75,8 +77,27 @@ class Attendee extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new DateRangeFilter('Created at', 'created_at', [
+                Config::ALLOW_INPUT => false,
+                Config::DATE_FORMAT => 'Y-m-d',
+//                Config::DEFAULT_DATE => ['2019-06-01', '2019-06-30'],
+                Config::DISABLED => false,
+                Config::ENABLE_TIME => false,
+                Config::ENABLE_SECONDS => false,
+                Config::FIRST_DAY_OF_WEEK => 0,
+                Config::LOCALE => 'default',
+//                Config::MAX_DATE => '2019-12-31',
+//                Config::MIN_DATE => '2019-01-01',
+                Config::PLACEHOLDER => __('Choose date range'),
+                Config::SHORTHAND_CURRENT_MONTH => false,
+                Config::SHOW_MONTHS => 1,
+                Config::TIME24HR => false,
+                Config::WEEK_NUMBERS => false,
+            ]),
+        ];
     }
+
 
     /**
      * Get the lenses available for the resource.

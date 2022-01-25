@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad3fb7056ab25e61ddf9366fa93d7fa3",
+    "content-hash": "c759e10ababc90a6eb5ceeb46e9ef660",
     "packages": [
+        {
+            "name": "64robots/nova-date-filter",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/64robots/nova-date-filter.git",
+                "reference": "b6bb806c70928035f879776d49e3ee47137b9fb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/64robots/nova-date-filter/zipball/b6bb806c70928035f879776d49e3ee47137b9fb9",
+                "reference": "b6bb806c70928035f879776d49e3ee47137b9fb9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "R64\\Filters\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "R64\\Filters\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova date filter.",
+            "keywords": [
+                "date",
+                "filter",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/64robots/nova-date-filter/issues",
+                "source": "https://github.com/64robots/nova-date-filter/tree/master"
+            },
+            "abandoned": true,
+            "time": "2018-11-26T08:36:54+00:00"
+        },
         {
             "name": "acme/date-range",
             "version": "dev-main",
@@ -4938,6 +4986,67 @@
                 }
             ],
             "time": "2021-11-28T23:46:03+00:00"
+        },
+        {
+            "name": "pos-lifestyle/laravel-nova-date-range-filter",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pos-lifestyle/laravel-nova-date-range-filter.git",
+                "reference": "9c1c1c1e8939c7c48ec04c550c9b0dbe4fdf5d6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pos-lifestyle/laravel-nova-date-range-filter/zipball/9c1c1c1e8939c7c48ec04c550c9b0dbe4fdf5d6d",
+                "reference": "9c1c1c1e8939c7c48ec04c550c9b0dbe4fdf5d6d",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+                "laravel/nova": "^2.0 || ^3.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PosLifestyle\\DateRangeFilter\\FilterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PosLifestyle\\DateRangeFilter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Hähne",
+                    "email": "jan.haehne@pos-lifestyle.de",
+                    "homepage": "https://github.com/jhae-de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova date range filter.",
+            "keywords": [
+                "date",
+                "filter",
+                "laravel",
+                "nova",
+                "range"
+            ],
+            "support": {
+                "issues": "https://github.com/pos-lifestyle/laravel-nova-date-range-filter/issues",
+                "source": "https://github.com/pos-lifestyle/laravel-nova-date-range-filter/tree/1.3.3"
+            },
+            "time": "2021-07-29T13:24:51+00:00"
         },
         {
             "name": "propaganistas/laravel-phone",

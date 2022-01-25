@@ -175,6 +175,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/trainer-view" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/treestoneit/text-wrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/startup-view" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/64robots/nova-date-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pos-lifestyle/laravel-nova-date-range-filter" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
