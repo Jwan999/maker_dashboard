@@ -185,7 +185,7 @@ class Session extends Resource
     public function filters(Request $request)
     {
         return [
-            new DateRangeFilter('Created at', 'created_at', [
+            new DateRangeFilter('Starting date', 'date', [
                 Config::ALLOW_INPUT => false,
                 Config::DATE_FORMAT => 'Y-m-d',
 //                Config::DEFAULT_DATE => ['2019-06-01', '2019-06-30'],
