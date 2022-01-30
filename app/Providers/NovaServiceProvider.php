@@ -157,6 +157,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primary = '#67CEF7';
             $primaryDark = '#018881';
 
+        } elseif (str_contains(url(''), 'makerchi')) {
+            $primary = '#000000';
+            $primaryDark = '#000000';
+
         } elseif (str_contains(url(''), 'erbilmakerspace')) {
             $primary = '#000000';
             $primaryDark = '#F04E42';
@@ -296,6 +300,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return false;
                 } else if (str_contains(url(''), 'sulimakerspace')) {
                     return true;
+                }else if (str_contains(url(''), 'makerchi')) {
+                    return false;
                 }
             }),
 
@@ -314,6 +320,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return false;
                 } else if (str_contains(url(''), 'sulimakerspace')) {
                     return true;
+                } else if (str_contains(url(''), 'makerchi')) {
+                    return false;
                 }
 
             }),

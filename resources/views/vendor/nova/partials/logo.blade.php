@@ -8,7 +8,10 @@ if (str_contains(url(''), 'iotkids')) {
     echo '<h1>Fallujah</h1>';
 } elseif (str_contains(url(''), 'maarifmakerspace')) {
     echo '<h1>Maarif</h1>';
-} elseif (str_contains(url(''), '3dworld')) {
+} elseif (str_contains(url(''), 'makerchi')) {
+    echo '<h1>Makerchi</h1>';
+}
+elseif (str_contains(url(''), '3dworld')) {
     echo '<h1>3D World</h1>';
 } elseif (str_contains(url(''), 'sulimakerspace')) {
     echo '<h1>Suli</h1>';

@@ -30,7 +30,10 @@ class Contact extends Resource
     {
         if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
             return false;
-        } else {
+        }else if (auth()->user()->email == 'makerchi@makershive.org') {
+            return false;
+        }
+        else {
             return true;
         }
     }

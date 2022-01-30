@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*:root {*/
+/*    --primary: #20222a;*/
+/*    --primary-dark: #20222a;*/
+/*    --primary-70: #4d4e55;*/
+/*    --primary-50: #36383f;*/
+/*    --primary-30: #20222a;*/
+/*    --primary-10: #1a1b22;*/
+/*    --logo: #20222a;*/
+/*    --sidebar-icon: #f35668;*/
+/*}*/
+
+:root {
+    --transparent: transparent;
+    --black: #2d3748;
+    --white: white;
+    --white-50: rgba(255, 255, 255, 0.5);
+    --danger: #f56565;
+    --success: #48bb78;
+    --warning: #f6e05e;
+    --info: #46c4f9;
+    --primary: #369BDD;
+    --primary-dark: #F9C70E;
+    --primary-70: #272727;
+    --primary-50: #242424;
+    --primary-30: #242424;
+    --primary-10: #3d3d3d;
+    --logo: #0C0C0C;
+    --sidebar-icon: #F9C70E;
+    --20: #f7fafc;
+    --30: #f7fafc;
+    --40: #edf2f7;
+    --50: #e2e8f0;
+    --60: #cbd5e0;
+    --70: #a0aec0;
+    --80: #718096;
+    --90: #4a5568;
+    --90-half: #2d3748;
+    --warning-light: #fefcbf;
+    --warning-dark: #f6e05e;
+    --success-light: #c6f6d5;
+    --success-dark: #48bb78;
+    --danger-light: #fed7d7;
+    --danger-dark: #f56565;
+    --info-light: #c3dafe;
+    --info-dark: #FCA000;
+}
+
+.bg-grad-sidebar {
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#0C0C0C),
+        to(#0C0C0C)
+    );
+
+    background-image: linear-gradient(
+        0deg,
+        #0C0C0C,
+        #0C0C0C
+    );
+}

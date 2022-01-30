@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use OwenMelbz\RadioField\RadioButton;
 use PosLifestyle\DateRangeFilter\DateRangeFilter;
 use PosLifestyle\DateRangeFilter\Enums\Config;
@@ -152,6 +153,7 @@ class Trainer extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+        ];
     }
 }

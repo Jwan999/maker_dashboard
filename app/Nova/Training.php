@@ -2,11 +2,14 @@
 
 namespace App\Nova;
 
+use Allanvb\NovaExports\ExportResourceAction;
 use App\Nova\Actions\StudentsImporter;
 use App\Nova\Metrics\GenderRatio;
 use Gkermer\TextAutoComplete\TextAutoComplete;
 use PosLifestyle\DateRangeFilter\DateRangeFilter;
 use Illuminate\Http\Request;
+
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use Comodolab\Nova\Fields\Help\Help;
 use Laravel\Nova\Fields\BelongsTo;
 use PosLifestyle\DateRangeFilter\Enums\Config;
@@ -219,11 +222,21 @@ class Training extends Resource
      *
      * @param \Illuminate\Http\Request $request
      * @return array
+     * @throws \ReflectionException
      */
     public function actions(Request $request)
     {
         return [
-            (new StudentsImporter)->showOnTableRow()
+            (new DownloadExcel)->askForFilename()->withHeadings()->allFields()->showOnIndex(),
+            (new StudentsImporter)->showOnTableRow(),
+//            new ExportResourceAction($this),
+//            new App\Nova\Actions\ExportTrainings,
+//            (new DownloadExcel)->withHeadings()->askForWriterType()->withMeta([
+//                'detachedAction' => true,
+//                'label' => 'Export',
+//                'name' => 'Export',
+//                'showOnIndexToolbar' => true
+//            ])->confirmButtonText('Export'),
         ];
     }
 }

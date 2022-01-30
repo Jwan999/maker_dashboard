@@ -18,6 +18,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use OwenMelbz\RadioField\RadioButton;
 use PosLifestyle\DateRangeFilter\DateRangeFilter;
 use PosLifestyle\DateRangeFilter\Enums\Config;
@@ -226,6 +227,8 @@ class Session extends Resource
     public function actions(Request $request)
     {
         return [
+            (new DownloadExcel)->askForFilename()->withHeadings()->allFields()->showOnIndex(),
+
             (new StudentsImporter)->showOnTableRow()
 
         ];

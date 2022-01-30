@@ -47,7 +47,10 @@ class Membership extends Resource
             return false;
         } else if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
             return false;
-        } else {
+        }else if (auth()->user()->email == 'makerchi@makershive.org') {
+            return false;
+        }
+        else {
             return true;
         }
     }
@@ -89,6 +92,7 @@ class Membership extends Resource
             BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton()->required(),
             Date::make(__('Starts at'), 'starts_at')->sortable()->required(),
             Select::make(__('Duration'), 'duration')->options([
+                0 => '1 Day',
                 1 => '1 Month',
                 2 => '2 Months',
                 3 => '3 Months',
@@ -101,7 +105,8 @@ class Membership extends Resource
             RadioButton::make(__('Membership type'), 'type')
                 ->options([
                     'Golden Membership' => 'Golden Membership',
-                    'Silver Membership' => 'Silver Membership'
+                    'Silver Membership' => 'Silver Membership',
+                    'Daily Membership' => 'Daily Membership',
                 ])->required()
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional

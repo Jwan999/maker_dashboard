@@ -176,6 +176,15 @@
       <path value="$PROJECT_DIR$/vendor/beyondcode/startup-view" />
       <path value="$PROJECT_DIR$/vendor/64robots/nova-date-filter" />
       <path value="$PROJECT_DIR$/vendor/pos-lifestyle/laravel-nova-date-range-filter" />
+      <path value="$PROJECT_DIR$/vendor/gobrightspot/nova-detached-actions" />
+      <path value="$PROJECT_DIR$/vendor/optimistdigital/nova-translations-loader" />
+      <path value="$PROJECT_DIR$/vendor/optimistdigital/nova-multiselect-field" />
+      <path value="$PROJECT_DIR$/vendor/kpolicar/nova-date-range" />
+      <path value="$PROJECT_DIR$/vendor/rap2hpoutre/fast-excel" />
+      <path value="$PROJECT_DIR$/vendor/box/spout" />
+      <path value="$PROJECT_DIR$/vendor/laravie/serialize-queries" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/laravel-nova-excel" />
+      <path value="$PROJECT_DIR$/vendor/allanvb/nova-exports" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">

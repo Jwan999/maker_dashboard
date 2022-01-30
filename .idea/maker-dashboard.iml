@@ -177,6 +177,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/startup-view" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/64robots/nova-date-filter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pos-lifestyle/laravel-nova-date-range-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gobrightspot/nova-detached-actions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/optimistdigital/nova-translations-loader" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/optimistdigital/nova-multiselect-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kpolicar/nova-date-range" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rap2hpoutre/fast-excel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/box/spout" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravie/serialize-queries" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/laravel-nova-excel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/allanvb/nova-exports" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
