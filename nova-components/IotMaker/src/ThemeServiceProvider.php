@@ -25,7 +25,7 @@ class ThemeServiceProvider extends ServiceProvider
             } elseif (str_contains(url(''), 'maarifmakerspace')) {
                 Nova::theme(asset('/css/maarif.css?v=6'));
             }elseif (str_contains(url(''), 'makerchi')) {
-                Nova::theme(asset('/css/makerchi.css?v=1'));
+                Nova::theme(asset('/css/makerchi.css?v=2'));
             }
             elseif (str_contains(url(''), 'sulimakerspace')) {
                 Nova::theme(asset('/css/suli.css?v=6'));
