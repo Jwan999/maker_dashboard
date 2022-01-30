@@ -158,8 +158,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primaryDark = '#018881';
 
         } elseif (str_contains(url(''), 'makerchi')) {
-            $primary = '#000000';
-            $primaryDark = '#000000';
+            $primary = '#F15A25';
+            $primaryDark = '#2ABBF1';
 
         } elseif (str_contains(url(''), 'erbilmakerspace')) {
             $primary = '#000000';
