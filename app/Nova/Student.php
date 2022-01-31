@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use OwenMelbz\RadioField\RadioButton;
 use Dniccum\PhoneNumber\PhoneNumber;
 use PosLifestyle\DateRangeFilter\DateRangeFilter;
@@ -185,6 +186,9 @@ class Student extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new DownloadExcel)->askForFilename()->withHeadings()->allFields()->showOnIndex(),
+
+        ];
     }
 }
