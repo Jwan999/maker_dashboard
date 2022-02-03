@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\Training;
 use Benjacho\BelongsToManyField\BelongsToManyField;
 use Beyondcode\ProductView\ProductView;
 use Beyondcode\TrainerView\TrainerView;
@@ -88,7 +89,8 @@ class Trainer extends Resource
                 ->toggle([  // optional
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ])->hideFromDetail()->required(),
-            TrainerView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex()
+            TrainerView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex(),
+            BelongsToMany::make('trainings'),
 
         ];
     }
