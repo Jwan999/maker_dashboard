@@ -89,30 +89,30 @@ class Membership extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            BelongsTo::make(__("Student"), "student", Student::Class)->showCreateRelationButton()->required(),
+            BelongsTo::make(__("Member"), "student", Student::Class)->showCreateRelationButton()->required(),
             Date::make(__('Starts at'), 'starts_at')->sortable()->required(),
             Select::make(__('Duration'), 'duration')->options([
-                0 => '1 Day',
-                1 => '1 Month',
-                2 => '2 Months',
-                3 => '3 Months',
-                4 => '4 Months',
-                5 => '5 Months',
-                6 => '6 Months',
+                1 => '1 Day',
+                7 => '1 Week',
+                14 => '2 Weeks',
+                30 => '1 Month',
+                90 => '2 Months',
+                120 => '3 Months',
+                150 => '4 Months',
             ])->displayUsingLabels()->required(),
 
 
-            RadioButton::make(__('Membership type'), 'type')
-                ->options([
-                    'Golden Membership' => 'Golden Membership',
-                    'Silver Membership' => 'Silver Membership',
-                    'Daily Membership' => 'Daily Membership',
-                ])->required()
-                ->stack() // optional (required to show hints)
-                ->marginBetween() // optional
-                ->skipTransformation() // optional
-                ->toggle([  // optional
-                    1 => ['max_skips', 'skip_sponsored']]),// will hide max_skips and skip_sponsored when the value is 1
+//            RadioButton::make(__('Membership type'), 'type')
+//                ->options([
+//                    'Golden Membership' => 'Golden Membership',
+//                    'Silver Membership' => 'Silver Membership',
+//                    'Daily Membership' => 'Daily Membership',
+//                ])->required()
+//                ->stack() // optional (required to show hints)
+//                ->marginBetween() // optional
+//                ->skipTransformation() // optional
+//                ->toggle([  // optional
+//                    1 => ['max_skips', 'skip_sponsored']]),// will hide max_skips and skip_sponsored when the value is 1
 
 //            Date::make(__('Ends at'), 'ends_at')->sortable(),
             Boolean::make(__('Is Active'), 'is_active')->sortable()->exceptOnForms(),

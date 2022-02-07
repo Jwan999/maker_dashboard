@@ -25,13 +25,13 @@ class Membership extends Base
     public function getIsActiveAttribute()
     {
         /** @var Carbon $expiresAt */
-        if ($this->duration == 0){
-            $expiresAt = $this->starts_at->addDays(1);
+//        if ($this->duration == 0){
+//            $expiresAt = $this->starts_at->addDays(1);
+//            return Carbon::now()->isBefore($expiresAt);
+//        }else{
+            $expiresAt = $this->starts_at->addDays($this->duration);
             return Carbon::now()->isBefore($expiresAt);
-        }else{
-            $expiresAt = $this->starts_at->addMonths($this->duration);
-            return Carbon::now()->isBefore($expiresAt);
-        }
+//        }
 
     }
 }
