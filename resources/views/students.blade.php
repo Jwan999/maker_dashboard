@@ -15,7 +15,7 @@ if (Student::get()->count() == 0) {
 //if ($percentage == 0) ; $percentage = 3;
 
 ?>
-
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
     .text-4xl {
         font-size: 2.25rem;
@@ -54,10 +54,10 @@ if (Student::get()->count() == 0) {
 </style>
 <div class="flex justify-around items-center px-4 py-6 h">
     <div>
-        <h1 class="text-4xl mt-2">
+        <h1 class="text-4xl mt-2 text-center">
             {{ $students }}
         </h1>
-        <p>
+        <p class="text-center">
             Number of students
         </p>
 
