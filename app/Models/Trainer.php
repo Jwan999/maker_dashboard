@@ -13,4 +13,8 @@ class Trainer extends Base
     {
         return $this->belongsToMany(Training::class);
     }
+    public function sessions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Training::class);
+    }
 }

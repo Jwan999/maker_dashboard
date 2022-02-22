@@ -78,7 +78,7 @@ class Trainer extends Resource
             Text::make(__('Email'), 'email')->hideFromDetail()->required(),
             Filepond::make('Image')->disk('public')->hideFromDetail(),
 
-            RadioButton::make(__('Training Type'), 'type')
+            RadioButton::make(__('Trainer Type'), 'type')
                 ->options([
                     'external' => 'External',
                     'internal' => 'Internal'
@@ -90,7 +90,8 @@ class Trainer extends Resource
                     1 => ['max_skips', 'skip_sponsored'] // will hide max_skips and skip_sponsored when the value is 1
                 ])->hideFromDetail()->required(),
             TrainerView::make('View')->hideWhenCreating()->hideWhenUpdating()->hideFromIndex(),
-            BelongsToMany::make('trainings'),
+            BelongsToMany::make('Trainings'),
+            BelongsToMany::make('Sessions'),
 
         ];
     }
