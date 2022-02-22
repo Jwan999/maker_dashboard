@@ -58,9 +58,13 @@
             <div class="mt-6">
                 <div class="mt-2" v-for="founder in founders">
 
-                    <h1 class="text-gray-500">Founder name: <span class="text-gray-900">{{ founder.attributes.name }}</span></h1>
-                    <h1 class="text-gray-500">Email: <span class="text-gray-900">{{ founder.attributes.email }}</span></h1>
-                    <h1 class="text-gray-500">Phone: <span class="text-gray-900">{{ founder.attributes.number }}</span></h1>
+                    <h1 class="text-gray-500">Founder name: <span class="text-gray-900">{{
+                            founder.attributes.name
+                        }}</span></h1>
+                    <h1 class="text-gray-500">Email: <span class="text-gray-900">{{ founder.attributes.email }}</span>
+                    </h1>
+                    <h1 class="text-gray-500">Phone: <span class="text-gray-900">{{ founder.attributes.number }}</span>
+                    </h1>
                 </div>
                 <div class="mt-3">
                     <h1 class="text-gray-500">Location: <span class="text-gray-900">{{ startup.location }}</span></h1>
@@ -131,11 +135,13 @@ export default {
         getStartups() {
             axios.get('/api/startups').then(response => {
                 this.startups = response.data
-                this.founders = JSON.parse(response.data[0].founders)
 
                 this.startup = this.startups.filter(startup => startup.id == this.resource.id.value)[0]
                 this.startupIndex = this.startups.indexOf(this.startup)
                 this.lastIndex = this.startups.length - 1
+
+                this.founders = JSON.parse(this.startup.founders)
+
 
             })
 

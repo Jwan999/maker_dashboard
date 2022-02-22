@@ -828,6 +828,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -848,13 +852,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('/api/startups').then(function (response) {
                 _this.startups = response.data;
-                _this.founders = JSON.parse(response.data[0].founders);
 
                 _this.startup = _this.startups.filter(function (startup) {
                     return startup.id == _this.resource.id.value;
                 })[0];
                 _this.startupIndex = _this.startups.indexOf(_this.startup);
                 _this.lastIndex = _this.startups.length - 1;
+
+                _this.founders = JSON.parse(_this.startup.founders);
             });
         },
         paginate: function paginate(page) {
