@@ -89,7 +89,7 @@
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
                         {{--                                            <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
                         {{--    <span class="px-1">&middot;</span>--}}
-                        &copy; {{ date('Y') }} IoT Maker partnered with
+                        &copy; {{ date('Y') }} IoT Maker
                         {{--                        <div class="w-16 mx-4">--}}
                         {{--                            <img src="/fieldready.png" alt="test">--}}
                         {{--                        </div>--}}

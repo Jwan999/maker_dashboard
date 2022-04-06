@@ -25,7 +25,6 @@ class Membership extends Resource
         return '
 
 
-
 <svg class="sidebar-icon" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="3" stroke="var(--sidebar-icon)" fill="none" fill-rule="evenodd">
         <g stroke-width="6" stroke="var(--sidebar-icon)" id="customer-support" fill="var(--sidebar-icon)" fill-rule="nonzero">

@@ -72,7 +72,7 @@ class Product extends Resource
 //            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->hideFromDetail()->required(),
             Textarea::make(__('Description'), 'description')->hideFromDetail()->required(),
-            Filepond::make('Image')->disk('public')->hideFromDetail()->required(),
+            Filepond::make('Image')->disk('public')->hideFromDetail()->required()->showOnIndex(),
 //                ->storeAs(function (Request $request) { // this is optional, use in case you need generate custom file names
 ////                dd($request);
 //                return Str::random(20) . '.' . $request->file->getExtension();
