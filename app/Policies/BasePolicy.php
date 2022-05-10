@@ -43,7 +43,7 @@ class BasePolicy
     public function create(User $user)
     {
         $value = true;
-        if ($user->name == 'Guest') {
+        if ($user->email == 'me@guest.org') {
             $value = false;
         }
         return $value;
@@ -59,7 +59,7 @@ class BasePolicy
     public function update(User $user, Base $base)
     {
         $value = true;
-        if ($user->name == 'Guest') {
+        if ($user->email == 'me@guest.org') {
             $value = false;
         }
         return $value;
@@ -75,7 +75,7 @@ class BasePolicy
     public function delete(User $user, Base $base)
     {
         $value = true;
-        if ($user->name == 'Guest') {
+        if ($user->email == 'me@guest.org' || $user->email == 'me@intern.org') {
             $value = false;
         }
         return $value;
@@ -91,7 +91,7 @@ class BasePolicy
     public function restore(User $user, Base $base)
     {
         $value = true;
-        if ($user->name == 'Guest') {
+        if ($user->email == 'me@guest.org' || $user->email == 'me@intern.org') {
             $value = false;
         }
         return $value;
@@ -107,7 +107,7 @@ class BasePolicy
     public function forceDelete(User $user, Base $base)
     {
         $value = true;
-        if ($user->name == 'Guest') {
+        if ($user->email == 'me@guest.org' || $user->email == 'me@intern.org') {
             $value = false;
         }
         return $value;
