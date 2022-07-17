@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Scout\Searchable;
 class Training extends Base
 {
+    use Searchable;
     use HasFactory;
 
     protected $with = ["students"];

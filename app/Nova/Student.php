@@ -63,9 +63,12 @@ class Student extends Resource
 //        'id',
         'name',
         'email',
-        'trainings',
+//        'training_id',
     ];
 
+    public static $searchRelations = [
+        'trainings' => ['name'],
+    ];
     /**
      * Get the fields displayed by the resource.
      *

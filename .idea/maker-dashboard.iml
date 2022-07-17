@@ -186,6 +186,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravie/serialize-queries" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/laravel-nova-excel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/allanvb/nova-exports" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/scout" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/titasgailius/search-relations" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Nova\Fields\Searchable;
 
 class Student extends Base
 {
+    use Searchable;
+
     use HasFactory;
 
 //    protected $appends = ["is_adult"];
