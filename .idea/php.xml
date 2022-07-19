@@ -185,8 +185,6 @@
       <path value="$PROJECT_DIR$/vendor/laravie/serialize-queries" />
       <path value="$PROJECT_DIR$/vendor/maatwebsite/laravel-nova-excel" />
       <path value="$PROJECT_DIR$/vendor/allanvb/nova-exports" />
-      <path value="$PROJECT_DIR$/vendor/laravel/scout" />
-      <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
       <path value="$PROJECT_DIR$/vendor/titasgailius/search-relations" />
     </include_path>
   </component>
