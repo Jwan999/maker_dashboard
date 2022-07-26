@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Intern;
+use App\Models\Product;
 use App\Models\Startup;
+use App\Models\Student;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
 class StartupController extends Controller
@@ -15,6 +19,27 @@ class StartupController extends Controller
     public function index()
     {
         //
+    }
+
+    public function getModelsNumbers()
+    {
+        $trainings = Training::count();
+        $products = Product::count();
+        $students = Student::count();
+        $interns = Intern::count();
+        $startups = Startup::count();
+
+        $data = [
+            'trainings' => $trainings,
+            'products' => $products,
+            'students' => $students,
+            'interns' => $interns,
+            'startups' => $startups,
+        ];
+
+        return $data;
+
+
     }
 
     /**
@@ -30,7 +55,7 @@ class StartupController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +66,7 @@ class StartupController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Startup  $startup
+     * @param \App\Models\Startup $startup
      * @return \Illuminate\Http\Response
      */
     public function show(Startup $startup)
@@ -53,7 +78,7 @@ class StartupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Startup  $startup
+     * @param \App\Models\Startup $startup
      * @return \Illuminate\Http\Response
      */
     public function edit(Startup $startup)
@@ -64,8 +89,8 @@ class StartupController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Startup  $startup
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Startup $startup
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Startup $startup)
@@ -76,7 +101,7 @@ class StartupController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Startup  $startup
+     * @param \App\Models\Startup $startup
      * @return \Illuminate\Http\Response
      */
     public function destroy(Startup $startup)
