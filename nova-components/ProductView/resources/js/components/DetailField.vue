@@ -50,7 +50,7 @@
 
                     <div class="mt-4">
 
-                        <div class="flex items-center space-x-2">
+                        <div v-if="product.design" class="flex items-center space-x-2">
                             <h1 class="text-gray-500">
                                 Design file:
                             </h1>
@@ -108,7 +108,7 @@ export default {
                 this.product = this.products.filter(product => product.id == this.resource.id.value)[0]
                 this.productIndex = this.products.indexOf(this.product)
                 this.lastIndex = this.products.length - 1
-
+                // console.log(this.product)
             })
 
         },
