@@ -46,10 +46,9 @@ class Startup extends Resource
             return false;
         } else if (auth()->user()->email == 'fallujahmakerspace@makershive.org') {
             return false;
-        }else if (auth()->user()->email == 'makerchi@makershive.org') {
+        } else if (auth()->user()->email == 'makerchi@makershive.org') {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
@@ -98,10 +97,7 @@ class Startup extends Resource
                 ->options([
                     'Virtual' => 'Virtual',
                     'In space' => 'In space'
-                ])
-                ->hideWhenUpdating()
-                ->hideFromDetail()
-                ->hideFromIndex()
+                ])->hideFromDetail()
                 ->default('In space')
                 ->stack() // optional (required to show hints)
                 ->marginBetween() // optional
