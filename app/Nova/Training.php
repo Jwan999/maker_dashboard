@@ -93,7 +93,7 @@ class Training extends Resource
     public function fields(Request $request)
     {
         return [
-//            ID::make(__('ID'), 'id'),
+
             Text::make(__('Name'), 'name')->sortable()->resolveUsing(function ($attribute, $resource, $requestAttribute) {
                 return $resource->getOriginal("name");
             })->required(),
