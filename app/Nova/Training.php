@@ -153,6 +153,7 @@ class Training extends Resource
 //                'interface' => 'Finance or Microsoft',
 //            ])->hideFromIndex(),
             Textarea::make(__('Description'), 'description')->hideFromIndex()->required(),
+            Textarea::make(__('English description'), 'en_description')->hideFromIndex(),
             Text::make(__('Training hours'), 'time')->hideFromIndex(),
             Number::make(__('Number of Lectures'), 'lectures')->hideFromIndex(),
 //            Text::make(__('Date'), 'date'),
