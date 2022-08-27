@@ -14,7 +14,10 @@ class Student extends Base
 
 //    protected $appends = ["is_adult"];
     protected $casts = [
-        'date_of_birth' => 'datetime'
+//        'age' => 'date',
+//        'date_of_birth' => 'date',
+
+//        'date_of_birth' => 'datetime'
     ];
 
 //public function getIsAdultAttribute(){

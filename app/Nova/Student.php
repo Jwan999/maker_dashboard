@@ -65,7 +65,7 @@ class Student extends Resource
         'email',
 //        'training_id',
     ];
-
+//searching in relations
     public static $searchRelations = [
         'trainings' => ['name'],
     ];
