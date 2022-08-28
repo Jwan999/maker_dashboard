@@ -79,7 +79,7 @@ class Story extends Resource
 
             Text::make(__('Name'), 'name')->required(),
             Text::make(__('Phone'), 'phone')->required(),
-            Text::make(__('Email'), 'Email')->required(),
+            Text::make(__('Email'), 'email')->required(),
             Textarea::make(__('Story'), 'story')->required(),
 
         ];
