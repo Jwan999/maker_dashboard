@@ -12,13 +12,13 @@ class Training extends Base
 
     protected $with = ["students"];
 
-//    public function getNameAttribute($name)
-//    {
-//        $fullname = $name;
-//        if ($this->date)
-//            $fullname .= " - " . $this->date->format("M, Y");
-//        return $fullname;
-//    }
+    public function getNameAttribute($name)
+    {
+        $fullname = $name;
+        if ($this->date)
+            $fullname .= " - " . $this->date->format("M, Y");
+        return $fullname;
+    }
 
 //    public function getSomethingNotInTheDbAttribute()
 //    {
