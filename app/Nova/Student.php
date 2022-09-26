@@ -83,7 +83,7 @@ class Student extends Resource
             Text::make(__('Name'), 'name')->sortable()->required(),
 
             Text::make(__('Phone Number'), 'phone')->required(),
-            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::select('name', 'date')->get())->hideWhenCreating()->hideWhenUpdating(),
+            BelongsToManyField::make('Training', 'trainings', 'App\Nova\Training')->options(\App\Models\Training::select('name', 'date')->get()),
 //            dd(\App\Models\Training::select('name', 'date')->get()),
             Text::make(__('University'), 'university')->required(),
 
