@@ -46,7 +46,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        $projects = Project::all();
+        return json_encode($projects);
+
     }
 
     /**
