@@ -48,7 +48,6 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
         return json_encode($projects);
-
     }
 
     /**

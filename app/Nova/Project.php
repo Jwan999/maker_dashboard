@@ -6,6 +6,7 @@ use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -46,7 +47,7 @@ class Project extends Resource
     {
         return [
 //            ID::make(__('ID'), 'id')->sortable(),
-            Filepond::make('Icon')->disk('public')->required(),
+            Image::make('Icon')->disk('public')->required(),
             Text::make(__('Name'), 'name')->required(),
             Text::make(__('Sponsored by'), 'sponsored_by')->required(),
             Textarea::make(__('Overview'), 'overview')->required(),
