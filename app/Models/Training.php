@@ -15,8 +15,8 @@ class Training extends Base
     public function getNameAttribute($name)
     {
         $fullname = $name;
-        if ($this->date)
-            $fullname .= " - " . $this->date->format("M, Y");
+//        if ($this->date)
+//            $fullname .= " - " . $this->date->format("M, Y");
         return $fullname;
     }
 
@@ -42,3 +42,4 @@ class Training extends Base
     }
 
 }
+
