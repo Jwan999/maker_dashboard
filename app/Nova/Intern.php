@@ -57,7 +57,7 @@ class Intern extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'name', 'Tasks'
     ];
 
     /**
