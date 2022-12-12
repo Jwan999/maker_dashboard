@@ -24,9 +24,9 @@
     --primary-70: rgba(38, 157, 221, 0.7);
     --primary-50: rgba(38, 157, 221, 0.5);
     --primary-30: rgba(38, 157, 221, 0.3);
-    --primary-10: #041016;
-    --logo: #041016;
-    --sidebar-icon: #fca000;
+    --primary-10: #202020;
+    --logo: #202020;
+    --sidebar-icon: #E26600;
     --20: #f7fafc;
     --30: #f7fafc;
     --40: #edf2f7;
@@ -42,7 +42,7 @@
     --danger-light: #fed7d7;
     --danger-dark: #f56565;
     --info-light: #c3dafe;
-    --info-dark: #fca000;
+    --info-dark: #E26600;
 }
 
 .bg-grad-sidebar {
@@ -50,13 +50,13 @@
             linear,
             left bottom,
             left top,
-            from(#041016),
-            to(#041016)
+            from(#202020),
+            to(#202020)
     );
 
     background-image: linear-gradient(
             0deg,
-            #041016,
-            #041016
+            #202020,
+            #202020
     );
 }

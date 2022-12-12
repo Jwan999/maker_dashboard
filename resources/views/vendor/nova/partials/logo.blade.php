@@ -3,7 +3,7 @@
 if (str_contains(url(''), 'iotkids')) {
     echo '<h1>IoT Kids</h1>';
 } elseif (str_contains(url(''), 'iotmaker')) {
-    echo '<h1>IoT Maker</h1>';
+    echo '<h1>Makers</h1>';
 } elseif (str_contains(url(''), 'fallujahmakerspace')) {
     echo '<h1>Fallujah</h1>';
 } elseif (str_contains(url(''), 'maarifmakerspace')) {

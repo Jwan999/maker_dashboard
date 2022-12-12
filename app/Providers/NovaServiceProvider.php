@@ -141,7 +141,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         if (str_contains(url(''), 'iotkids')) {
             $primary = '#46C4F9';
             $primaryDark = '#F172AB';
-        } elseif (str_contains(url(''), 'iotmaker')) {
+        } elseif (str_contains(url(''), 'makers')) {
             $primary = '#269DDD';
             $primaryDark = '#fca000';
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
@@ -295,7 +295,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('services')->canSee(function ($request) {
                 if (str_contains(url(''), 'iotkids')) {
                     return false;
-                } else if (str_contains(url(''), 'iotmaker')) {
+                } else if (str_contains(url(''), 'makers')) {
                     return true;
                 } else if (str_contains(url(''), 'fallujahmakerspace')) {
                     return false;
@@ -315,7 +315,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HtmlCard())->width('1/3')->view('startups')->canSee(function ($request) {
                 if (str_contains(url(''), 'iotkids')) {
                     return false;
-                } else if (str_contains(url(''), 'iotmaker')) {
+                } else if (str_contains(url(''), 'makers')) {
                     return true;
                 } else if (str_contains(url(''), 'fallujahmakerspace')) {
                     return false;
