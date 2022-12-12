@@ -143,7 +143,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             $primaryDark = '#F172AB';
         } elseif (str_contains(url(''), 'makers')) {
             $primary = '#269DDD';
-            $primaryDark = '#fca000';
+            $primaryDark = '#E26600';
         } elseif (str_contains(url(''), 'fallujahmakerspace')) {
             $primary = '#369BDD';
             $primaryDark = '#F9C70E';
