@@ -18,7 +18,7 @@ class ThemeServiceProvider extends ServiceProvider
 
             if (str_contains(url(''), 'iotkids')) {
                 Nova::theme(asset('/css/iotkids.css?v=1'));
-            } elseif (str_contains(url(''), 'iotmaker')) {
+            } elseif (str_contains(url(''), 'makersiq')) {
                 Nova::theme(asset('/css/iotmaker.css?v=1'));
             } elseif (str_contains(url(''), 'fallujahmakerspace')) {
                 Nova::theme(asset('/css/fallujah.css?v=9'));
@@ -34,13 +34,13 @@ class ThemeServiceProvider extends ServiceProvider
             } elseif (str_contains(url(''), 'erbilmakerspace')) {
                 Nova::theme(asset('/css/erbil.css?v=2'));
             } else {
-                Nova::theme(asset('/css/iotmaker.css?v=1'));
+                Nova::theme(asset('/css/makersiq.css?v=1'));
             }
 
         });
 
         $this->publishes([
-            __DIR__ . '/../resources/css' => public_path('/IotMaker'),
+            __DIR__ . '/../resources/css' => public_path('/makersiq'),
         ], 'public');
     }
 

@@ -85,7 +85,7 @@
 
                     </div>
 
-                @elseif (str_contains(url(''), 'iotmaker'))
+                @elseif (str_contains(url(''), 'makersiq'))
                     <div class="mt-8 flex justify-center text-center text-lg text-80 items-end">
                         {{--                                            <a href="https://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>--}}
                         {{--    <span class="px-1">&middot;</span>--}}
