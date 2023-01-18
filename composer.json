@@ -29,6 +29,7 @@
         "dillingham/nova-attach-many": "^1.3",
         "dniccum/phone-number": "^1.1",
         "doctrine/dbal": "2.13.4",
+        "eolica/nova-pill-filter": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "gkermer/nova-text-auto-complete": "^0.0.5",

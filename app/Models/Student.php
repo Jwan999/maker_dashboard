@@ -28,6 +28,19 @@ class Student extends Base
         return $this->belongsToMany(Training::class);
     }
 
+// todo
+    public function studentsInCourses()
+    {
+        return $this->belongsToMany(Training::class)->where('type', 'Course')->count();
+
+    }
+
+    public function studentsInSessions()
+    {
+        return $this->belongsToMany(Training::class)->where('type', 'Session')->count();
+
+    }
+
     public function run()
     {
         User::factory()

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\CoursesSessionsFilter;
 use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -69,6 +70,7 @@ class Student extends Resource
     public static $searchRelations = [
         'trainings' => ['name'],
     ];
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -150,6 +152,8 @@ class Student extends Resource
     public function filters(Request $request)
     {
         return [
+//            todo
+            Filters\CoursesSessionsFilter::make()->single(),
             new DateRangeFilter('Created at', 'created_at', [
                 Config::ALLOW_INPUT => false,
                 Config::DATE_FORMAT => 'Y-m-d',

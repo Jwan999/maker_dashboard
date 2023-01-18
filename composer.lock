@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afae5636ff2be7f7aa4dc254912f9442",
+    "content-hash": "f8bf4dc6796e5e64eba085e1f709a82e",
     "packages": [
         {
             "name": "64robots/nova-date-filter",
@@ -1921,6 +1921,64 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "eolica/nova-pill-filter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eolica-Web/nova-pill-filter.git",
+                "reference": "5409ed3f6781457b45e59237176b45919d2c1b93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eolica-Web/nova-pill-filter/zipball/5409ed3f6781457b45e59237176b45919d2c1b93",
+                "reference": "5409ed3f6781457b45e59237176b45919d2c1b93",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^3.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Eolica\\NovaPillFilter\\FilterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Eolica\\NovaPillFilter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Llobell",
+                    "email": "dllobellmoya@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple Laravel Nova filter that renders into clickable pills",
+            "homepage": "https://github.com/Eolica-Web/nova-pill-filter",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Eolica-Web/nova-pill-filter/issues",
+                "source": "https://github.com/Eolica-Web/nova-pill-filter/tree/1.0.0"
+            },
+            "abandoned": true,
+            "time": "2020-10-29T18:06:50+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -11928,5 +11986,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
